@@ -29,6 +29,10 @@
   [data-reveal]{transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
   [data-reveal].pre{opacity:0;transform:translateY(28px)}
   [data-svc]:hover{background:#1A1510!important}
+  [data-spastrip]{scrollbar-width:none;-ms-overflow-style:none;cursor:grab}
+  [data-spastrip]::-webkit-scrollbar{display:none}
+  @keyframes thNudge{0%,100%{transform:translateX(0);opacity:.6}50%{transform:translateX(5px);opacity:1}}
+  @media (max-width:820px){[data-spaacc]{flex-direction:column;height:auto!important}[data-spapanel]{min-height:230px}[data-spapanel] [style*="vertical-rl"]{writing-mode:horizontal-tb!important}}
   [data-svc]:hover div,[data-svc]:hover span{color:#F5F0E7!important}
   @media (pointer:fine){
     body{cursor:none}
@@ -54,6 +58,7 @@
   [data-gph] img{width:100%;height:100%}
   @keyframes thDrift{0%{transform:scale(1.04) translate3d(0,0,0)}100%{transform:scale(1.14) translate3d(0,-1.5%,0)}}
   @keyframes thPulse{0%,100%{opacity:.35;transform:translateY(0)}50%{opacity:1;transform:translateY(7px)}}
+  @keyframes thFade{from{opacity:0}to{opacity:1}}
   @keyframes thUp{from{opacity:0;transform:translateY(44px)}to{opacity:1;transform:none}}
   @keyframes thLine{from{transform:translateY(112%)}to{transform:none}}
   @keyframes thFade{from{opacity:0}to{opacity:1}}
@@ -135,7 +140,7 @@
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#16130F"/><path d="M22 66 L40 40 L52 56 L64 34 L80 66 Z" fill="#C6A87C"/><text x="50" y="84" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#E8D3AE" letter-spacing="2">TATRY HILLS</text></svg></template>
 
 <section id="gora" data-screen-label="Hero" style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;color:#F5F0E7">
-  <video autoplay="" muted="" loop="" playsinline="" src="assets/hero.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#16130F;filter:brightness(.9) contrast(1.04) saturate(1.04)"></video>
+  <video autoplay="" muted="" loop="" playsinline="" src="assets/hero.mp4" style="position:absolute;top:0;left:0;width:116%;height:116%;object-fit:cover;background:#16130F;filter:brightness(.9) contrast(1.04) saturate(1.04)"></video>
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,.42) 0%,rgba(15,12,9,.12) 32%,rgba(15,12,9,.5) 74%,rgba(15,12,9,.82) 100%)"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(15,12,9,.62) 0%,rgba(15,12,9,.34) 34%,rgba(15,12,9,0) 62%)"></div>
 
@@ -154,11 +159,11 @@
       </h1>
       <div style="display:flex;flex-wrap:wrap;margin-top:clamp(30px,3.6vw,46px);background:rgba(15,12,9,.4);border:1px solid rgba(245,240,231,.22);backdrop-filter:blur(14px);animation:thUp 1s cubic-bezier(.2,.7,.2,1) .56s both">
         <div data-hstat="1" style="flex:1 1 170px;padding:24px 28px;border-right:1px solid rgba(245,240,231,.18);transition:background .35s ease" style-hover="background:rgba(245,240,231,.07)">
-          <div id="th-hero-count" style="font-size:clamp(26px,2.4vw,38px);font-weight:300;letter-spacing:-.02em;line-height:1">55</div>
+          <div id="th-hero-count" style="font-size:clamp(26px,2.4vw,38px);font-weight:300;letter-spacing:-.02em;line-height:1">66</div>
           <div style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(245,240,231,.66);margin-top:10px">apartamentów</div>
         </div>
         <div data-hstat="1" style="flex:1 1 170px;padding:24px 28px;border-right:1px solid rgba(245,240,231,.18);transition:background .35s ease" style-hover="background:rgba(245,240,231,.07)">
-          <div style="font-size:clamp(26px,2.4vw,38px);font-weight:300;letter-spacing:-.02em;line-height:1">23–46 m²</div>
+          <div style="font-size:clamp(26px,2.4vw,38px);font-weight:300;letter-spacing:-.02em;line-height:1">25–65 m²</div>
           <div style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(245,240,231,.66);margin-top:10px">metraż</div>
         </div>
         <div data-hstat="1" style="flex:1 1 170px;padding:24px 28px;border-right:1px solid rgba(245,240,231,.18);transition:background .35s ease" style-hover="background:rgba(245,240,231,.07)">
@@ -237,7 +242,7 @@
       </div>
     </div>
     <div data-reveal="" style="position:relative;aspect-ratio:21/9;overflow:hidden;background:#16130F">
-      <video id="th-apt-video" autoplay="" muted="" loop="" playsinline="" src="assets/apartment.mp4" style="position:absolute;top:50%;left:50%;width:112%;height:112%;transform:translate(-52%,-50%);object-fit:cover"></video>
+      <video id="th-apt-video" autoplay="" muted="" loop="" playsinline="" src="assets/apartment.mp4" style="position:absolute;top:0;left:0;width:122%;height:122%;object-fit:cover"></video>
       <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,12,9,.78),rgba(15,12,9,.16) 46%,rgba(15,12,9,.28));pointer-events:none"></div>
       <div style="position:absolute;left:clamp(20px,3vw,48px);right:clamp(20px,3vw,48px);bottom:clamp(24px,3vw,46px);height:clamp(74px,7vw,96px);pointer-events:none">
         <div style="position:absolute;left:0;bottom:0;display:flex;flex-direction:column;gap:8px;opacity:{{ cap0Op }};transform:translateY({{ cap0Y }});transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1)">
@@ -296,44 +301,176 @@
       <button onClick="{{ showResto }}" style="flex:1;min-width:180px;height:64px;border:0;cursor:pointer;font-size:13px;letter-spacing:.2em;text-transform:uppercase;background:{{ restoBtnBg }};color:{{ restoBtnFg }};transition:all .3s ease">Restauracja</button>
       <button onClick="{{ showLobby }}" style="flex:1;min-width:180px;height:64px;border:0;cursor:pointer;font-size:13px;letter-spacing:.2em;text-transform:uppercase;background:{{ lobbyBtnBg }};color:{{ lobbyBtnFg }};transition:all .3s ease">Recepcja i klub</button>
     </div>
-    <div style="display:{{ spaShow }};grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:0;background:#FFFFFF">
-      <img loading="lazy" decoding="async" src="assets/spa-pool.jpg" alt="Basen i strefa SPA" style="width:100%;height:100%;min-height:420px;object-fit:cover">
-      <div style="padding:clamp(32px,4vw,56px) clamp(24px,3.6vw,52px)">
-        <h3 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:38px;margin:0 0 20px">Góralska strefa SPA</h3>
-        <p style="font-size:17px;line-height:1.75;color:#55504A;font-weight:400;margin:0 0 26px;text-wrap:pretty">Relaks inspirowany podhalańską tradycją — drewno, kamień i ciepłe światło.</p>
-        <ul style="list-style:none;padding:0;margin:0;display:grid;gap:14px">
-          <li style="display:flex;gap:14px;font-size:16px;color:#4A453D;font-weight:400"><span style="color:#C6A87C">—</span>Basen z widokiem na góry</li>
-          <li style="display:flex;gap:14px;font-size:16px;color:#4A453D;font-weight:400"><span style="color:#C6A87C">—</span>Sauna fińska, parowa i biosauna</li>
-          <li style="display:flex;gap:14px;font-size:16px;color:#4A453D;font-weight:400"><span style="color:#C6A87C">—</span>Grota solna i jacuzzi</li>
-          <li style="display:flex;gap:14px;font-size:16px;color:#4A453D;font-weight:400"><span style="color:#C6A87C">—</span>Siłownia i sala fitness z panoramą Tatr</li>
-        </ul>
+    <div onMouseEnter="{{ spaPause }}" onMouseLeave="{{ spaResume }}" style="display:{{ spaShow }};position:relative;flex-direction:column">
+      
+            <button onClick="{{ spaPrev }}" title="Poprzednie" style="position:absolute;top:calc(50% - 60px);left:clamp(10px,1.4vw,20px);z-index:3;display:flex;align-items:center;justify-content:center;width:46px;height:46px;padding:0;border:0;background:transparent;cursor:pointer;opacity:.72;transition:opacity .3s ease,transform .3s ease" style-hover="opacity:1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5F0E7" stroke-width="1.1" stroke-linecap="round" aria-hidden="true" style="display:block;filter:drop-shadow(0 1px 6px rgba(15,12,9,.85))"><path d="M15 5l-7 7 7 7"></path></svg>
+      </button>
+      <button onClick="{{ spaNext }}" title="Następne" style="position:absolute;top:calc(50% - 60px);right:clamp(10px,1.4vw,20px);z-index:3;display:flex;align-items:center;justify-content:center;width:46px;height:46px;padding:0;border:0;background:transparent;cursor:pointer;opacity:.72;transition:opacity .3s ease,transform .3s ease" style-hover="opacity:1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5F0E7" stroke-width="1.1" stroke-linecap="round" aria-hidden="true" style="display:block;filter:drop-shadow(0 1px 6px rgba(15,12,9,.85))"><path d="M9 5l7 7-7 7"></path></svg>
+      </button>
+      <div id="th-spa-strip" data-spastrip="1" style="display:flex;gap:2px;height:clamp(400px,46vw,600px);overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#F7F4EE">
+        <figure data-spaslide="0" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/spa-pool.jpg" alt="Basen i jacuzzi" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ spaSc0 }});filter:brightness({{ spaBr0 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ spaDH0 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Basen i jacuzzi</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ spaDOp0 }};transition:opacity .55s ease;text-wrap:pretty">Podgrzewana tafla i jacuzzi za panoramicznym przeszkleniem na Tatry.</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure data-spaslide="1" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/spa-sauna.jpg" alt="Sauny" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ spaSc1 }});filter:brightness({{ spaBr1 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ spaDH1 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Sauny</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ spaDOp1 }};transition:opacity .55s ease;text-wrap:pretty">Fińska, parowa i biosauna — drewno, kamień i widok na zaśnieżony las.</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure data-spaslide="2" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/spa-grota.jpg" alt="Grota solna" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ spaSc2 }});filter:brightness({{ spaBr2 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ spaDH2 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Grota solna</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ spaDOp2 }};transition:opacity .55s ease;text-wrap:pretty">Mikroklimat solny, leżaki i ciepłe światło — inhalacja i wyciszenie.</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure data-spaslide="3" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/spa-fitness.jpg" alt="Siłownia i fitness" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ spaSc3 }});filter:brightness({{ spaBr3 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ spaDH3 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Siłownia i fitness</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ spaDOp3 }};transition:opacity .55s ease;text-wrap:pretty">Cardio, wolne ciężary i zajęcia grupowe — z trenerami personalnymi na miejscu.</span>
+            </div>
+          </figcaption>
+        </figure>
       </div>
+
     </div>
-    <div style="display:{{ restoShow }};grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:0;background:#FFFFFF">
-      <img loading="lazy" decoding="async" src="assets/restaurant.jpg" alt="Restauracja Tatry Hills" style="width:100%;height:100%;min-height:420px;object-fit:cover">
-      <div style="padding:clamp(32px,4vw,56px) clamp(24px,3.6vw,52px)">
-        <h3 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:38px;margin:0 0 20px">Restauracja i bar</h3>
-        <p style="font-size:17px;line-height:1.75;color:#55504A;font-weight:400;margin:0 0 26px;text-wrap:pretty">Kuchnia z szefem kuchni, naturalne materiały i panoramiczne okna otwarte na przyrodę.</p>
-        <ul style="list-style:none;padding:0;margin:0;display:grid;gap:14px">
-          <li style="display:flex;gap:14px;font-size:16px;color:#4A453D;font-weight:400"><span style="color:#C6A87C">—</span>Cztery posiłki dziennie: śniadanie, lunch, obiad, kolacja</li>
-          <li style="display:flex;gap:14px;font-size:16px;color:#4A453D;font-weight:400"><span style="color:#C6A87C">—</span>Całodobowy bar bezalkoholowy: kawa, herbata, soki, przekąski</li>
-          <li style="display:flex;gap:14px;font-size:16px;color:#4A453D;font-weight:400"><span style="color:#C6A87C">—</span>Opieka dietetyka</li>
-          <li style="display:flex;gap:14px;font-size:16px;color:#4A453D;font-weight:400"><span style="color:#C6A87C">—</span>Trenerzy personalni</li>
-        </ul>
+    <div style="display:{{ restoShow }};flex-direction:column;position:relative;background:#FFFFFF">
+      
+            <button onClick="{{ resPrev }}" title="Poprzednie" style="position:absolute;top:calc(50% - 60px);left:clamp(10px,1.4vw,20px);z-index:3;display:flex;align-items:center;justify-content:center;width:46px;height:46px;padding:0;border:0;background:transparent;cursor:pointer;opacity:.72;transition:opacity .3s ease,transform .3s ease" style-hover="opacity:1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5F0E7" stroke-width="1.1" stroke-linecap="round" aria-hidden="true" style="display:block;filter:drop-shadow(0 1px 6px rgba(15,12,9,.85))"><path d="M15 5l-7 7 7 7"></path></svg>
+      </button>
+      <button onClick="{{ resNext }}" title="Następne" style="position:absolute;top:calc(50% - 60px);right:clamp(10px,1.4vw,20px);z-index:3;display:flex;align-items:center;justify-content:center;width:46px;height:46px;padding:0;border:0;background:transparent;cursor:pointer;opacity:.72;transition:opacity .3s ease,transform .3s ease" style-hover="opacity:1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5F0E7" stroke-width="1.1" stroke-linecap="round" aria-hidden="true" style="display:block;filter:drop-shadow(0 1px 6px rgba(15,12,9,.85))"><path d="M9 5l7 7-7 7"></path></svg>
+      </button>
+      <div id="th-resto-strip" data-spastrip="1" style="display:flex;gap:2px;height:clamp(400px,46vw,600px);overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#F7F4EE">
+        <figure data-restoslide="0" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/restaurant.jpg" alt="Restauracja i bar" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ resSc0 }});filter:brightness({{ resBr0 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ resDH0 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Restauracja i bar</span>
+              <span style="font-size:15px;line-height:1.6;max-width:86ch;color:#5B5346;opacity:{{ resDOp0 }};transition:opacity .55s ease;text-wrap:pretty">Cztery posiłki dziennie — śniadanie, lunch, obiad i kolacja — całodobowy bar bezalkoholowy z kawą, herbatą, sokami i przekąskami oraz opieka dietetyka.</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure data-restoslide="1" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/resto-chef.jpg" alt="Kuchnia szefa kuchni" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ resSc1 }});filter:brightness({{ resBr1 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ resDH1 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Kuchnia szefa kuchni</span>
+              <span style="font-size:15px;line-height:1.6;max-width:86ch;color:#5B5346;opacity:{{ resDOp1 }};transition:opacity .55s ease;text-wrap:pretty">Dania przygotowywane na miejscu ze świeżych, sezonowych produktów — z myślą o diecie każdego mieszkańca.</span>
+            </div>
+          </figcaption>
+        </figure>
       </div>
+
     </div>
-    <div style="display:{{ lobbyShow }};grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:0;background:#FFFFFF">
-      <img loading="lazy" decoding="async" src="assets/lobby.jpg" alt="Recepcja Tatry Hills" style="width:100%;height:100%;min-height:420px;object-fit:cover">
-      <div style="padding:clamp(32px,4vw,56px) clamp(24px,3.6vw,52px)">
-        <h3 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:38px;margin:0 0 20px">Recepcja, klub, concierge</h3>
-        <p style="font-size:17px;line-height:1.75;color:#55504A;font-weight:400;margin:0 0 26px;text-wrap:pretty">Eventy, wieczorki taneczne, koncerty i spotkania — a recepcja i concierge działają jak w hotelu.</p>
-        <ul style="list-style:none;padding:0;margin:0;display:grid;gap:14px">
-          <li style="display:flex;gap:14px;font-size:16px;color:#4A453D;font-weight:400"><span style="color:#C6A87C">—</span>Salon fryzjerski i gabinet kosmetologiczny</li>
-          <li style="display:flex;gap:14px;font-size:16px;color:#4A453D;font-weight:400"><span style="color:#C6A87C">—</span>Kaplica</li>
-          <li style="display:flex;gap:14px;font-size:16px;color:#4A453D;font-weight:400"><span style="color:#C6A87C">—</span>Sala klubowa: ping-pong, karty, bilard</li>
-          <li style="display:flex;gap:14px;font-size:16px;color:#4A453D;font-weight:400"><span style="color:#C6A87C">—</span>Bezpłatny transport po Zakopanem hotelowym pojazdem</li>
-        </ul>
+    <div style="display:{{ lobbyShow }};flex-direction:column;position:relative;background:#FFFFFF">
+      
+            <button onClick="{{ lobPrev }}" title="Poprzednie" style="position:absolute;top:calc(50% - 60px);left:clamp(10px,1.4vw,20px);z-index:3;display:flex;align-items:center;justify-content:center;width:46px;height:46px;padding:0;border:0;background:transparent;cursor:pointer;opacity:.72;transition:opacity .3s ease,transform .3s ease" style-hover="opacity:1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5F0E7" stroke-width="1.1" stroke-linecap="round" aria-hidden="true" style="display:block;filter:drop-shadow(0 1px 6px rgba(15,12,9,.85))"><path d="M15 5l-7 7 7 7"></path></svg>
+      </button>
+      <button onClick="{{ lobNext }}" title="Następne" style="position:absolute;top:calc(50% - 60px);right:clamp(10px,1.4vw,20px);z-index:3;display:flex;align-items:center;justify-content:center;width:46px;height:46px;padding:0;border:0;background:transparent;cursor:pointer;opacity:.72;transition:opacity .3s ease,transform .3s ease" style-hover="opacity:1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5F0E7" stroke-width="1.1" stroke-linecap="round" aria-hidden="true" style="display:block;filter:drop-shadow(0 1px 6px rgba(15,12,9,.85))"><path d="M9 5l7 7-7 7"></path></svg>
+      </button>
+      <div id="th-lobby-strip" data-spastrip="1" style="display:flex;gap:2px;height:clamp(400px,46vw,600px);overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#F7F4EE">
+        <figure data-lobbyslide="0" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/lobby.jpg" alt="Recepcja i concierge" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ lobSc0 }});filter:brightness({{ lobBr0 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ lobDH0 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Recepcja i concierge</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ lobDOp0 }};transition:opacity .55s ease;text-wrap:pretty">Obsługa jak w hotelu: rezerwacje, zakupy, bilety i bezpłatny transport po Zakopanem.</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure data-lobbyslide="1" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/klub-salon.jpg" alt="Salon fryzjerski i gabinet kosmetologiczny" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ lobSc1 }});filter:brightness({{ lobBr1 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ lobDH1 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Salon fryzjerski i gabinet kosmetologiczny</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ lobDOp1 }};transition:opacity .55s ease;text-wrap:pretty">Strefa beauty z gabinetem kosmetologicznym i widokiem na las.</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure data-lobbyslide="2" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/klub-gry.jpg" alt="Sala klubowa i bar" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ lobSc2 }});filter:brightness({{ lobBr2 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ lobDH2 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Sala klubowa i bar</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ lobDOp2 }};transition:opacity .55s ease;text-wrap:pretty">Bilard, ping-pong, karty i wieczorne spotkania przy barze. Eventy, wieczorki taneczne, koncerty i spotkania.</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure data-lobbyslide="3" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/klub-kaplica.jpg" alt="Kaplica" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ lobSc3 }});filter:brightness({{ lobBr3 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ lobDH3 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Kaplica</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ lobDOp3 }};transition:opacity .55s ease;text-wrap:pretty">Ciche wnętrze z drewnem, kamiennym ołtarzem i widokiem na las — msze i modlitwa na miejscu.</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure data-lobbyslide="4" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/klub-transport.jpg" alt="Transport" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ lobSc4 }});filter:brightness({{ lobBr4 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ lobDH4 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Transport</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ lobDOp4 }};transition:opacity .55s ease;text-wrap:pretty">Bezpłatny transport po Zakopanem hotelowym pojazdem — z kierowcą, pod same drzwi.</span>
+            </div>
+          </figcaption>
+        </figure>
       </div>
+
+
+
+
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:1px;margin-top:1px;background:#E4DDCF">
       <div style="flex:1 1 290px;background:#FFFFFF;padding:28px 26px;transition:background .3s ease" data-svc="1"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px"><span style="font-family:'Bodoni Moda',serif;font-size:20px">Sprzątanie i serwis</span></div><div style="font-size:14px;line-height:1.6;color:#7A7264;font-weight:400">Regularne sprzątanie apartamentu i obsługa na hotelowym poziomie.</div></div>
@@ -358,7 +495,7 @@
       <div style="position:relative;z-index:3;flex:1 1 250px;display:flex;flex-direction:column;background:#F7F4EE">
         <button onClick="{{ pickFloor }}" data-floor="0" style="position:relative;text-align:left;padding:0 58px 0 22px;height:{{ f0h }};border:0;border-left:3px solid {{ f0line }};cursor:pointer;background:{{ f0bg }};color:{{ f0fg }};display:flex;flex-direction:column;justify-content:center;gap:3px;overflow:hidden;transition:height .45s cubic-bezier(.2,.7,.2,1),background .35s ease,color .35s ease,border-color .35s ease">
           <span style="font-size:15px;letter-spacing:.06em;transform:translateX({{ f0shift }});transition:transform .45s cubic-bezier(.2,.7,.2,1)">Piętro 4</span>
-          <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f0subOp }};max-height:{{ f0subH }};transform:translateX({{ f0shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">rzut kondygnacji</span>
+          <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f0subOp }};max-height:{{ f0subH }};transform:translateX({{ f0shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">11 lokali</span>
           <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f0cShow }};align-items:baseline;gap:4px;color:{{ f0cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:20px;line-height:1">{{ f0count }}</span></span>
           <span style="position:absolute;left:0;top:0;height:2px;width:{{ f0top }};background:{{ f0barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
           <span style="position:absolute;left:0;bottom:0;height:2px;width:{{ f0bar }};background:{{ f0barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
@@ -412,10 +549,19 @@
           <span style="position:absolute;left:0;top:0;height:2px;width:{{ f7top }};background:{{ f7barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
           <span style="position:absolute;left:0;bottom:0;height:2px;width:{{ f7bar }};background:{{ f7barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
         </button>
-        <div style="margin-top:auto;padding:24px 22px;font-size:13px;line-height:1.6;color:#7D766A;font-weight:400">Wybierz kondygnację, a pod rzutem pojawi się lista jej lokali. Kliknij lokal na rzucie lub na liście, aby zobaczyć szczegóły; kliknięcie poza lokalem powiększa rysunek.</div>
+      </div>
+      <div style="display:{{ listShow }};flex:0 1 232px;min-width:200px;flex-direction:column;background:#FFFFFF;min-height:620px;max-height:760px">
+        <div style="flex:1;min-height:0;overflow-y:auto">
+          <sc-for list="{{ unitList }}" as="u" hint-placeholder-count="0">
+            <button onClick="{{ pickUnit }}" onMouseEnter="{{ hoverUnit }}" onMouseLeave="{{ unhoverUnit }}" data-unit="{{ u.n }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;border:0;border-bottom:1px solid #F0EADD;background:{{ u.rowBg }};color:{{ u.rowFg }};cursor:pointer;text-align:left;transition:background .25s ease,color .25s ease" style-hover="background:#EDE6D8">
+              <span style="display:flex;align-items:baseline;gap:8px"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:{{ u.subFg }}">Lokal</span><span style="font-family:'Bodoni Moda',serif;font-size:22px;line-height:1">{{ u.n }}</span></span>
+              <span style="font-size:12px;color:{{ u.subFg }};white-space:nowrap">{{ u.a }} m²</span>
+            </button>
+          </sc-for>
+        </div>
       </div>
       <div style="flex:3 1 380px;background:#FFFFFF;position:relative;min-height:620px;overflow:hidden">
-        <div id="th-plan-outer" style="display:{{ planShow }};position:absolute;left:0;right:0;top:0;bottom:{{ planBottom }};align-items:center;justify-content:center;padding:18px">
+        <div id="th-plan-outer" style="display:{{ planShow }};position:absolute;left:0;right:0;top:0;bottom:0;align-items:center;justify-content:center;padding:18px">
           <div id="th-plan-wrap" style="position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center">
             <div id="th-plan-box" style="position:relative;display:inline-block;max-width:100%">
               <img id="th-plan-img" alt="Rzut kondygnacji" onClick="{{ zoomPlan }}" style="display:{{ planImgShow }};max-width:100%;max-height:582px;object-fit:contain;cursor:zoom-in">
@@ -429,44 +575,37 @@
           </div>
           <div id="th-floor-status" style="position:absolute;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#7A7264">wczytywanie rzutu…</div>
         </div>
-        <div style="display:{{ stripShow }};position:absolute;left:0;right:0;bottom:0;height:{{ stripH }};flex-direction:column;background:#FFFFFF;border-top:1px solid #E4DDCF">
-          <div style="display:{{ unitCardShow }};align-items:stretch;height:112px;background:#16130F;color:#F2ECE1;overflow:hidden">
-            <div style="flex:1 1 auto;min-width:0;display:flex;align-items:stretch;overflow-x:auto;overflow-y:hidden">
-            <div style="flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;gap:9px;padding:0 24px;border-right:1px solid #2A241D">
-              <span style="font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:#8C8377">{{ unitFloor }}</span>
-              <span style="font-family:'Bodoni Moda',serif;font-size:30px;line-height:1;white-space:nowrap">Lokal {{ unitNo }}</span>
+      </div>
+    </div>
+
+    <div style="display:{{ cardShow }};margin-top:1px;background:#FFFFFF;border-top:1px solid #E4DDCF;animation:thUp .5s cubic-bezier(.2,.7,.2,1) both">
+      <div id="th-unit-card" style="width:100%;display:flex;flex-wrap:wrap;gap:1px;background:#E4DDCF">
+        <div style="flex:2 1 460px;min-width:0;display:flex;align-items:center;justify-content:center;padding:clamp(22px,3vw,46px);background:#FBF9F5">
+          <img id="th-card-img" alt="Rzut lokalu" style="max-width:100%;max-height:min(78vh,860px);object-fit:contain"></div>
+        <div style="flex:1 1 340px;display:flex;flex-direction:column;gap:clamp(20px,2.2vw,30px);padding:clamp(26px,3vw,44px);background:#16130F;color:#F2ECE1">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px">
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <span style="font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8C8377">{{ cardFloor }}</span>
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(34px,3.4vw,48px);line-height:1">Lokal {{ cardNo }}</span>
             </div>
-            <div style="display:{{ unitTotalShow }};flex:0 0 auto;flex-direction:column;justify-content:center;gap:9px;padding:0 24px;border-right:1px solid #2A241D">
-              <span style="font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:#8C8377">Powierzchnia lokalu</span>
-              <span style="display:flex;align-items:baseline;gap:6px;white-space:nowrap"><span style="font-family:'Bodoni Moda',serif;font-size:30px;line-height:1">{{ unitTotal }}</span><span style="font-size:13px;color:#A89C8A">m²</span></span>
-            </div>
-            <div style="display:{{ unitExShow }};flex:0 1 auto;min-width:0;flex-direction:column;justify-content:center;gap:9px;padding:0 24px;border-right:1px solid #2A241D">
-              <span style="font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:#8C8377">Do lokalu</span>
-              <span style="display:flex;gap:4px 16px;white-space:nowrap">
-                <sc-for list="{{ unitExList }}" as="x" hint-placeholder-count="0">
-                  <span style="display:flex;align-items:baseline;gap:6px;white-space:nowrap"><span style="font-size:12px;color:#A89C8A">{{ x.label }}</span><span style="font-size:15px">{{ x.val }} m²</span></span>
-                </sc-for>
-              </span>
-            </div>
-            <div style="display:{{ unitAskShow }};flex:0 0 auto;flex-direction:column;justify-content:center;gap:9px;padding:0 24px;border-right:1px solid #2A241D">
-              <span style="font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:#8C8377">Powierzchnia</span>
-              <span style="font-size:15px;color:#C6A87C;white-space:nowrap">na zapytanie</span>
-            </div>
-            </div>
-            <a href="#kontakt" onClick="{{ askUnit }}" style="flex:0 0 auto;display:flex;align-items:center;padding:0 22px;background:#C6A87C;color:#16130F;font-size:10px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap" style-hover="background:#D8BB8E">Zapytaj o lokal</a>
-            <button onClick="{{ closeUnit }}" title="Zamknij" style="flex:0 0 auto;width:46px;border:0;border-left:1px solid #2A241D;background:transparent;color:#8C8377;font-size:15px;cursor:pointer;line-height:1" style-hover="color:#F5F0E7">✕</button>
+            <button onClick="{{ closeCard }}" title="Zamknij" style="flex:0 0 auto;width:40px;height:40px;border:1px solid #2E2A24;background:transparent;color:#8C8377;cursor:pointer;font-size:15px;line-height:1;transition:color .3s ease,border-color .3s ease" style-hover="color:#F2ECE1;border-color:#C6A87C">✕</button>
           </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;height:40px;padding:0 20px;flex:0 0 auto">
-            <div style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#A6824E;white-space:nowrap">{{ listFloor }} · {{ listCount }} lokali</div>
-            <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8C8377;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">kupno lub najem</div>
+          <div style="display:{{ cardTotalShow }};flex-direction:column;gap:10px;padding-top:clamp(18px,2vw,24px);border-top:1px solid #2A241D">
+            <span style="font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#8C8377">Powierzchnia lokalu</span>
+            <span style="display:flex;align-items:baseline;gap:7px"><span style="font-family:'Bodoni Moda',serif;font-size:36px;line-height:1">{{ cardTotal }}</span><span style="font-size:14px;color:#A89C8A">m²</span></span>
           </div>
-          <div style="flex:1;min-height:0;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));grid-auto-rows:56px;align-content:start;background:#FFFFFF;border-top:1px solid #EFE9DC">
-            <sc-for list="{{ unitList }}" as="u" hint-placeholder-count="0">
-              <button onClick="{{ pickUnit }}" onMouseEnter="{{ hoverUnit }}" onMouseLeave="{{ unhoverUnit }}" data-unit="{{ u.n }}" style="display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;padding:8px 12px;border:0;border-right:1px solid #F0EADD;border-bottom:1px solid #F0EADD;background:{{ u.rowBg }};color:{{ u.rowFg }};cursor:pointer;text-align:left;transition:background .2s ease,color .2s ease" style-hover="background:#EDE6D8">
-                <span style="font-size:14px;letter-spacing:.04em">{{ u.n }}</span>
-                <span style="font-size:11px;color:{{ u.subFg }}">{{ u.a }} m²</span>
-              </button>
+          <div style="display:{{ cardExShow }};flex-direction:column;gap:12px;padding-top:clamp(18px,2vw,24px);border-top:1px solid #2A241D">
+            <span style="font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#8C8377">Do lokalu</span>
+            <sc-for list="{{ cardExList }}" as="x" hint-placeholder-count="0">
+              <span style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;font-size:14px"><span style="color:#A89C8A">{{ x.label }}</span><span>{{ x.val }} m²</span></span>
             </sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:auto;padding-top:clamp(18px,2vw,24px)">
+            <a href="#kontakt" onClick="{{ askUnitCard }}" style="display:flex;align-items:center;justify-content:center;height:52px;background:#C6A87C;color:#16130F;font-size:11px;letter-spacing:.2em;text-transform:uppercase;transition:background .3s ease" style-hover="background:#D8BB8E">Zapytaj o ten lokal</a>
+            <div style="display:flex;gap:10px">
+              <button onClick="{{ cardPrev }}" style="flex:1;height:44px;border:1px solid #2E2A24;background:transparent;color:#A89C8A;cursor:pointer;font-size:10px;letter-spacing:.2em;text-transform:uppercase;transition:color .3s ease,border-color .3s ease" style-hover="color:#F2ECE1;border-color:#C6A87C">Poprzedni</button>
+              <button onClick="{{ cardNext }}" style="flex:1;height:44px;border:1px solid #2E2A24;background:transparent;color:#A89C8A;cursor:pointer;font-size:10px;letter-spacing:.2em;text-transform:uppercase;transition:color .3s ease,border-color .3s ease" style-hover="color:#F2ECE1;border-color:#C6A87C">Następny</button>
+            </div>
           </div>
         </div>
       </div>
@@ -480,7 +619,6 @@
       <div style="font-size:13px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">05</span>Formy korzystania</div>
       <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(40px,5vw,84px);letter-spacing:-.02em;line-height:1.06;margin:0 auto 18px;max-width:22ch">Policz swój miesięczny koszt</h2>
       <p style="max-width:600px;margin:0 auto;font-size:17px;line-height:1.7;color:#6B655A;font-weight:400">Wybierz formę i metraż — pokażemy pełny koszt z obowiązkowymi opłatami.</p>
-        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8F8474">{{ rateNote }}</div>
       </div>
     </div>
     <div data-reveal="" style="display:flex;gap:1px;background:#E4DDCF;flex-wrap:wrap">
@@ -495,12 +633,12 @@
           <span style="font-size:15px;color:#6B655A;font-weight:400">Metraż apartamentu</span>
           <span style="font-family:'Bodoni Moda',serif;font-size:34px;line-height:1">{{ area }} m²</span>
         </div>
-        <input type="range" min="23" max="46" step="1" value="{{ area }}" onInput="{{ setArea }}" style="width:100%;height:22px;cursor:grab">
-        <div style="display:flex;justify-content:space-between;font-size:13px;color:#7D766A;margin-top:4px"><span>23 m²</span><span>46 m²</span></div>
+        <input type="range" min="25" max="65" step="1" value="{{ area }}" onInput="{{ setArea }}" style="width:100%;height:22px;cursor:grab">
+        <div style="display:flex;justify-content:space-between;font-size:13px;color:#7D766A;margin-top:4px"><span>25 m²</span><span>65 m²</span></div>
         <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">
-          <button onClick="{{ setAreaPreset }}" data-area="23" style="height:42px;padding:0 18px;border:1px solid {{ pa23b }};background:{{ pa23bg }};color:{{ pa23c }};cursor:pointer;font-size:13px;letter-spacing:.08em;transition:all .25s ease">Studio · 23 m²</button>
-          <button onClick="{{ setAreaPreset }}" data-area="34" style="height:42px;padding:0 18px;border:1px solid {{ pa34b }};background:{{ pa34bg }};color:{{ pa34c }};cursor:pointer;font-size:13px;letter-spacing:.08em;transition:all .25s ease">Komfort · 34 m²</button>
-          <button onClick="{{ setAreaPreset }}" data-area="46" style="height:42px;padding:0 18px;border:1px solid {{ pa46b }};background:{{ pa46bg }};color:{{ pa46c }};cursor:pointer;font-size:13px;letter-spacing:.08em;transition:all .25s ease">Z sypialnią · 46 m²</button>
+          <button onClick="{{ setAreaPreset }}" data-area="25" style="height:42px;padding:0 18px;border:1px solid {{ pa25b }};background:{{ pa25bg }};color:{{ pa25c }};cursor:pointer;font-size:13px;letter-spacing:.08em;transition:all .25s ease">Najmniejszy · 25 m²</button>
+          <button onClick="{{ setAreaPreset }}" data-area="34" style="height:42px;padding:0 18px;border:1px solid {{ pa34b }};background:{{ pa34bg }};color:{{ pa34c }};cursor:pointer;font-size:13px;letter-spacing:.08em;transition:all .25s ease">Typowy · 34 m²</button>
+          <button onClick="{{ setAreaPreset }}" data-area="65" style="height:42px;padding:0 18px;border:1px solid {{ pa65b }};background:{{ pa65bg }};color:{{ pa65c }};cursor:pointer;font-size:13px;letter-spacing:.08em;transition:all .25s ease">Największy · 65 m²</button>
         </div>
 
         <div style="height:1px;background:#E4DDCF;margin:40px 0 34px"></div>
@@ -512,11 +650,17 @@
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px">
             <div><div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="flex:0 0 auto;min-width:214px;font-size:16px;color:#16130F">Zarządzanie obiektem</span><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#A6824E;border:1px solid #E0D4BE;padding:3px 8px">obowiązkowe</span></div><div style="font-size:13px;color:#7D766A;font-weight:400;margin-top:4px">Fundusz remontowy, media, pralnia, sprzątanie, concierge, transport, eventy</div></div>
-            <div style="font-family:'Bodoni Moda',serif;font-size:26px;white-space:nowrap">{{ feeMgmtLabel }}</div>
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:right">
+              <span style="font-family:'Bodoni Moda',serif;font-size:26px;line-height:1;white-space:nowrap">{{ feeMgmtValue }}</span>
+              <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#7D766A;white-space:nowrap">{{ perMonthLabel }}</span>
+            </div>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px">
             <div><div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="flex:0 0 auto;min-width:214px;font-size:16px;color:#16130F">Wyżywienie i opieka</span><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#A6824E;border:1px solid #E0D4BE;padding:3px 8px">obowiązkowe</span></div><div style="font-size:13px;color:#7D766A;font-weight:400;margin-top:4px">4 posiłki dziennie, całodobowy bar bezalkoholowy, dietetyk, trenerzy personalni</div></div>
-            <div style="font-family:'Bodoni Moda',serif;font-size:26px;white-space:nowrap">{{ feeMealsLabel }}</div>
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:right">
+              <span style="font-family:'Bodoni Moda',serif;font-size:26px;line-height:1;white-space:nowrap">{{ feeMealsValue }}</span>
+              <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#7D766A;white-space:nowrap">{{ perMonthLabel }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -534,7 +678,6 @@
           </div>
           <div style="font-family:'Bodoni Moda',serif;font-size:clamp(46px,6vw,78px);line-height:1;letter-spacing:-.02em">{{ monthlyTotal }}</div>
           <div style="font-size:15px;color:#A89C8A;font-weight:400;margin-top:12px">{{ monthlyNote }}</div>
-          <div style="display:{{ rateNoteShow }};font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#A89C8A;margin-top:10px">{{ rateNote }}</div>
           <div style="display:{{ oneTimeShow }};margin-top:38px;padding-top:32px;border-top:1px solid #2E2A24">
             <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#B4A896;margin-bottom:12px">Cena apartamentu</div>
             <div style="font-family:'Bodoni Moda',serif;font-size:44px;line-height:1">{{ purchasePrice }}</div>
@@ -562,16 +705,50 @@
       <div style="font-size:13px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">06</span>Galeria</div>
       <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(38px,4.6vw,76px);letter-spacing:-.02em;line-height:1.06;margin:0">Zobacz Tatry Hills</h2>
     </div>
-    <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));grid-auto-flow:dense;gap:12px">
+    <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));grid-auto-flow:dense;gap:12px">
       <div data-gph="1" style="position:relative;overflow:hidden;grid-column:1/-1;grid-row:span 2;max-height:640px;"><img loading="lazy" decoding="async" src="assets/exterior-summer.jpg" alt="Budynek latem" data-src="assets/exterior-summer.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Budynek latem</div></div>
       <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/opt-apartment.jpg" alt="Salon apartamentu" data-src="assets/opt-apartment.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Salon apartamentu</div></div>
-      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/spa-pool.jpg" alt="Basen" data-src="assets/spa-pool.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Basen</div></div>
+      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/spa-pool.jpg" alt="Basen i jacuzzi" data-src="assets/spa-pool.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Basen i jacuzzi</div></div>
+      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/spa-sauna.jpg" alt="Sauny" data-src="assets/spa-sauna.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Sauny</div></div>
+      <button onClick="{{ openGal }}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;width:100%;aspect-ratio:16/10;border:1px solid #C6A87C;background:#FFFFFF;cursor:pointer;transition:background .35s ease,border-color .35s ease" style-hover="background:#F7F4EE;border-color:#A6824E">
+        <span style="font-family:'Bodoni Moda',serif;font-size:clamp(38px,3.4vw,56px);line-height:1;color:#A6824E">+{{ galMoreCount }}</span>
+        <span style="display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#A6824E">Zobacz więcej zdjęć
+          <svg width="24" height="8" viewBox="0 0 26 8" fill="none" stroke="#A6824E" stroke-width="1" aria-hidden="true" style="display:block"><path d="M0 4h24M20 1l4 3-4 3"></path></svg>
+        </span>
+      </button>
+    </div>
+    <div style="display:{{ galOverlayShow }};position:fixed;inset:0;z-index:62;flex-direction:column;background:#FFFFFF">
+      <div style="flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:clamp(18px,2.2vw,30px) clamp(18px,3vw,44px);border-bottom:1px solid #E4DDCF">
+        <div style="display:flex;align-items:baseline;gap:16px;color:#16130F">
+          <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px)">Galeria</span>
+          <span style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8F8474">{{ galTotal }} zdjęć</span>
+        </div>
+        <button onClick="{{ closeGal }}" title="Zamknij" style="display:flex;align-items:center;gap:12px;height:42px;padding:0 18px;border:1px solid #E4DDCF;background:transparent;color:#16130F;cursor:pointer;font-size:11px;letter-spacing:.22em;text-transform:uppercase;transition:background .3s ease,border-color .3s ease" style-hover="background:#F7F4EE;border-color:#C6A87C">Zamknij
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true" style="display:block"><path d="M5 5l14 14M19 5L5 19"></path></svg>
+        </button>
+      </div>
+      <div style="flex:1 1 auto;overflow-y:auto;padding:clamp(14px,1.6vw,22px) clamp(14px,3vw,44px) clamp(40px,5vw,72px)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:10px;max-width:1500px;margin:0 auto">
+      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/exterior-summer.jpg" alt="Budynek latem" data-src="assets/exterior-summer.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Budynek latem</div></div>
+      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/opt-apartment.jpg" alt="Salon apartamentu" data-src="assets/opt-apartment.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Salon apartamentu</div></div>
+      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/spa-pool.jpg" alt="Basen i jacuzzi" data-src="assets/spa-pool.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Basen i jacuzzi</div></div>
+      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/spa-sauna.jpg" alt="Sauny" data-src="assets/spa-sauna.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Sauny</div></div>
+      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/spa-grota.jpg" alt="Grota solna" data-src="assets/spa-grota.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Grota solna</div></div>
+      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/spa-fitness.jpg" alt="Siłownia i fitness" data-src="assets/spa-fitness.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Siłownia i fitness</div></div>
       <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/restaurant.jpg" alt="Restauracja" data-src="assets/restaurant.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Restauracja</div></div>
+      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/resto-chef.jpg" alt="Kuchnia szefa kuchni" data-src="assets/resto-chef.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Kuchnia szefa kuchni</div></div>
       <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/lobby.jpg" alt="Recepcja" data-src="assets/lobby.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Recepcja</div></div>
-      <div data-gph="1" style="position:relative;overflow:hidden;"><img src="assets/opt-winter-new.jpg" alt="Elewacja zimą" data-src="assets/opt-winter-new.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Elewacja zimą</div></div>
+      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/klub-salon.jpg" alt="Salon fryzjerski i gabinet kosmetologiczny" data-src="assets/klub-salon.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Salon fryzjerski i gabinet kosmetologiczny</div></div>
+      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/klub-gry.jpg" alt="Sala klubowa i bar" data-src="assets/klub-gry.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Sala klubowa i bar</div></div>
+      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/klub-kaplica.jpg" alt="Kaplica" data-src="assets/klub-kaplica.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Kaplica</div></div>
+      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/klub-transport.jpg" alt="Transport" data-src="assets/klub-transport.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Transport</div></div>
+      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/opt-winter-new.jpg" alt="Elewacja zimą" data-src="assets/opt-winter-new.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Elewacja zimą</div></div>
+      <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/opt-winter-1.jpg" alt="Bryła od północy" data-src="assets/opt-winter-1.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Bryła od północy</div></div>
       <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/opt-winter-3.jpg" alt="Widok od południa" data-src="assets/opt-winter-3.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Widok od południa</div></div>
       <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/opt-winter-4.jpg" alt="Widok od wschodu" data-src="assets/opt-winter-4.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Widok od wschodu</div></div>
       <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/opt-winter-2.jpg" alt="Widok od zachodu" data-src="assets/opt-winter-2.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Widok od zachodu</div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -593,7 +770,6 @@
         <iframe src="map.html" loading="lazy" title="Mapa lokalizacji Tatry Hills" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
         <a href="https://www.google.com/maps/search/?api=1&amp;query=49.3068%2C19.9312" target="_blank" rel="noopener" style="position:absolute;right:18px;bottom:18px;z-index:1000;display:inline-flex;align-items:center;height:46px;padding:0 22px;border:1px solid rgba(239,231,220,.3);color:#F5F0E7;font-size:12px;letter-spacing:.18em;text-transform:uppercase;background:rgba(20,16,13,.78);backdrop-filter:blur(6px)" style-hover="border-color:#C6A87C;color:#C6A87C">Otwórz w Google Maps</a>
       </div>
-      <p style="margin:14px 0 0;font-size:13px;color:#7D766A;font-weight:400">Mapa interaktywna — przesuwaj i przybliżaj. Kliknij, aby włączyć zoom kółkiem.</p>
     </div>
   </div>
 </section>
@@ -697,7 +873,7 @@
     </div>
   </div>
   <div style="max-width:1240px;margin:44px auto 0;padding-top:26px;border-top:1px solid #EFE9DC;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px;line-height:1.7;color:#8F8474;font-weight:400">
-    <span>© 2026 CAPITAL TOWERS RESIDENCE sp. z o.o. · ul. Piłsudskiego 34, 35-001 Rzeszów · NIP 5170397476 · KRS 0000967454</span>
+    <span>© 2026 CAPITAL TOWERS GROUP sp. z o.o. · ul. Elektoralna 13/121, 00-137 Warszawa · NIP 5272745024 · REGON 362531978 · KRS 0000576513</span>
     <span style="max-width:60ch">Wizualizacje i dane mają charakter informacyjny i nie stanowią oferty w rozumieniu art. 66 § 1 Kodeksu cywilnego.</span>
   </div>
 </section>
@@ -719,15 +895,30 @@
 }">
 class Component extends DCLogic {
   state = {
-    lang: 'pl', cap: 0, cur: 'PLN', rates: { PLN: 1, EUR: null, USD: null }, ratesDate: '', scroll: 0, video: 1, split: 0, splitAnim: true, tab: 0, floor: 4, floorView: 'plan', selectedUnit: 0, mode: 0, area: 34,
+    lang: 'pl', cap: 0, cardUnit: 0, cur: 'PLN', rates: { PLN: 1, EUR: null, USD: null }, ratesDate: '', scroll: 0, video: 1, split: 0, splitAnim: true, tab: 0, floor: 4, floorView: 'plan', selectedUnit: 0, mode: 0, area: 34,
     interest: 0, submitted: false, leadName: '', lbIndex: -1, shownMonthly: null, activeSection: '',
-    cApart: 0, cArea: 0, cMeals: 0, cKm: 0
+    cApart: 0, cArea: 0, cMeals: 0, cKm: 0, galOpen: false, restoSpot: 0, lobbySpot: 0, spaSpot: 0, spaAuto: true, spaProg: 0, spaTouched: false
   };
 
   gallery = [
-    'assets/exterior-summer.jpg', 'assets/opt-apartment.jpg', 'assets/spa-pool.jpg',
-    'assets/restaurant.jpg', 'assets/lobby.jpg', 'assets/opt-winter-new.jpg',
-    'assets/opt-winter-3.jpg', 'assets/opt-winter-4.jpg', 'assets/opt-winter-2.jpg'
+    'assets/exterior-summer.jpg',
+    'assets/opt-apartment.jpg',
+    'assets/spa-pool.jpg',
+    'assets/spa-sauna.jpg',
+    'assets/spa-grota.jpg',
+    'assets/spa-fitness.jpg',
+    'assets/restaurant.jpg',
+    'assets/resto-chef.jpg',
+    'assets/lobby.jpg',
+    'assets/klub-salon.jpg',
+    'assets/klub-gry.jpg',
+    'assets/klub-kaplica.jpg',
+    'assets/klub-transport.jpg',
+    'assets/opt-winter-new.jpg',
+    'assets/opt-winter-1.jpg',
+    'assets/opt-winter-3.jpg',
+    'assets/opt-winter-4.jpg',
+    'assets/opt-winter-2.jpg'
   ];
 
   planImgs = {
@@ -849,6 +1040,26 @@ class Component extends DCLogic {
     this.applyHighlights();
     this.hlTimer = setInterval(() => this.applyHighlights(), 350);
     this.loadRates();
+    this.spaTimer = setInterval(() => {
+      const st = this.state;
+      if (st.tab !== 0 || !st.spaAuto || document.hidden) return;
+      const p = (st.spaProg || 0) + 0.14 / 5;
+      if (p >= 1) this.spaScrollTo(((st.spaSpot || 0) + 1) % 4, false);
+      else this.setState({ spaProg: p });
+    }, 140);
+    this.syncCardImg();
+    this.onCardKey = (e) => {
+      if (!this.state.cardUnit) return;
+      if (e.key === 'Escape') this.setState({ cardUnit: 0 });
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        const list = this.floorUnits(this.state.floor);
+        if (!list.length) return;
+        const i = list.indexOf(this.state.cardUnit);
+        const n = e.key === 'ArrowRight' ? list[(i + 1) % list.length] : list[(i <= 0 ? list.length : i) - 1];
+        this.setState({ cardUnit: n, pickedUnit: n });
+      }
+    };
+    window.addEventListener('keydown', this.onCardKey);
     this.capTimer = setInterval(() => this.setState((st) => ({ cap: (st.cap + 1) % 5 })), 4200);
     const apt = document.getElementById('th-apt-video');
     if (apt) {
@@ -860,15 +1071,19 @@ class Component extends DCLogic {
     }
     const cEl = document.getElementById('th-hero-count');
     if (cEl) {
-      const t0 = performance.now();
-      const step = (t) => {
-        const p = Math.min(1, (t - t0) / 1700);
-        const e = 1 - Math.pow(1 - p, 3);
-        cEl.textContent = String(Math.round(55 * e));
-        if (p < 1) requestAnimationFrame(step);
-      };
-      cEl.textContent = '0';
-      requestAnimationFrame(step);
+      if (document.hidden) {
+        cEl.textContent = '66';
+      } else {
+        const t0 = performance.now();
+        const step = (t) => {
+          const p = Math.min(1, (t - t0) / 1700);
+          const e2 = 1 - Math.pow(1 - p, 3);
+          cEl.textContent = String(Math.round(66 * e2));
+          if (p < 1) requestAnimationFrame(step);
+        };
+        cEl.textContent = '0';
+        requestAnimationFrame(step);
+      }
     }
     const saved = (() => { try { return localStorage.getItem('th-lang'); } catch (e) { return null; } })();
     if (saved && saved !== 'pl') this.setState({ lang: saved });
@@ -1003,7 +1218,7 @@ class Component extends DCLogic {
   calcMonthly() {
     const s = this.state;
     const m = this.modes()[s.mode];
-    const primary = m.lo + (m.hi - m.lo) * ((s.area - 23) / 23);
+    const primary = m.lo + (m.hi - m.lo) * ((s.area - 25) / 40);
     return m.once ? m.mgmt + m.meals : primary + m.mgmt + m.meals;
   }
 
@@ -1091,6 +1306,10 @@ class Component extends DCLogic {
   }
 
   componentDidUpdate() {
+    this.syncCardImg();
+    this.bindSpaStrip();
+    this.bindLobbyStrip();
+    this.bindRestoStrip();
     this.applyHighlights();
     this.translateDom();
     const prevFloor = this._prevFloor;
@@ -1117,7 +1336,207 @@ class Component extends DCLogic {
     if (status) status.style.display = 'none';
   }
 
+  spaOffset(strip, el) {
+    return el.getBoundingClientRect().left - strip.getBoundingClientRect().left + strip.scrollLeft;
+  }
+
+  spaNearest(strip) {
+    const mid = strip.scrollLeft + strip.clientWidth / 2;
+    let best = 0, bd = Infinity;
+    strip.querySelectorAll('[data-spaslide]').forEach((el) => {
+      const d = Math.abs(this.spaOffset(strip, el) + el.clientWidth / 2 - mid);
+      if (d < bd) { bd = d; best = Number(el.dataset.spaslide); }
+    });
+    return best;
+  }
+
+  spaScrollTo(i, manual) {
+    const strip = document.getElementById('th-spa-strip');
+    if (!strip) return;
+    const el = strip.querySelector('[data-spaslide="' + i + '"]');
+    if (el) strip.scrollTo({ left: this.spaOffset(strip, el) - (strip.clientWidth - el.clientWidth) / 2, behavior: 'smooth' });
+    this.setState(manual ? { spaSpot: i, spaAuto: false, spaTouched: true, spaProg: 0 } : { spaSpot: i, spaProg: 0 });
+  }
+
+  restoNearest(strip) {
+    const mid = strip.scrollLeft + strip.clientWidth / 2;
+    let best = 0, bd = Infinity;
+    strip.querySelectorAll('[data-restoslide]').forEach((el) => {
+      const d = Math.abs(this.spaOffset(strip, el) + el.clientWidth / 2 - mid);
+      if (d < bd) { bd = d; best = Number(el.dataset.restoslide); }
+    });
+    return best;
+  }
+
+  restoScrollTo(i) {
+    const strip = document.getElementById('th-resto-strip');
+    if (!strip) return;
+    const el = strip.querySelector('[data-restoslide="' + i + '"]');
+    if (el) strip.scrollTo({ left: this.spaOffset(strip, el) - (strip.clientWidth - el.clientWidth) / 2, behavior: 'smooth' });
+    this.setState({ restoSpot: i });
+  }
+
+  bindRestoStrip() {
+    const strip = document.getElementById('th-resto-strip');
+    if (!strip || strip.dataset.bound) return;
+    strip.dataset.bound = '1';
+    let t;
+    strip.addEventListener('scroll', () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        const best = this.restoNearest(strip);
+        if (best !== this.state.restoSpot) this.setState({ restoSpot: best });
+      }, 90);
+    }, { passive: true });
+    let dragging = false, sx = 0, sl = 0, moved = 0;
+    strip.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'touch') return;
+      dragging = true; moved = 0; sx = e.clientX; sl = strip.scrollLeft;
+      strip.style.scrollSnapType = 'none';
+      strip.style.cursor = 'grabbing';
+    });
+    strip.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      const dx = e.clientX - sx;
+      moved = Math.max(moved, Math.abs(dx));
+      strip.scrollLeft = sl - dx;
+    });
+    const endDrag = () => {
+      if (!dragging) return;
+      dragging = false;
+      strip.style.cursor = 'grab';
+      strip.style.scrollSnapType = 'x mandatory';
+      this.restoScrollTo(this.restoNearest(strip));
+    };
+    strip.addEventListener('pointerup', endDrag);
+    strip.addEventListener('pointerleave', endDrag);
+    strip.addEventListener('click', (e) => { if (moved > 6) { e.preventDefault(); e.stopPropagation(); } }, true);
+  }
+
+  lobbyNearest(strip) {
+    const mid = strip.scrollLeft + strip.clientWidth / 2;
+    let best = 0, bd = Infinity;
+    strip.querySelectorAll('[data-lobbyslide]').forEach((el) => {
+      const d = Math.abs(this.spaOffset(strip, el) + el.clientWidth / 2 - mid);
+      if (d < bd) { bd = d; best = Number(el.dataset.lobbyslide); }
+    });
+    return best;
+  }
+
+  lobbyScrollTo(i) {
+    const strip = document.getElementById('th-lobby-strip');
+    if (!strip) return;
+    const el = strip.querySelector('[data-lobbyslide="' + i + '"]');
+    if (el) strip.scrollTo({ left: this.spaOffset(strip, el) - (strip.clientWidth - el.clientWidth) / 2, behavior: 'smooth' });
+    this.setState({ lobbySpot: i });
+  }
+
+  bindLobbyStrip() {
+    const strip = document.getElementById('th-lobby-strip');
+    if (!strip || strip.dataset.bound) return;
+    strip.dataset.bound = '1';
+    let t;
+    strip.addEventListener('scroll', () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        const best = this.lobbyNearest(strip);
+        if (best !== this.state.lobbySpot) this.setState({ lobbySpot: best });
+      }, 90);
+    }, { passive: true });
+    let dragging = false, sx = 0, sl = 0, moved = 0;
+    strip.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'touch') return;
+      dragging = true; moved = 0; sx = e.clientX; sl = strip.scrollLeft;
+      strip.style.scrollSnapType = 'none';
+      strip.style.cursor = 'grabbing';
+    });
+    strip.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      const dx = e.clientX - sx;
+      moved = Math.max(moved, Math.abs(dx));
+      strip.scrollLeft = sl - dx;
+    });
+    const endDrag = () => {
+      if (!dragging) return;
+      dragging = false;
+      strip.style.cursor = 'grab';
+      strip.style.scrollSnapType = 'x mandatory';
+      this.lobbyScrollTo(this.lobbyNearest(strip));
+    };
+    strip.addEventListener('pointerup', endDrag);
+    strip.addEventListener('pointerleave', endDrag);
+    strip.addEventListener('click', (e) => { if (moved > 6) { e.preventDefault(); e.stopPropagation(); } }, true);
+  }
+
+  bindSpaStrip() {
+    const strip = document.getElementById('th-spa-strip');
+    if (!strip || strip.dataset.bound) return;
+    strip.dataset.bound = '1';
+    let t;
+    strip.addEventListener('scroll', () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        const best = this.spaNearest(strip);
+        if (best !== this.state.spaSpot) this.setState({ spaSpot: best, spaProg: 0 });
+      }, 90);
+    }, { passive: true });
+    let dragging = false, sx = 0, sl = 0, moved = 0;
+    strip.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'touch') return;
+      dragging = true; moved = 0; sx = e.clientX; sl = strip.scrollLeft;
+      strip.style.scrollSnapType = 'none';
+      strip.style.cursor = 'grabbing';
+      this.setState({ spaAuto: false, spaTouched: true });
+    });
+    strip.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      const dx = e.clientX - sx;
+      moved = Math.max(moved, Math.abs(dx));
+      strip.scrollLeft = sl - dx;
+    });
+    const endDrag = () => {
+      if (!dragging) return;
+      dragging = false;
+      strip.style.cursor = 'grab';
+      strip.style.scrollSnapType = 'x mandatory';
+      this.spaScrollTo(this.spaNearest(strip), true);
+    };
+    strip.addEventListener('pointerup', endDrag);
+    strip.addEventListener('pointerleave', endDrag);
+    strip.addEventListener('click', (e) => { if (moved > 6) { e.preventDefault(); e.stopPropagation(); } }, true);
+
+    if (!this.spaIntroDone && 'IntersectionObserver' in window) {
+      this.spaIo = new IntersectionObserver((ent) => {
+        if (!ent[0] || ent[0].intersectionRatio < 0.45 || this.spaIntroDone) return;
+        this.spaIntroDone = true;
+        this.spaIo.disconnect();
+        this.setState({ spaAuto: false });
+        const seq = [1, 2, 3, 0];
+        seq.forEach((n, k) => setTimeout(() => {
+          this.spaScrollTo(n, false);
+          if (k === seq.length - 1) setTimeout(() => this.setState({ spaAuto: true, spaProg: 0 }), 700);
+        }, 340 + k * 430));
+      }, { threshold: [0, 0.45, 1] });
+      this.spaIo.observe(strip);
+    }
+  }
+
+  syncCardImg() {
+    const el = document.getElementById('th-card-img');
+    if (!el) return;
+    const n = this.state.cardUnit;
+    if (n) {
+      const src = 'assets/rzut/' + String(n).padStart(2, '0') + '.jpg';
+      if (!el.src || el.src.indexOf(src) === -1) el.src = src;
+    } else if (el.hasAttribute('src')) {
+      el.removeAttribute('src');
+    }
+  }
+
   componentWillUnmount() {
+    clearInterval(this.spaTimer);
+    if (this.spaIo) this.spaIo.disconnect();
+    if (this.onCardKey) window.removeEventListener('keydown', this.onCardKey);
     if (this.capTimer) clearInterval(this.capTimer);
     if (this.aptTimer) clearInterval(this.aptTimer);
     if (this.langTimer) clearInterval(this.langTimer);
@@ -1213,11 +1632,21 @@ class Component extends DCLogic {
     42:['Piętro 3','19,84',''],43:['Piętro 3','19,93',''],44:['Piętro 3','40,95','balkon 8,1 m²'],45:['Piętro 3','32,18','balkon 8,1 m²'],46:['Piętro 3','18,52',''],47:['Piętro 3','20,48',''],48:['Piętro 3','20,39',''],49:['Piętro 3','25,91',''],50:['Piętro 3','20,38',''],51:['Piętro 3','20,47',''],52:['Piętro 3','41,70','balkon 6,7 m²'],53:['Piętro 3','40,64','balkon 6,5 m²'],54:['Piętro 3','19,93',''],55:['Piętro 3','19,85','']
   };
 
-  unitRanges = { 4: [1, 7], 3: [8, 24], 2: [25, 41], 1: [42, 55] };
+  unitRanges = { 4: [1, 7], 3: [8, 24], 2: [25, 41], 1: [42, 55], 0: [56, 66] };
+
+  floorUnits(i) {
+    const spots = this.planUnits[i] || [];
+    if (spots.length) return spots.map((u) => u.n).sort((a, b) => a - b);
+    const r = this.unitRanges[i];
+    if (!r) return [];
+    const out = [];
+    for (let n = r[0]; n <= r[1]; n++) out.push(n);
+    return out;
+  }
 
   floorNames = { 0: 'Piętro 4', 1: 'Piętro 3', 2: 'Piętro 2', 3: 'Piętro 1', 4: 'Parter' };
 
-  unitInfo = {"1":{"t":"33,61","e":"Ogródek 26,01 m²"},"2":{"t":"33,61","e":"Ogródek 24,23 m²"},"3":{"t":"31,67","e":"Ogródek 22,04 m²"},"4":{"t":"34,17","e":"Ogródek 20,61 m²"},"5":{"t":"33,60","e":"Ogródek 12,38 m²"},"6":{"t":"33,60","e":"Ogródek 16,49 m²"},"7":{"t":"31,26","e":"Ogródek 20,61 m²"},"8":{"t":"34,92","e":"Ogródek 21,21 m²"},"9":{"t":"33,16","e":"Ogródek 21,21 m²"},"10":{"t":"33,11","e":"Ogródek 21,21 m²"},"11":{"t":"36,22","e":"Balkon 13,17 m² · Ogródek 21,80 m²"},"12":{"t":"36,45","e":"Balkon 13,17 m² · Loggia 9,73 m²"},"13":{"t":"31,70","e":"Loggia 1 4,76 m² · Loggia 2 4,76 m²"},"14":{"t":"33,65","e":"Loggia 1 4,74 m² · Loggia 2 4,80 m²"},"15":{"t":"33,54","e":"Loggia 1 4,76 m² · Loggia 2 4,75 m²"},"16":{"t":"42,56","e":""},"17":{"t":"33,50","e":"Loggia 1 4,74 m² · Loggia 2 4,78 m²"},"18":{"t":"33,64","e":"Loggia 1 4,78 m² · Loggia 2 4,74 m²"},"19":{"t":"33,64","e":"Loggia 1 4,74 m² · Loggia 2 4,67 m²"},"20":{"t":"33,63","e":"Balkon 9,86 m²"},"21":{"t":"33,08","e":"Balkon 11,50 m² · Ogródek 21,60 m²"},"22":{"t":"33,10","e":"Ogródek 21,21 m²"},"23":{"t":"33,10","e":"Ogródek 21,21 m²"},"24":{"t":"34,89","e":"Ogródek 21,21 m²"},"25":{"t":"34,92","e":"Loggia 1 4,36 m² · Loggia 2 4,08 m²"},"26":{"t":"33,16","e":"Loggia 1 4,05 m² · Loggia 2 4,38 m²"},"27":{"t":"33,11","e":"Balkon 6,03 m²"},"28":{"t":"36,22","e":"Balkon 1 6,03 m² · Balkon 2 13,17 m²"},"29":{"t":"36,45","e":"Balkon 1 13,17 m² · Balkon 2 6,08 m²"},"30":{"t":"31,70","e":"Loggia 1 4,39 m² · Loggia 2 4,06 m²"},"31":{"t":"33,65","e":"Loggia 1 4,06 m² · Loggia 2 4,06 m²"},"32":{"t":"33,54","e":"Loggia 1 4,08 m² · Loggia 2 4,36 m²"},"33":{"t":"42,56","e":"Balkon 9,06 m²"},"34":{"t":"33,50","e":"Loggia 1 4,36 m² · Loggia 2 4,06 m²"},"35":{"t":"33,64","e":"Loggia 1 4,05 m² · Loggia 2 4,05 m²"},"36":{"t":"33,64","e":"Loggia 1 4,05 m² · Loggia 2 4,38 m²"},"37":{"t":"33,63","e":"Balkon 1 6,04 m² · Balkon 2 11,77 m²"},"38":{"t":"33,08","e":"Balkon 11,60 m²"},"39":{"t":"33,10","e":"Loggia 1 4,38 m² · Loggia 2 4,01 m²"},"40":{"t":"33,10","e":"Loggia 1 4,01 m² · Loggia 2 4,01 m²"},"41":{"t":"34,89","e":"Loggia 1 4,02 m² · Loggia 2 4,36 m²"},"42":{"t":"19,84","e":""},"43":{"t":"19,93","e":""},"44":{"t":"40,95","e":"Balkon 8,10 m²"},"45":{"t":"32,18","e":"Balkon 8,10 m²"},"46":{"t":"18,52","e":""},"47":{"t":"20,48","e":""},"48":{"t":"20,39","e":""},"49":{"t":"25,91","e":""},"50":{"t":"20,38","e":""},"51":{"t":"20,47","e":""},"52":{"t":"41,70","e":""},"53":{"t":"40,64","e":"Balkon 6,53 m²"},"54":{"t":"19,93","e":""},"55":{"t":"19,85","e":""}};
+  unitInfo = {"1":{"t":"34,22","e":"Ogródek 26,01 m²"},"2":{"t":"34,08","e":"Ogródek 24,23 m²"},"3":{"t":"32,19","e":"Ogródek 22,04 m²"},"4":{"t":"34,91","e":"Ogródek 20,61 m²"},"5":{"t":"34,22","e":"Ogródek 12,38 m²"},"6":{"t":"34,08","e":"Ogródek 16,49 m²"},"7":{"t":"32,10","e":"Ogródek 20,61 m²"},"8":{"t":"35,54","e":"Ogródek 21,21 m²"},"9":{"t":"33,58","e":"Ogródek 21,21 m²"},"10":{"t":"33,59","e":"Ogródek 21,21 m²"},"11":{"t":"37,59","e":"Balkon 13,17 m² · Ogródek 21,80 m²"},"12":{"t":"37,79","e":"Balkon 22,80 m²"},"13":{"t":"32,23","e":"Loggia 8,74 m²"},"14":{"t":"34,12","e":"Loggia 8,69 m²"},"15":{"t":"34,28","e":"Loggia 8,73 m²"},"16":{"t":"43,74","e":"Loggia 11,26 m²"},"17":{"t":"34,26","e":"Loggia 8,73 m²"},"18":{"t":"34,13","e":"Loggia 8,69 m²"},"19":{"t":"34,12","e":"Loggia 8,76 m²"},"20":{"t":"37,59","e":"Balkon 11,77 m²"},"21":{"t":"37,37","e":"Balkon 11,59 m² · Ogródek 21,60 m²"},"22":{"t":"33,60","e":"Ogródek 21,21 m²"},"23":{"t":"33,60","e":"Ogródek 21,21 m²"},"24":{"t":"35,65","e":"Ogródek 21,21 m²"},"25":{"t":"35,59","e":"Loggia 8,73 m²"},"26":{"t":"33,58","e":"Loggia 8,74 m²"},"27":{"t":"32,29","e":"Balkon 6,59 m²"},"28":{"t":"36,69","e":"Balkon 19,76 m²"},"29":{"t":"36,92","e":"Balkon 20,15 m²"},"30":{"t":"32,21","e":"Loggia 8,74 m²"},"31":{"t":"34,04","e":"Loggia 8,70 m²"},"32":{"t":"34,28","e":"Loggia 8,73 m²"},"33":{"t":"42,42","e":"Balkon 10,40 m²"},"34":{"t":"34,26","e":"Loggia 8,71 m²"},"35":{"t":"34,12","e":"Loggia 8,68 m²"},"36":{"t":"34,12","e":"Loggia 8,72 m²"},"37":{"t":"33,88","e":"Balkon 18,71 m²"},"38":{"t":"33,33","e":"Balkon 18,54 m²"},"39":{"t":"33,60","e":"Loggia 8,74 m²"},"40":{"t":"33,60","e":"Loggia 8,70 m²"},"41":{"t":"35,63","e":"Loggia 8,73 m²"},"42":{"t":"33,75","e":"Loggia 8,73 m²"},"43":{"t":"33,58","e":"Loggia 8,70 m²"},"44":{"t":"39,44","e":"Balkon 8,10 m²"},"45":{"t":"32,23","e":"Balkon 8,10 m²"},"46":{"t":"32,21","e":"Loggia 8,70 m²"},"47":{"t":"34,10","e":"Loggia 8,69 m²"},"48":{"t":"34,27","e":"Loggia 8,73 m²"},"49":{"t":"25,35","e":""},"50":{"t":"34,26","e":"Loggia 8,72 m²"},"51":{"t":"34,12","e":"Loggia 8,70 m²"},"52":{"t":"55,03","e":"Loggia 8,70 m² · Balkon 6,70 m²"},"53":{"t":"53,96","e":"Loggia 8,69 m² · Balkon 6,53 m²"},"54":{"t":"33,60","e":"Loggia 8,70 m²"},"55":{"t":"33,76","e":"Loggia 8,73 m²"},"56":{"t":"33,72","e":"Loggia 8,73 m²"},"57":{"t":"33,58","e":"Loggia 8,70 m²"},"58":{"t":"65,27","e":"Loggia 6,59 m² · Balkon 8,83 m²"},"59":{"t":"34,06","e":"Loggia 8,70 m²"},"60":{"t":"34,27","e":"Loggia 8,73 m²"},"61":{"t":"34,26","e":"Loggia 8,73 m²"},"62":{"t":"34,12","e":"Loggia 8,70 m²"},"63":{"t":"39,20","e":"Loggia 8,70 m²"},"64":{"t":"38,14","e":"Loggia 8,70 m²"},"65":{"t":"33,60","e":"Loggia 8,70 m²"},"66":{"t":"33,75","e":"Loggia 8,73 m²"}};
 
   // powierzchnia pokoju dziennego z rzutu [m²]
   unitArea = {
@@ -1257,7 +1686,7 @@ class Component extends DCLogic {
   renderVals() {
     const s = this.state;
     const m = this.modes()[s.mode];
-    const t = (46 - 23) === 0 ? 0 : (s.area - 23) / 23;
+    const t = (s.area - 25) / 40;
     const primary = m.lo + (m.hi - m.lo) * t;
     const monthly = m.once ? m.mgmt + m.meals : primary + m.mgmt + m.meals;
     const v = {};
@@ -1288,16 +1717,16 @@ class Component extends DCLogic {
       v['f' + i + 'barFg'] = on ? '#C6A87C' : '#E4DDCF';
     });
 
-    const fUnits = (this.planUnits[s.floor] || []).slice().sort((a, b) => a.n - b.n);
-    v.unitList = fUnits.map((u) => ({
-      n: u.n,
-      a: (this.unitInfo[u.n] || {}).t || '—',
-      rowBg: s.pickedUnit === u.n ? '#16130F' : (s.hoverUnit === u.n ? '#EDE6D8' : '#FFFFFF'),
-      rowFg: s.pickedUnit === u.n ? '#F5F0E7' : '#3A352E',
-      subFg: s.pickedUnit === u.n ? '#C6A87C' : '#8C8377'
+    const fUnits = this.floorUnits(s.floor);
+    v.unitList = fUnits.map((n) => ({
+      n: n,
+      a: (this.unitInfo[n] || {}).t || '—',
+      rowBg: s.pickedUnit === n ? '#16130F' : (s.hoverUnit === n ? '#EDE6D8' : '#FFFFFF'),
+      rowFg: s.pickedUnit === n ? '#F5F0E7' : '#3A352E',
+      subFg: s.pickedUnit === n ? '#C6A87C' : '#8C8377'
     }));
     const stripH = fUnits.length ? (s.pickedUnit ? 266 : 154) : 0;
-    v.stripShow = fUnits.length ? 'flex' : 'none';
+    v.listShow = fUnits.length ? 'flex' : 'none';
     v.stripH = stripH + 'px';
     v.planBottom = stripH + 'px';
     v.listCount = fUnits.length;
@@ -1310,12 +1739,13 @@ class Component extends DCLogic {
       v['cap' + i + 'Bar'] = on ? '#C6A87C' : 'rgba(245,240,231,.28)';
     });
 
+    const perMonth = s.lang === 'en' ? 'per month' : (s.lang === 'uk' ? 'на місяць' : 'miesięcznie');
     const spa = this.tabStyle(s.tab === 0), resto = this.tabStyle(s.tab === 1), lobby = this.tabStyle(s.tab === 2);
 
     ['inwestycja', 'apartamenty', 'udogodnienia', 'rzuty', 'kalkulator', 'galeria', 'lokalizacja', 'kontakt'].forEach((id) => {
       v['dot' + id] = s.activeSection === id ? '#C6A87C' : 'rgba(198,168,124,.12)';
     });
-    [23, 34, 46].forEach((a) => {
+    [25, 34, 65].forEach((a) => {
       const on = s.area === a;
       v['pa' + a + 'b'] = on ? '#C6A87C' : '#D6CEBE';
       v['pa' + a + 'bg'] = on ? '#C6A87C' : 'transparent';
@@ -1373,9 +1803,201 @@ class Component extends DCLogic {
       spaBtnBg: spa.bg, spaBtnFg: spa.fg,
       restoBtnBg: resto.bg, restoBtnFg: resto.fg,
       lobbyBtnBg: lobby.bg, lobbyBtnFg: lobby.fg,
-      spaShow: s.tab === 0 ? 'grid' : 'none',
-      restoShow: s.tab === 1 ? 'grid' : 'none',
-      lobbyShow: s.tab === 2 ? 'grid' : 'none',
+      spaTh0Op: (s.spaSpot || 0) === 0 ? 1 : 0.42,
+      spaTh0Sc: (s.spaSpot || 0) === 0 ? 1.05 : 1,
+      spaTh1Op: (s.spaSpot || 0) === 1 ? 1 : 0.42,
+      spaTh1Sc: (s.spaSpot || 0) === 1 ? 1.05 : 1,
+      spaTh2Op: (s.spaSpot || 0) === 2 ? 1 : 0.42,
+      spaTh2Sc: (s.spaSpot || 0) === 2 ? 1.05 : 1,
+      spaTh3Op: (s.spaSpot || 0) === 3 ? 1 : 0.42,
+      spaTh3Sc: (s.spaSpot || 0) === 3 ? 1.05 : 1,
+      spaFlex0: (s.spaSpot || 0) === 0 ? 4.2 : 1,
+      spaSc0: (s.spaSpot || 0) === 0 ? 1.02 : 1.08,
+      spaBr0: (s.spaSpot || 0) === 0 ? 1 : 0.78,
+      spaRule0: (s.spaSpot || 0) === 0 ? '46px' : '0px',
+      spaDH0: (s.spaSpot || 0) === 0 ? '132px' : '64px',
+      spaDOp0: (s.spaSpot || 0) === 0 ? 1 : 0,
+      spaBarOp0: (s.spaSpot || 0) === 0 ? 1 : 0,
+      spaFlex1: (s.spaSpot || 0) === 1 ? 4.2 : 1,
+      spaSc1: (s.spaSpot || 0) === 1 ? 1.02 : 1.08,
+      spaBr1: (s.spaSpot || 0) === 1 ? 1 : 0.78,
+      spaRule1: (s.spaSpot || 0) === 1 ? '46px' : '0px',
+      spaDH1: (s.spaSpot || 0) === 1 ? '132px' : '64px',
+      spaDOp1: (s.spaSpot || 0) === 1 ? 1 : 0,
+      spaBarOp1: (s.spaSpot || 0) === 1 ? 1 : 0,
+      spaFlex2: (s.spaSpot || 0) === 2 ? 4.2 : 1,
+      spaSc2: (s.spaSpot || 0) === 2 ? 1.02 : 1.08,
+      spaBr2: (s.spaSpot || 0) === 2 ? 1 : 0.78,
+      spaRule2: (s.spaSpot || 0) === 2 ? '46px' : '0px',
+      spaDH2: (s.spaSpot || 0) === 2 ? '132px' : '64px',
+      spaDOp2: (s.spaSpot || 0) === 2 ? 1 : 0,
+      spaBarOp2: (s.spaSpot || 0) === 2 ? 1 : 0,
+      spaFlex3: (s.spaSpot || 0) === 3 ? 4.2 : 1,
+      spaSc3: (s.spaSpot || 0) === 3 ? 1.02 : 1.08,
+      spaBr3: (s.spaSpot || 0) === 3 ? 1 : 0.78,
+      spaRule3: (s.spaSpot || 0) === 3 ? '46px' : '0px',
+      spaDH3: (s.spaSpot || 0) === 3 ? '132px' : '64px',
+      spaDOp3: (s.spaSpot || 0) === 3 ? 1 : 0,
+      spaBarOp3: (s.spaSpot || 0) === 3 ? 1 : 0,
+      spaWM0: (s.spaSpot || 0) === 0 ? 'horizontal-tb' : 'vertical-rl',
+      spaTF0: (s.spaSpot || 0) === 0 ? 'clamp(19px,1.9vw,29px)' : 'clamp(15px,1.25vw,19px)',
+      spaWM1: (s.spaSpot || 0) === 1 ? 'horizontal-tb' : 'vertical-rl',
+      spaTF1: (s.spaSpot || 0) === 1 ? 'clamp(19px,1.9vw,29px)' : 'clamp(15px,1.25vw,19px)',
+      spaWM2: (s.spaSpot || 0) === 2 ? 'horizontal-tb' : 'vertical-rl',
+      spaTF2: (s.spaSpot || 0) === 2 ? 'clamp(19px,1.9vw,29px)' : 'clamp(15px,1.25vw,19px)',
+      spaWM3: (s.spaSpot || 0) === 3 ? 'horizontal-tb' : 'vertical-rl',
+      spaTF3: (s.spaSpot || 0) === 3 ? 'clamp(19px,1.9vw,29px)' : 'clamp(15px,1.25vw,19px)',
+      spaNameC0: (s.spaSpot || 0) === 0 ? '#F7F1E6' : 'rgba(245,240,231,.42)',
+      spaNameOp0: 1,
+      spaNumC0: (s.spaSpot || 0) === 0 ? '#E0C69C' : 'rgba(245,240,231,.32)',
+      spaLine0: (s.spaSpot || 0) === 0 ? 'clamp(120px,16vw,260px)' : '0px',
+      spaNameC1: (s.spaSpot || 0) === 1 ? '#F7F1E6' : 'rgba(245,240,231,.42)',
+      spaNameOp1: 1,
+      spaNumC1: (s.spaSpot || 0) === 1 ? '#E0C69C' : 'rgba(245,240,231,.32)',
+      spaLine1: (s.spaSpot || 0) === 1 ? 'clamp(120px,16vw,260px)' : '0px',
+      spaNameC2: (s.spaSpot || 0) === 2 ? '#F7F1E6' : 'rgba(245,240,231,.42)',
+      spaNameOp2: 1,
+      spaNumC2: (s.spaSpot || 0) === 2 ? '#E0C69C' : 'rgba(245,240,231,.32)',
+      spaLine2: (s.spaSpot || 0) === 2 ? 'clamp(120px,16vw,260px)' : '0px',
+      spaNameC3: (s.spaSpot || 0) === 3 ? '#F7F1E6' : 'rgba(245,240,231,.42)',
+      spaNameOp3: 1,
+      spaNumC3: (s.spaSpot || 0) === 3 ? '#E0C69C' : 'rgba(245,240,231,.32)',
+      spaLine3: (s.spaSpot || 0) === 3 ? 'clamp(120px,16vw,260px)' : '0px',
+      spaDotBgL0: (s.spaSpot || 0) === 0 ? '#E0C69C' : 'rgba(245,240,231,.42)',
+      spaDotBgL1: (s.spaSpot || 0) === 1 ? '#E0C69C' : 'rgba(245,240,231,.42)',
+      spaDotBgL2: (s.spaSpot || 0) === 2 ? '#E0C69C' : 'rgba(245,240,231,.42)',
+      spaDotBgL3: (s.spaSpot || 0) === 3 ? '#E0C69C' : 'rgba(245,240,231,.42)',
+      spaIdx: '0' + ((s.spaSpot || 0) + 1),
+      resPrev: () => this.restoScrollTo(((s.restoSpot || 0) + 1) % 2),
+      resNext: () => this.restoScrollTo(((s.restoSpot || 0) + 1) % 2),
+      resSc0: (s.restoSpot || 0) === 0 ? 1.02 : 1.08,
+      resBr0: (s.restoSpot || 0) === 0 ? 1 : 0.78,
+      resDH0: (s.restoSpot || 0) === 0 ? '150px' : '64px',
+      resDOp0: (s.restoSpot || 0) === 0 ? 1 : 0,
+      resDotW0: (s.restoSpot || 0) === 0 ? '34px' : '12px',
+      resDotBg0: (s.restoSpot || 0) === 0 ? '#E0C69C' : 'rgba(245,240,231,.42)',
+      resGo0: () => this.restoScrollTo(0),
+      resSc1: (s.restoSpot || 0) === 1 ? 1.02 : 1.08,
+      resBr1: (s.restoSpot || 0) === 1 ? 1 : 0.78,
+      resDH1: (s.restoSpot || 0) === 1 ? '150px' : '64px',
+      resDOp1: (s.restoSpot || 0) === 1 ? 1 : 0,
+      resDotW1: (s.restoSpot || 0) === 1 ? '34px' : '12px',
+      resDotBg1: (s.restoSpot || 0) === 1 ? '#E0C69C' : 'rgba(245,240,231,.42)',
+      resGo1: () => this.restoScrollTo(1),
+      lobPrev: () => this.lobbyScrollTo(((s.lobbySpot || 0) + 4) % 5),
+      lobNext: () => this.lobbyScrollTo(((s.lobbySpot || 0) + 1) % 5),
+      lobSc4: (s.lobbySpot || 0) === 4 ? 1.02 : 1.08,
+      lobBr4: (s.lobbySpot || 0) === 4 ? 1 : 0.78,
+      lobDH4: (s.lobbySpot || 0) === 4 ? '132px' : '64px',
+      lobDOp4: (s.lobbySpot || 0) === 4 ? 1 : 0,
+      lobDotW4: (s.lobbySpot || 0) === 4 ? '34px' : '12px',
+      lobDotBg4: (s.lobbySpot || 0) === 4 ? '#E0C69C' : 'rgba(245,240,231,.42)',
+      lobGo4: () => this.lobbyScrollTo(4),
+      lobSc3: (s.lobbySpot || 0) === 3 ? 1.02 : 1.08,
+      lobBr3: (s.lobbySpot || 0) === 3 ? 1 : 0.78,
+      lobDH3: (s.lobbySpot || 0) === 3 ? '132px' : '64px',
+      lobDOp3: (s.lobbySpot || 0) === 3 ? 1 : 0,
+      lobDotW3: (s.lobbySpot || 0) === 3 ? '34px' : '12px',
+      lobDotBg3: (s.lobbySpot || 0) === 3 ? '#E0C69C' : 'rgba(245,240,231,.42)',
+      lobGo3: () => this.lobbyScrollTo(3),
+      lobSc0: (s.lobbySpot || 0) === 0 ? 1.02 : 1.08,
+      lobBr0: (s.lobbySpot || 0) === 0 ? 1 : 0.78,
+      lobDH0: (s.lobbySpot || 0) === 0 ? '132px' : '64px',
+      lobDOp0: (s.lobbySpot || 0) === 0 ? 1 : 0,
+      lobDotW0: (s.lobbySpot || 0) === 0 ? '34px' : '12px',
+      lobDotBg0: (s.lobbySpot || 0) === 0 ? '#E0C69C' : 'rgba(245,240,231,.42)',
+      lobGo0: () => this.lobbyScrollTo(0),
+      lobSc1: (s.lobbySpot || 0) === 1 ? 1.02 : 1.08,
+      lobBr1: (s.lobbySpot || 0) === 1 ? 1 : 0.78,
+      lobDH1: (s.lobbySpot || 0) === 1 ? '132px' : '64px',
+      lobDOp1: (s.lobbySpot || 0) === 1 ? 1 : 0,
+      lobDotW1: (s.lobbySpot || 0) === 1 ? '34px' : '12px',
+      lobDotBg1: (s.lobbySpot || 0) === 1 ? '#E0C69C' : 'rgba(245,240,231,.42)',
+      lobGo1: () => this.lobbyScrollTo(1),
+      lobSc2: (s.lobbySpot || 0) === 2 ? 1.02 : 1.08,
+      lobBr2: (s.lobbySpot || 0) === 2 ? 1 : 0.78,
+      lobDH2: (s.lobbySpot || 0) === 2 ? '132px' : '64px',
+      lobDOp2: (s.lobbySpot || 0) === 2 ? 1 : 0,
+      lobDotW2: (s.lobbySpot || 0) === 2 ? '34px' : '12px',
+      lobDotBg2: (s.lobbySpot || 0) === 2 ? '#E0C69C' : 'rgba(245,240,231,.42)',
+      lobGo2: () => this.lobbyScrollTo(2),
+      spaPrev: () => this.spaScrollTo(((s.spaSpot || 0) + 3) % 4, true),
+      spaNext: () => this.spaScrollTo(((s.spaSpot || 0) + 1) % 4, true),
+      spaGo0: () => this.spaScrollTo(0, true),
+      spaDotW0: (s.spaSpot || 0) === 0 ? '34px' : '12px',
+      spaDotBg0: (s.spaSpot || 0) === 0 ? '#A6824E' : '#D6CEBE',
+      spaGo1: () => this.spaScrollTo(1, true),
+      spaDotW1: (s.spaSpot || 0) === 1 ? '34px' : '12px',
+      spaDotBg1: (s.spaSpot || 0) === 1 ? '#A6824E' : '#D6CEBE',
+      spaGo2: () => this.spaScrollTo(2, true),
+      spaDotW2: (s.spaSpot || 0) === 2 ? '34px' : '12px',
+      spaDotBg2: (s.spaSpot || 0) === 2 ? '#A6824E' : '#D6CEBE',
+      spaGo3: () => this.spaScrollTo(3, true),
+      spaDotW3: (s.spaSpot || 0) === 3 ? '34px' : '12px',
+      spaDotBg3: (s.spaSpot || 0) === 3 ? '#A6824E' : '#D6CEBE',
+      spaDesc: ["Podgrzewana tafla i jacuzzi za panoramicznym przeszkleniem na Tatry.","Fińska, parowa i biosauna — drewno, kamień i widok na zaśnieżony las.","Mikroklimat solny, leżaki i ciepłe światło — inhalacja i wyciszenie.","Cardio, wolne ciężary i zajęcia grupowe — z trenerami personalnymi na miejscu."][s.spaSpot || 0],
+      spa0BarW: (s.spaSpot || 0) === 0 ? (s.spaAuto === false ? '100%' : (Math.round((s.spaProg || 0) * 100) + '%')) : '0%',
+      spa1BarW: (s.spaSpot || 0) === 1 ? (s.spaAuto === false ? '100%' : (Math.round((s.spaProg || 0) * 100) + '%')) : '0%',
+      spa2BarW: (s.spaSpot || 0) === 2 ? (s.spaAuto === false ? '100%' : (Math.round((s.spaProg || 0) * 100) + '%')) : '0%',
+      spa3BarW: (s.spaSpot || 0) === 3 ? (s.spaAuto === false ? '100%' : (Math.round((s.spaProg || 0) * 100) + '%')) : '0%',
+      spaProgW: Math.round((s.spaProg || 0) * 100) + '%',
+      spaHint: s.spaTouched ? 'przeciągnij' : 'przewiń zdjęcia',
+      spaHintOp: s.spaTouched ? 0.75 : 1,
+      spaHintY: '0px',
+      spaPause: () => this.setState({ spaAuto: false, spaTouched: true }),
+      spaResume: () => this.setState({ spaAuto: true, spaProg: 0 }),
+      spaCaption: ["Basen i jacuzzi z widokiem na góry","Sauna fińska, parowa i biosauna","Grota solna","Siłownia i sala fitness"][s.spaSpot || 0],
+      spaHover0: () => { if ((s.spaSpot || 0) !== 0) this.setState({ spaAuto: false, spaTouched: true, spaProg: 0, spaSpot: 0 }); },
+      spaImg0Op: (s.spaSpot || 0) === 0 ? 1 : 0,
+      spaImg0Sc: (s.spaSpot || 0) === 0 ? 1.04 : 1,
+      spa0Bg: (s.spaSpot || 0) === 0 ? '#FBF8F2' : '#FFFFFF',
+      spa0Line: (s.spaSpot || 0) === 0 ? '#C6A87C' : 'transparent',
+      spa0Num: (s.spaSpot || 0) === 0 ? '#A6824E' : '#B8AF9F',
+      spa0Fg: (s.spaSpot || 0) === 0 ? '#16130F' : '#9C9384',
+      spa0Sub: (s.spaSpot || 0) === 0 ? '#6B655A' : '#8C8377',
+      spa0H: (s.spaSpot || 0) === 0 ? '80px' : '0px',
+      spa0Op: (s.spaSpot || 0) === 0 ? 1 : 0,
+      spaDot0W: (s.spaSpot || 0) === 0 ? '26px' : '10px',
+      spaDot0Bg: (s.spaSpot || 0) === 0 ? '#E0C69C' : 'rgba(245,240,231,.4)',
+      spaHover1: () => { if ((s.spaSpot || 0) !== 1) this.setState({ spaAuto: false, spaTouched: true, spaProg: 0, spaSpot: 1 }); },
+      spaImg1Op: (s.spaSpot || 0) === 1 ? 1 : 0,
+      spaImg1Sc: (s.spaSpot || 0) === 1 ? 1.04 : 1,
+      spa1Bg: (s.spaSpot || 0) === 1 ? '#FBF8F2' : '#FFFFFF',
+      spa1Line: (s.spaSpot || 0) === 1 ? '#C6A87C' : 'transparent',
+      spa1Num: (s.spaSpot || 0) === 1 ? '#A6824E' : '#B8AF9F',
+      spa1Fg: (s.spaSpot || 0) === 1 ? '#16130F' : '#9C9384',
+      spa1Sub: (s.spaSpot || 0) === 1 ? '#6B655A' : '#8C8377',
+      spa1H: (s.spaSpot || 0) === 1 ? '80px' : '0px',
+      spa1Op: (s.spaSpot || 0) === 1 ? 1 : 0,
+      spaDot1W: (s.spaSpot || 0) === 1 ? '26px' : '10px',
+      spaDot1Bg: (s.spaSpot || 0) === 1 ? '#E0C69C' : 'rgba(245,240,231,.4)',
+      spaHover2: () => { if ((s.spaSpot || 0) !== 2) this.setState({ spaAuto: false, spaTouched: true, spaProg: 0, spaSpot: 2 }); },
+      spaImg2Op: (s.spaSpot || 0) === 2 ? 1 : 0,
+      spaImg2Sc: (s.spaSpot || 0) === 2 ? 1.04 : 1,
+      spa2Bg: (s.spaSpot || 0) === 2 ? '#FBF8F2' : '#FFFFFF',
+      spa2Line: (s.spaSpot || 0) === 2 ? '#C6A87C' : 'transparent',
+      spa2Num: (s.spaSpot || 0) === 2 ? '#A6824E' : '#B8AF9F',
+      spa2Fg: (s.spaSpot || 0) === 2 ? '#16130F' : '#9C9384',
+      spa2Sub: (s.spaSpot || 0) === 2 ? '#6B655A' : '#8C8377',
+      spa2H: (s.spaSpot || 0) === 2 ? '80px' : '0px',
+      spa2Op: (s.spaSpot || 0) === 2 ? 1 : 0,
+      spaDot2W: (s.spaSpot || 0) === 2 ? '26px' : '10px',
+      spaDot2Bg: (s.spaSpot || 0) === 2 ? '#E0C69C' : 'rgba(245,240,231,.4)',
+      spaHover3: () => { if ((s.spaSpot || 0) !== 3) this.setState({ spaAuto: false, spaTouched: true, spaProg: 0, spaSpot: 3 }); },
+      spaImg3Op: (s.spaSpot || 0) === 3 ? 1 : 0,
+      spaImg3Sc: (s.spaSpot || 0) === 3 ? 1.04 : 1,
+      spa3Bg: (s.spaSpot || 0) === 3 ? '#FBF8F2' : '#FFFFFF',
+      spa3Line: (s.spaSpot || 0) === 3 ? '#C6A87C' : 'transparent',
+      spa3Num: (s.spaSpot || 0) === 3 ? '#A6824E' : '#B8AF9F',
+      spa3Fg: (s.spaSpot || 0) === 3 ? '#16130F' : '#9C9384',
+      spa3Sub: (s.spaSpot || 0) === 3 ? '#6B655A' : '#8C8377',
+      spa3H: (s.spaSpot || 0) === 3 ? '80px' : '0px',
+      spa3Op: (s.spaSpot || 0) === 3 ? 1 : 0,
+      spaDot3W: (s.spaSpot || 0) === 3 ? '26px' : '10px',
+      spaDot3Bg: (s.spaSpot || 0) === 3 ? '#E0C69C' : 'rgba(245,240,231,.4)',
+      spaShow: s.tab === 0 ? 'flex' : 'none',
+      restoShow: s.tab === 1 ? 'flex' : 'none',
+      lobbyShow: s.tab === 2 ? 'flex' : 'none',
 
       setLang: (e) => {
         const l = e.currentTarget.dataset.lang;
@@ -1391,7 +2013,7 @@ class Component extends DCLogic {
       langUk: s.lang === 'uk' ? '#C6A87C' : '#B9AE9E',
       pickFloor: (e) => {
         const i = Number(e.currentTarget.dataset.floor);
-        this.setState({ floor: i, floorView: 'plan', selectedUnit: 0, pickedUnit: 0, hoverUnit: 0 });
+        this.setState({ floor: i, floorView: 'plan', selectedUnit: 0, pickedUnit: 0, hoverUnit: 0, cardUnit: 0 });
       },
       backTo3d: () => this.setState({ floorView: '3d', selectedUnit: 0 }),
       pickUnit: (e) => {
@@ -1417,7 +2039,37 @@ class Component extends DCLogic {
       }),
       hoverUnit: (e) => this.setState({ hoverUnit: Number(e.currentTarget.dataset.unit) }),
       unhoverUnit: () => this.setState({ hoverUnit: 0 }),
-      pickUnit: (e) => this.setState({ pickedUnit: Number(e.currentTarget.dataset.unit) }),
+      pickUnit: (e) => {
+        const n = Number(e.currentTarget.dataset.unit);
+        this.setState({ pickedUnit: n, cardUnit: n });
+      },
+      stopProp: (e) => e.stopPropagation(),
+      closeCard: () => this.setState({ cardUnit: 0 }),
+      askUnitCard: () => this.setState({ interest: 0 }),
+      cardPrev: () => {
+        const list = this.floorUnits(s.floor);
+        if (!list.length) return;
+        const i = list.indexOf(s.cardUnit);
+        const n = list[(i <= 0 ? list.length : i) - 1];
+        this.setState({ cardUnit: n, pickedUnit: n });
+      },
+      cardNext: () => {
+        const list = this.floorUnits(s.floor);
+        if (!list.length) return;
+        const i = list.indexOf(s.cardUnit);
+        const n = list[(i + 1) % list.length];
+        this.setState({ cardUnit: n, pickedUnit: n });
+      },
+      cardShow: s.cardUnit ? 'flex' : 'none',
+      cardNo: s.cardUnit || '',
+      cardFloor: this.floorNames[s.floor] || '',
+      cardTotal: (this.unitInfo[s.cardUnit] || {}).t || '',
+      cardTotalShow: (this.unitInfo[s.cardUnit] || {}).t ? 'flex' : 'none',
+      cardExShow: (this.unitInfo[s.cardUnit] || {}).e ? 'flex' : 'none',
+      cardExList: (((this.unitInfo[s.cardUnit] || {}).e || '').split(' · ').filter(Boolean)).map((p) => {
+        const m = p.match(/^(.*?)\s+([\d,]+)\s*m²$/);
+        return m ? { label: m[1], val: m[2] } : { label: p, val: '' };
+      }),
       askUnit: () => this.setState({ interest: 0 }),
       closeUnit: () => this.setState({ pickedUnit: 0 }),
       unitCardShow: s.pickedUnit ? 'flex' : 'none',
@@ -1433,13 +2085,13 @@ class Component extends DCLogic {
         return m ? { label: m[1], val: m[2] } : { label: p, val: '' };
       }),
       prevUnit: () => {
-        const list = (this.planUnits[s.floor] || []).map((u) => u.n).sort((a, b) => a - b);
+        const list = this.floorUnits(s.floor);
         if (!list.length) return;
         const i = list.indexOf(s.pickedUnit);
         this.setState({ pickedUnit: list[(i <= 0 ? list.length : i) - 1] });
       },
       nextUnit: () => {
-        const list = (this.planUnits[s.floor] || []).map((u) => u.n).sort((a, b) => a - b);
+        const list = this.floorUnits(s.floor);
         if (!list.length) return;
         const i = list.indexOf(s.pickedUnit);
         this.setState({ pickedUnit: list[(i + 1) % list.length] });
@@ -1461,8 +2113,9 @@ class Component extends DCLogic {
       primaryLabel: m.label,
       primaryHint: m.hint,
       primaryValue: this.fmt(primary),
-      feeMgmtLabel: this.fmt(m.mgmt) + ' / msc',
-      feeMealsLabel: this.fmt(m.meals) + ' / msc',
+      feeMgmtValue: this.fmt(m.mgmt),
+      feeMealsValue: this.fmt(m.meals),
+      perMonthLabel: perMonth,
       monthlyTotal: this.fmt(s.shownMonthly === null ? monthly : s.shownMonthly),
       perM2: this.fmt(primary / s.area),
       monthlyNote: m.once ? 'Obowiązkowe opłaty miesięczne przy własnym apartamencie' : 'Czynsz najmu wraz z obowiązkowymi opłatami',
@@ -1494,6 +2147,11 @@ class Component extends DCLogic {
       leadName: s.leadName,
       leadInterest: this.interests[s.interest],
 
+      galOverlayShow: s.galOpen ? 'flex' : 'none',
+      galMoreCount: 14,
+      galTotal: 18,
+      openGal: () => this.setState({ galOpen: true }),
+      closeGal: () => this.setState({ galOpen: false }),
       openLightbox: (e) => this.setState({ lbIndex: Math.max(0, this.gallery.indexOf(e.currentTarget.dataset.src)) }),
       closeLightbox: () => this.setState({ lbIndex: -1, zoomSrc: '' }),
       lbPrev: (e) => { e.stopPropagation(); this.setState({ lbIndex: (s.lbIndex + this.gallery.length - 1) % this.gallery.length }); },
