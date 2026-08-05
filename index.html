@@ -59,7 +59,8 @@
   @keyframes thDrift{0%{transform:scale(1.04) translate3d(0,0,0)}100%{transform:scale(1.14) translate3d(0,-1.5%,0)}}
   @keyframes thPulse{0%,100%{opacity:.35;transform:translateY(0)}50%{opacity:1;transform:translateY(7px)}}
   @keyframes thFade{from{opacity:0}to{opacity:1}}
-  @keyframes thUp{from{opacity:0;transform:translateY(44px)}to{opacity:1;transform:none}}
+  @keyframes thNudge{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(3px);opacity:1}}
+@keyframes thUp{from{opacity:0;transform:translateY(44px)}to{opacity:1;transform:none}}
   @keyframes thLine{from{transform:translateY(112%)}to{transform:none}}
   @keyframes thFade{from{opacity:0}to{opacity:1}}
   @keyframes thGrowX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
@@ -113,7 +114,7 @@
     <a href="#kalkulator" data-nav="1" style="color:{{ navLink }};transition:color .3s ease" style-hover="color:{{ navLinkHover }}">Cennik</a>
     <a href="#lokalizacja" data-nav="1" style="color:{{ navLink }};transition:color .3s ease" style-hover="color:{{ navLinkHover }}">Lokalizacja</a>
     <span data-langsw="1" style="position:relative;display:flex;align-items:center">
-      <button onClick="{{ toggleLangMenu }}" title="Język" style="display:flex;align-items:center;gap:8px;height:36px;padding:0 12px;border:1px solid {{ langBorder }};background:transparent;color:{{ navLink }};cursor:pointer;font-size:11px;letter-spacing:.16em;transition:border-color .3s ease,color .3s ease" style-hover="border-color:#C6A87C">
+      <button onClick="{{ toggleLangMenu }}" title="Język" style="display:flex;align-items:center;gap:8px;height:36px;padding:0 12px;border:1px solid {{ langBorder }};background:transparent;color:{{ navLink }};cursor:pointer;font-size:12px;letter-spacing:.16em;transition:border-color .3s ease,color .3s ease" style-hover="border-color:#C6A87C">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true" style="display:block"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"></path></svg>
         <span>{{ langLabel }}</span>
       </button>
@@ -123,7 +124,7 @@
         <button onClick="{{ setLang }}" data-lang="uk" style="text-align:left;padding:11px 14px;border:0;border-top:1px solid #2A241D;background:transparent;color:{{ langUk }};cursor:pointer;font-size:12px;letter-spacing:.1em" style-hover="background:#221C16">Українська</button>
       </span>
     </span>
-    <a href="#kontakt" style="display:inline-flex;align-items:center;height:42px;padding:0 24px;background:{{ ctaBg }};color:{{ ctaFg }};letter-spacing:.16em;white-space:nowrap;transition:background .35s ease,color .35s ease" style-hover="background:#C6A87C;color:#16130F">Jestem zainteresowany</a>
+    <a href="#kontakt" style="display:inline-flex;align-items:center;height:42px;padding:0 24px;background:{{ ctaBg }};color:{{ ctaFg }};letter-spacing:.2em;white-space:nowrap;transition:background .35s ease,color .35s ease" style-hover="background:#C6A87C;color:#16130F">Zapytaj o apartament</a>
   </nav>
 </header>
 
@@ -144,49 +145,42 @@
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,.42) 0%,rgba(15,12,9,.12) 32%,rgba(15,12,9,.5) 74%,rgba(15,12,9,.82) 100%)"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(15,12,9,.62) 0%,rgba(15,12,9,.34) 34%,rgba(15,12,9,0) 62%)"></div>
 
-  <div id="th-hero-content" style="position:relative;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:200px clamp(20px,5vw,64px) clamp(34px,4vw,56px);will-change:transform,opacity">
+  <div id="th-hero-content" style="position:relative;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:200px clamp(20px,5vw,64px) clamp(40px,4.6vw,66px);will-change:transform,opacity">
     <div style="max-width:1280px;margin:0 auto;width:100%">
-      <div style="display:flex;align-items:center;gap:clamp(5px,.5vw,8px);margin-bottom:clamp(22px,2.6vw,34px);filter:drop-shadow(0 2px 10px rgba(15,12,9,.6));animation:thUp .9s cubic-bezier(.2,.7,.2,1) .1s both">
-        <svg viewBox="0 0 24 24" aria-hidden="true" style="display:block;width:clamp(24px,2.3vw,34px);height:auto"><path d="M12 1.6l3.24 6.56 7.24 1.05-5.24 5.1 1.24 7.21L12 18.12l-6.48 3.4 1.24-7.21-5.24-5.1 7.24-1.05z" fill="none" stroke="#C6A87C" stroke-width="1.15" stroke-linejoin="miter" stroke-miterlimit="10"></path></svg>
-        <svg viewBox="0 0 24 24" aria-hidden="true" style="display:block;width:clamp(24px,2.3vw,34px);height:auto"><path d="M12 1.6l3.24 6.56 7.24 1.05-5.24 5.1 1.24 7.21L12 18.12l-6.48 3.4 1.24-7.21-5.24-5.1 7.24-1.05z" fill="none" stroke="#C6A87C" stroke-width="1.15" stroke-linejoin="miter" stroke-miterlimit="10"></path></svg>
-        <svg viewBox="0 0 24 24" aria-hidden="true" style="display:block;width:clamp(24px,2.3vw,34px);height:auto"><path d="M12 1.6l3.24 6.56 7.24 1.05-5.24 5.1 1.24 7.21L12 18.12l-6.48 3.4 1.24-7.21-5.24-5.1 7.24-1.05z" fill="none" stroke="#C6A87C" stroke-width="1.15" stroke-linejoin="miter" stroke-miterlimit="10"></path></svg>
-        <svg viewBox="0 0 24 24" aria-hidden="true" style="display:block;width:clamp(24px,2.3vw,34px);height:auto"><path d="M12 1.6l3.24 6.56 7.24 1.05-5.24 5.1 1.24 7.21L12 18.12l-6.48 3.4 1.24-7.21-5.24-5.1 7.24-1.05z" fill="none" stroke="#C6A87C" stroke-width="1.15" stroke-linejoin="miter" stroke-miterlimit="10"></path></svg>
-        <svg viewBox="0 0 24 24" aria-hidden="true" style="display:block;width:clamp(24px,2.3vw,34px);height:auto"><path d="M12 1.6l3.24 6.56 7.24 1.05-5.24 5.1 1.24 7.21L12 18.12l-6.48 3.4 1.24-7.21-5.24-5.1 7.24-1.05z" fill="none" stroke="#C6A87C" stroke-width="1.15" stroke-linejoin="miter" stroke-miterlimit="10"></path></svg>
-      </div>
-      <h1 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(34px,4.4vw,74px);line-height:1.08;margin:0;letter-spacing:-.015em;max-width:20ch;text-shadow:0 2px 24px rgba(15,12,9,.5)">
+      <h1 style="font-family:'Jost',sans-serif;font-weight:300;font-size:clamp(38px,5.6vw,92px);line-height:1.02;margin:0;letter-spacing:-.01em;text-transform:uppercase;max-width:18ch;text-shadow:0 2px 24px rgba(15,12,9,.45)">
         <span style="display:block;overflow:hidden"><span style="display:block;animation:thLine 1.15s cubic-bezier(.16,.84,.24,1) .2s both">Luksusowa Villa seniora</span></span>
         <span style="display:block;overflow:hidden;padding-bottom:.1em"><span style="display:block;animation:thLine 1.15s cubic-bezier(.16,.84,.24,1) .34s both">w sercu Tatr</span></span>
       </h1>
-      <div style="display:flex;flex-wrap:wrap;margin-top:clamp(30px,3.6vw,46px);background:rgba(15,12,9,.4);border:1px solid rgba(245,240,231,.22);backdrop-filter:blur(14px);animation:thUp 1s cubic-bezier(.2,.7,.2,1) .56s both">
-        <div data-hstat="1" style="flex:1 1 170px;padding:24px 28px;border-right:1px solid rgba(245,240,231,.18);transition:background .35s ease" style-hover="background:rgba(245,240,231,.07)">
-          <div id="th-hero-count" style="font-size:clamp(26px,2.4vw,38px);font-weight:300;letter-spacing:-.02em;line-height:1">66</div>
-          <div style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(245,240,231,.66);margin-top:10px">apartamentów</div>
-        </div>
-        <div data-hstat="1" style="flex:1 1 170px;padding:24px 28px;border-right:1px solid rgba(245,240,231,.18);transition:background .35s ease" style-hover="background:rgba(245,240,231,.07)">
-          <div style="font-size:clamp(26px,2.4vw,38px);font-weight:300;letter-spacing:-.02em;line-height:1">25–65 m²</div>
-          <div style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(245,240,231,.66);margin-top:10px">metraż</div>
-        </div>
-        <div data-hstat="1" style="flex:1 1 170px;padding:24px 28px;border-right:1px solid rgba(245,240,231,.18);transition:background .35s ease" style-hover="background:rgba(245,240,231,.07)">
-          <div style="font-size:clamp(26px,2.4vw,38px);font-weight:300;letter-spacing:-.02em;line-height:1">24/7</div>
-          <div style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(245,240,231,.66);margin-top:10px">pełna opieka</div>
-        </div>
-        <div data-hstat="1" style="flex:1 1 170px;padding:24px 28px;border-right:1px solid rgba(245,240,231,.18);transition:background .35s ease" style-hover="background:rgba(245,240,231,.07)">
-          <div style="font-size:clamp(26px,2.4vw,38px);font-weight:300;letter-spacing:-.02em;line-height:1">XII 2029</div>
-          <div style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(245,240,231,.66);margin-top:10px">oddanie kluczy</div>
-        </div>
-        <a href="#kontakt" style="flex:0 1 230px;display:flex;align-items:center;justify-content:center;padding:24px 28px;background:#F5F0E7;color:#16130F;font-size:11px;letter-spacing:.2em;text-transform:uppercase;transition:background .3s ease" style-hover="background:#C6A87C">Zapytaj o apartament</a>
-      </div>
     </div>
+  </div>
+  <div style="position:relative;display:flex;flex-wrap:nowrap;align-items:stretch;width:100%;overflow:hidden;border-top:1px solid rgba(245,240,231,.28);background:linear-gradient(0deg,rgba(15,12,9,.62),rgba(15,12,9,.34));opacity:{{ heroBarOp }};transform:translateY({{ heroBarY }});pointer-events:{{ heroBarPe }};transition:opacity .45s ease,transform .5s cubic-bezier(.2,.7,.2,1);animation:thUp 1s cubic-bezier(.2,.7,.2,1) .56s both">
+    <div data-hstat="1" style="flex:1 1 96px;min-width:0;padding:clamp(16px,1.9vw,24px) clamp(12px,1.8vw,26px);transition:background .35s ease;border-right:1px solid rgba(245,240,231,.28)" style-hover="background:rgba(245,240,231,.08)">
+      <div style="font-family:'Jost',sans-serif;font-weight:300;font-size:clamp(20px,2vw,32px);letter-spacing:-.01em;line-height:1;color:#F5F0E7;white-space:nowrap"><span id="th-hero-count">66</span></div>
+      <div style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,231,.84);margin-top:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">apartamentów</div>
+    </div>
+    <div data-hstat="1" style="flex:1 1 96px;min-width:0;padding:clamp(16px,1.9vw,24px) clamp(12px,1.8vw,26px);transition:background .35s ease;border-right:1px solid rgba(245,240,231,.28)" style-hover="background:rgba(245,240,231,.08)">
+      <div style="font-family:'Jost',sans-serif;font-weight:300;font-size:clamp(20px,2vw,32px);letter-spacing:-.01em;line-height:1;color:#F5F0E7;white-space:nowrap">25–65 m²</div>
+      <div style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,231,.84);margin-top:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">metraż</div>
+    </div>
+    <div data-hstat="1" style="flex:1 1 96px;min-width:0;padding:clamp(16px,1.9vw,24px) clamp(12px,1.8vw,26px);transition:background .35s ease;border-right:1px solid rgba(245,240,231,.28)" style-hover="background:rgba(245,240,231,.08)">
+      <div style="display:flex;align-items:center;gap:clamp(3px,.4vw,6px);height:clamp(20px,2vw,32px)"><svg viewBox="0 0 24 24" aria-hidden="true" style="display:block;width:clamp(16px,1.6vw,26px);height:auto;flex:0 0 auto"><path d="M12 1.6l3.24 6.56 7.24 1.05-5.24 5.1 1.24 7.21L12 18.12l-6.48 3.4 1.24-7.21-5.24-5.1 7.24-1.05z" fill="none" stroke="#F5F0E7" stroke-width="1.2" stroke-linejoin="miter" stroke-miterlimit="10"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true" style="display:block;width:clamp(16px,1.6vw,26px);height:auto;flex:0 0 auto"><path d="M12 1.6l3.24 6.56 7.24 1.05-5.24 5.1 1.24 7.21L12 18.12l-6.48 3.4 1.24-7.21-5.24-5.1 7.24-1.05z" fill="none" stroke="#F5F0E7" stroke-width="1.2" stroke-linejoin="miter" stroke-miterlimit="10"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true" style="display:block;width:clamp(16px,1.6vw,26px);height:auto;flex:0 0 auto"><path d="M12 1.6l3.24 6.56 7.24 1.05-5.24 5.1 1.24 7.21L12 18.12l-6.48 3.4 1.24-7.21-5.24-5.1 7.24-1.05z" fill="none" stroke="#F5F0E7" stroke-width="1.2" stroke-linejoin="miter" stroke-miterlimit="10"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true" style="display:block;width:clamp(16px,1.6vw,26px);height:auto;flex:0 0 auto"><path d="M12 1.6l3.24 6.56 7.24 1.05-5.24 5.1 1.24 7.21L12 18.12l-6.48 3.4 1.24-7.21-5.24-5.1 7.24-1.05z" fill="none" stroke="#F5F0E7" stroke-width="1.2" stroke-linejoin="miter" stroke-miterlimit="10"></path></svg><svg viewBox="0 0 24 24" aria-hidden="true" style="display:block;width:clamp(16px,1.6vw,26px);height:auto;flex:0 0 auto"><path d="M12 1.6l3.24 6.56 7.24 1.05-5.24 5.1 1.24 7.21L12 18.12l-6.48 3.4 1.24-7.21-5.24-5.1 7.24-1.05z" fill="none" stroke="#F5F0E7" stroke-width="1.2" stroke-linejoin="miter" stroke-miterlimit="10"></path></svg></div>
+      <div style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,231,.84);margin-top:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">standard</div>
+    </div>
+    <div data-hstat="1" style="flex:1 1 96px;min-width:0;padding:clamp(16px,1.9vw,24px) clamp(12px,1.8vw,26px);transition:background .35s ease;border-right:1px solid rgba(245,240,231,.28)" style-hover="background:rgba(245,240,231,.08)">
+      <div style="font-family:'Jost',sans-serif;font-weight:300;font-size:clamp(20px,2vw,32px);letter-spacing:-.01em;line-height:1;color:#F5F0E7;white-space:nowrap">XII 2029</div>
+      <div style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,231,.84);margin-top:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">oddanie kluczy</div>
+    </div>
+    <a href="#kontakt" style="flex:0 0 auto;align-self:stretch;display:flex;align-items:center;justify-content:center;min-height:58px;padding:0 clamp(18px,2.2vw,38px);white-space:nowrap;background:#FFFFFF;color:#16130F;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;transition:background .3s ease,color .3s ease" style-hover="background:#C6A87C;color:#16130F">Zapytaj o apartament</a>
   </div>
 </section>
 
 <section id="inwestycja" data-screen-label="Inwestycja" style="padding:clamp(72px,10vw,130px) clamp(16px,3vw,40px);background:#F7F4EE">
   <div style="max-width:1440px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:clamp(40px,5vw,80px);align-items:center">
     <div data-reveal="">
-      <div style="font-size:13px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:26px"><span style="color:#B29066;margin-right:14px">01</span>O inwestycji</div>
+      <div style="font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:26px"><span style="color:#B29066;margin-right:14px">01</span>O inwestycji</div>
       <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(38px,4.6vw,76px);letter-spacing:-.02em;line-height:1.06;margin:0 0 28px">Twój luksusowy apartament <em style="font-style:italic;color:#A6824E">w sercu Tatr</em></h2>
-      <p style="font-size:18px;line-height:1.75;color:#4A453D;font-weight:400;margin:0 0 20px;text-wrap:pretty">Tatry Hills powstaje przy Gubałówce — w centralnej części Zakopanego. 55 nowoczesnych apartamentów od 23 do 46 m², z możliwością łączenia w większe.</p>
-      <p style="font-size:18px;line-height:1.75;color:#4A453D;font-weight:400;margin:0;text-wrap:pretty">Pozwolenie na budowę jest uzyskane, a działka objęta planem miejscowym pod usługi turystyczne. Wykonawca: Capital Towers.</p>
+      <p style="font-size:17px;line-height:1.75;color:#4A453D;font-weight:400;margin:0 0 20px;text-wrap:pretty">Tatry Hills powstaje przy Gubałówce — w centralnej części Zakopanego. 66 nowoczesnych apartamentów od 25 do 65 m², z możliwością łączenia w większe.</p>
+      <p style="font-size:17px;line-height:1.75;color:#4A453D;font-weight:400;margin:0;text-wrap:pretty">Pozwolenie na budowę jest uzyskane, a działka objęta planem miejscowym pod usługi turystyczne. Wykonawca: Capital Towers.</p>
     </div>
     <div data-reveal="">
       <div id="th-compare" onPointerDown="{{ splitDown }}" style="position:relative;aspect-ratio:16/11;overflow:hidden;background:#EDE6DB;cursor:ew-resize;touch-action:none;user-select:none">
@@ -198,12 +192,10 @@
             <svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="#C6A87C" stroke-width="1.4"></path></svg>
           </div>
         </div>
-        <div style="position:absolute;left:16px;top:16px;padding:7px 14px;background:rgba(20,16,13,.72);backdrop-filter:blur(6px);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#F5F0E7;pointer-events:none">Zima</div>
-        <div style="position:absolute;right:16px;top:16px;padding:7px 14px;background:rgba(20,16,13,.72);backdrop-filter:blur(6px);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#F5F0E7;pointer-events:none">Lato</div>
       </div>
       <div style="display:flex;gap:1px;margin-top:1px;background:#E4DDCF">
-        <button onClick="{{ showWinter }}" style="flex:1;height:56px;border:0;cursor:pointer;font-size:12px;letter-spacing:.22em;text-transform:uppercase;background:{{ winterBtnBg }};color:{{ winterBtnFg }};transition:all .3s ease">Zima</button>
-        <button onClick="{{ showSummer }}" style="flex:1;height:56px;border:0;cursor:pointer;font-size:12px;letter-spacing:.22em;text-transform:uppercase;background:{{ summerBtnBg }};color:{{ summerBtnFg }};transition:all .3s ease">Lato</button>
+        <button onClick="{{ showWinter }}" style="flex:1;height:56px;border:0;cursor:pointer;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;background:{{ winterBtnBg }};color:{{ winterBtnFg }};transition:all .3s ease">Zima</button>
+        <button onClick="{{ showSummer }}" style="flex:1;height:56px;border:0;cursor:pointer;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;background:{{ summerBtnBg }};color:{{ summerBtnFg }};transition:all .3s ease">Lato</button>
       </div>
     </div>
   </div>
@@ -214,17 +206,17 @@
       <div>
         <div style="width:17px;height:17px;border-radius:50%;background:#C6A87C;animation:thRing 3s ease-out infinite"></div>
         <div style="font-family:'Bodoni Moda',serif;font-size:clamp(18px,1.8vw,24px);margin-top:20px">Pozwolenie na budowę</div>
-        <div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#A6824E;margin-top:6px">uzyskane</div>
+        <div style="font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#A6824E;margin-top:6px">uzyskane</div>
       </div>
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center">
         <div style="width:17px;height:17px;border-radius:50%;border:1px solid #C6A87C;background:#F7F4EE"></div>
         <div style="font-family:'Bodoni Moda',serif;font-size:clamp(18px,1.8vw,24px);margin-top:20px">Start budowy</div>
-        <div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#7A7264;margin-top:6px">kwiecień 2027</div>
+        <div style="font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#7A7264;margin-top:6px">kwiecień 2027</div>
       </div>
       <div style="display:flex;flex-direction:column;align-items:flex-end;text-align:right">
         <div style="width:17px;height:17px;border-radius:50%;border:1px solid #9A9284;background:#F7F4EE"></div>
         <div style="font-family:'Bodoni Moda',serif;font-size:clamp(18px,1.8vw,24px);margin-top:20px">Oddanie kluczy</div>
-        <div style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#7A7264;margin-top:6px">grudzień 2029</div>
+        <div style="font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#7A7264;margin-top:6px">grudzień 2029</div>
       </div>
     </div>
   </div>
@@ -234,38 +226,54 @@
   <div style="max-width:1440px;margin:0 auto">
     <div data-reveal="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:64px">
       <div>
-        <div style="font-size:13px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">02</span>Apartamenty</div>
-        <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(38px,4.6vw,76px);letter-spacing:-.02em;line-height:1.06;margin:0;max-width:15ch">Mieszkanie, które umie się o Ciebie zatroszczyć</h2>
+        <div style="font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">02</span>Apartamenty</div>
+        <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(38px,4.6vw,76px);letter-spacing:-.02em;line-height:1.06;margin:0;max-width:15ch">Mieszkanie, które <em style="font-style:italic;color:#A6824E">umie się o Ciebie zatroszczyć</em></h2>
       </div>
       <div style="max-width:360px;padding:4px 0 6px 24px;border-left:1px solid #E4DDCF">
-        <p style="margin:0;font-size:16px;line-height:1.75;color:#6B655A;font-weight:400;text-wrap:pretty">Drewno, kamień i panoramiczne przeszklenia w stylistyce nowoczesnego rustykalizmu.</p>
+        <p style="margin:0;font-size:17px;line-height:1.75;color:#6B655A;font-weight:400;text-wrap:pretty">Drewno, kamień i panoramiczne przeszklenia w stylistyce nowoczesnego rustykalizmu.</p>
       </div>
     </div>
-    <div data-reveal="" style="position:relative;aspect-ratio:21/9;overflow:hidden;background:#16130F">
-      <video id="th-apt-video" autoplay="" muted="" loop="" playsinline="" src="assets/apartment.mp4" style="position:absolute;top:0;left:0;width:122%;height:122%;object-fit:cover"></video>
-      <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,12,9,.78),rgba(15,12,9,.16) 46%,rgba(15,12,9,.28));pointer-events:none"></div>
-      <div style="position:absolute;left:clamp(20px,3vw,48px);right:clamp(20px,3vw,48px);bottom:clamp(24px,3vw,46px);height:clamp(74px,7vw,96px);pointer-events:none">
-        <div style="position:absolute;left:0;bottom:0;display:flex;flex-direction:column;gap:8px;opacity:{{ cap0Op }};transform:translateY({{ cap0Y }});transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1)">
-          <span style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#E0C69C">Aneks kuchenny</span>
-          <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,2.1vw,30px);line-height:1.2;color:#F5F0E7">zmywarka, płyta grzewcza, lodówka i kawiarka</span>
+    <div data-reveal="" style="position:relative;margin-top:1px;height:clamp(280px,34vw,460px);overflow:hidden;background:#16130F">
+      <video id="th-apt-video" autoplay="" muted="" loop="" playsinline="" src="assets/apartment.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.86)"></video>
+    </div>
+    <div style="position:relative;min-height:clamp(104px,8vw,124px);background:#FFFFFF;border-top:1px solid #E4DDCF;overflow:hidden">
+        <div style="position:absolute;left:0;right:0;top:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:0 clamp(18px,4vw,60px);text-align:center;opacity:{{ ch0Op }};transform:translateY({{ ch0Y }});transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1)">
+          <span style="font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#A6824E">Wydzielona sypialnia</span>
+          <span style="font-family:'Bodoni Moda',serif;font-size:clamp(17px,1.7vw,25px);line-height:1.3;color:#16130F;text-wrap:pretty">Osobna strefa spania i pokój dzienny w większości apartamentów</span>
         </div>
-        <div style="position:absolute;left:0;bottom:0;display:flex;flex-direction:column;gap:8px;opacity:{{ cap1Op }};transform:translateY({{ cap1Y }});transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1)">
-          <span style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#E0C69C">Pokój dzienny</span>
-          <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,2.1vw,30px);line-height:1.2;color:#F5F0E7">strefa wypoczynku z panoramą Tatr</span>
+        <div style="position:absolute;left:0;right:0;top:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:0 clamp(18px,4vw,60px);text-align:center;opacity:{{ ch1Op }};transform:translateY({{ ch1Y }});transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1)">
+          <span style="font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#A6824E">Aneks kuchenny</span>
+          <span style="font-family:'Bodoni Moda',serif;font-size:clamp(17px,1.7vw,25px);line-height:1.3;color:#16130F;text-wrap:pretty">Zmywarka, zlew, płyta grzewcza, lodówka i kawiarka</span>
         </div>
-        <div style="position:absolute;left:0;bottom:0;display:flex;flex-direction:column;gap:8px;opacity:{{ cap2Op }};transform:translateY({{ cap2Y }});transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1)">
-          <span style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#E0C69C">Panoramiczne przeszklenia</span>
-          <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,2.1vw,30px);line-height:1.2;color:#F5F0E7">światło i widok od podłogi do sufitu</span>
+        <div style="position:absolute;left:0;right:0;top:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:0 clamp(18px,4vw,60px);text-align:center;opacity:{{ ch2Op }};transform:translateY({{ ch2Y }});transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1)">
+          <span style="font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#A6824E">Panoramiczne przeszklenia</span>
+          <span style="font-family:'Bodoni Moda',serif;font-size:clamp(17px,1.7vw,25px);line-height:1.3;color:#16130F;text-wrap:pretty">Światło i widok na Tatry od podłogi do sufitu</span>
         </div>
-        <div style="position:absolute;left:0;bottom:0;display:flex;flex-direction:column;gap:8px;opacity:{{ cap3Op }};transform:translateY({{ cap3Y }});transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1)">
-          <span style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#E0C69C">Balkon lub taras</span>
-          <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,2.1vw,30px);line-height:1.2;color:#F5F0E7">prywatna przestrzeń na świeżym powietrzu</span>
+        <div style="position:absolute;left:0;right:0;top:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:0 clamp(18px,4vw,60px);text-align:center;opacity:{{ ch3Op }};transform:translateY({{ ch3Y }});transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1)">
+          <span style="font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#A6824E">Balkon lub taras</span>
+          <span style="font-family:'Bodoni Moda',serif;font-size:clamp(17px,1.7vw,25px);line-height:1.3;color:#16130F;text-wrap:pretty">Prywatna przestrzeń na świeżym powietrzu</span>
         </div>
-        <div style="position:absolute;left:0;bottom:0;display:flex;flex-direction:column;gap:8px;opacity:{{ cap4Op }};transform:translateY({{ cap4Y }});transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1)">
-          <span style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#E0C69C">Wydzielona sypialnia</span>
-          <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,2.1vw,30px);line-height:1.2;color:#F5F0E7">osobna strefa spania w większości apartamentów</span>
+        <div style="position:absolute;left:0;right:0;top:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:0 clamp(18px,4vw,60px);text-align:center;opacity:{{ ch4Op }};transform:translateY({{ ch4Y }});transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1)">
+          <span style="font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#A6824E">Komfort termiczny</span>
+          <span style="font-family:'Bodoni Moda',serif;font-size:clamp(17px,1.7vw,25px);line-height:1.3;color:#16130F;text-wrap:pretty">Klimatyzacja i ogrzewanie podłogowe</span>
         </div>
-      </div>
+        <div style="position:absolute;left:0;right:0;top:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:0 clamp(18px,4vw,60px);text-align:center;opacity:{{ ch5Op }};transform:translateY({{ ch5Y }});transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1)">
+          <span style="font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#A6824E">Smart apartament</span>
+          <span style="font-family:'Bodoni Moda',serif;font-size:clamp(17px,1.7vw,25px);line-height:1.3;color:#16130F;text-wrap:pretty">Smart TV, wi-fi światłowodowe i system przywoławczy</span>
+        </div>
+        <div style="position:absolute;left:0;right:0;top:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:0 clamp(18px,4vw,60px);text-align:center;opacity:{{ ch6Op }};transform:translateY({{ ch6Y }});transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1)">
+          <span style="font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#A6824E">Pralnia</span>
+          <span style="font-family:'Bodoni Moda',serif;font-size:clamp(17px,1.7vw,25px);line-height:1.3;color:#16130F;text-wrap:pretty">Miejsce na pralko-suszarkę i profesjonalna pralnia w budynku</span>
+        </div>
+        <div style="position:absolute;left:0;right:0;top:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:0 clamp(18px,4vw,60px);text-align:center;opacity:{{ ch7Op }};transform:translateY({{ ch7Y }});transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1)">
+          <span style="font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#A6824E">Apartamenty dla gości</span>
+          <span style="font-family:'Bodoni Moda',serif;font-size:clamp(17px,1.7vw,25px);line-height:1.3;color:#16130F;text-wrap:pretty">Rodzina i wnuki mogą zostać na noc w tym samym budynku</span>
+        </div>
+        <div style="position:absolute;left:0;right:0;top:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:0 clamp(18px,4vw,60px);text-align:center;opacity:{{ ch8Op }};transform:translateY({{ ch8Y }});transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1)">
+          <span style="font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#A6824E">Łączenie apartamentów</span>
+          <span style="font-family:'Bodoni Moda',serif;font-size:clamp(17px,1.7vw,25px);line-height:1.3;color:#16130F;text-wrap:pretty">Dwa mieszkania można połączyć w jeden większy apartament</span>
+        </div>
+      <span style="position:absolute;left:0;bottom:0;height:2px;width:{{ chProg }};background:#C6A87C;transition:width .6s linear"></span>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:1px;margin-top:1px;background:#E4DDCF">
       <div data-reveal="" data-svc="1" style="flex:1 1 280px;background:#F7F4EE;padding:34px 30px;transition:background .3s ease"><div style="font-family:'Bodoni Moda',serif;font-size:22px;margin-bottom:10px">Wydzielona sypialnia</div><div style="font-size:15px;line-height:1.65;color:#6B655A;font-weight:400">Osobna strefa spania i pokój dzienny w większości apartamentów.</div></div>
@@ -280,26 +288,22 @@
   </div>
 </section>
 
-<section data-screen-label="Statement" style="position:relative;min-height:clamp(420px,62vh,660px);overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:clamp(64px,9vw,120px) 0">
-  <img loading="lazy" decoding="async" src="assets/opt-apartment.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%">
-  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,.72),rgba(15,12,9,.5) 45%,rgba(15,12,9,.78))"></div>
-  <div data-reveal="" style="position:relative;width:100%;padding:0 clamp(24px,6vw,72px);color:#F5F0E7">
-    <div style="font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#D8BB8E;margin-bottom:clamp(18px,2.4vw,26px)">Tatry Hills</div>
-    <div style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(30px,5.2vw,74px);line-height:1.14;max-width:17ch;margin:0 auto;text-wrap:balance;text-shadow:0 2px 30px rgba(15,12,9,.75)">Życie w rytmie gór, <em style="font-style:italic;color:#E0C69C">opieka jak w hotelu</em></div>
-    <span style="display:block;width:56px;height:1px;background:#C6A87C;margin:clamp(24px,3vw,34px) auto 0"></span>
-  </div>
-</section>
-
-<section id="udogodnienia" data-screen-label="Udogodnienia" style="padding:clamp(72px,10vw,130px) clamp(16px,3vw,40px);background:#F7F4EE">
+<section id="udogodnienia" data-screen-label="Udogodnienia" style="padding:clamp(48px,6vw,80px) clamp(16px,3vw,40px) clamp(56px,7vw,96px);background:#F7F4EE">
   <div style="max-width:1440px;margin:0 auto">
-    <div data-reveal="" style="text-align:center;margin-bottom:60px">
-      <div style="font-size:13px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">03</span>Życie w Tatry Hills</div>
-      <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(40px,5vw,84px);letter-spacing:-.02em;line-height:1.06;margin:0 auto;max-width:20ch">Wszystko <em style="font-style:italic;color:#A6824E">pod jednym dachem</em></h2>
+    <div data-reveal="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:clamp(28px,3vw,44px)">
+      <div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">03</span>Udogodnienia</div>
+        <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(38px,4.6vw,76px);letter-spacing:-.02em;line-height:1.06;margin:0;max-width:16ch">Wszystko <em style="font-style:italic;color:#A6824E">pod jednym dachem</em></h2>
+      </div>
+      <div style="max-width:360px;padding:4px 0 6px 24px;border-left:1px solid #E4DDCF">
+        <p style="margin:0;font-size:17px;line-height:1.75;color:#6B655A;font-weight:400;text-wrap:pretty">Strefa SPA, restauracja, recepcja z concierge oraz klub — bez wychodzenia z domu.</p>
+      </div>
     </div>
     <div data-reveal="" style="display:flex;gap:1px;background:#E4DDCF;margin-bottom:1px;flex-wrap:wrap">
-      <button onClick="{{ showSpa }}" style="flex:1;min-width:180px;height:64px;border:0;cursor:pointer;font-size:13px;letter-spacing:.2em;text-transform:uppercase;background:{{ spaBtnBg }};color:{{ spaBtnFg }};transition:all .3s ease">Strefa SPA</button>
-      <button onClick="{{ showResto }}" style="flex:1;min-width:180px;height:64px;border:0;cursor:pointer;font-size:13px;letter-spacing:.2em;text-transform:uppercase;background:{{ restoBtnBg }};color:{{ restoBtnFg }};transition:all .3s ease">Restauracja</button>
-      <button onClick="{{ showLobby }}" style="flex:1;min-width:180px;height:64px;border:0;cursor:pointer;font-size:13px;letter-spacing:.2em;text-transform:uppercase;background:{{ lobbyBtnBg }};color:{{ lobbyBtnFg }};transition:all .3s ease">Recepcja i klub</button>
+      <button onClick="{{ showSpa }}" style="flex:1;min-width:180px;height:64px;border:0;cursor:pointer;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:{{ spaBtnBg }};color:{{ spaBtnFg }};transition:all .3s ease">Strefa SPA</button>
+      <button onClick="{{ showResto }}" style="flex:1;min-width:180px;height:64px;border:0;cursor:pointer;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:{{ restoBtnBg }};color:{{ restoBtnFg }};transition:all .3s ease">Restauracja</button>
+      <button onClick="{{ showLobby }}" style="flex:1;min-width:180px;height:64px;border:0;cursor:pointer;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:{{ lobbyBtnBg }};color:{{ lobbyBtnFg }};transition:all .3s ease">Recepcja i obsługa</button>
+      <button onClick="{{ showClub }}" style="flex:1;min-width:180px;height:64px;border:0;cursor:pointer;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:{{ clubBtnBg }};color:{{ clubBtnFg }};transition:all .3s ease">Klub i usługi</button>
     </div>
     <div onMouseEnter="{{ spaPause }}" onMouseLeave="{{ spaResume }}" style="display:{{ spaShow }};position:relative;flex-direction:column">
       
@@ -358,6 +362,18 @@
             </div>
           </figcaption>
         </figure>
+        <figure data-spaslide="4" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/spa-rehab.jpg" alt="Rehabilitacja i masaże" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ spaSc4 }});filter:brightness({{ spaBr4 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ spaDH4 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Rehabilitacja i masaże</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ spaDOp4 }};transition:opacity .55s ease;text-wrap:pretty">Fizjoterapia indywidualna, masaże i zabiegi regeneracyjne — z widokiem na Tatry.</span>
+            </div>
+          </figcaption>
+        </figure>
       </div>
 
     </div>
@@ -398,15 +414,14 @@
 
     </div>
     <div style="display:{{ lobbyShow }};flex-direction:column;position:relative;background:#FFFFFF">
-      
-            <button onClick="{{ lobPrev }}" title="Poprzednie" style="position:absolute;top:calc(50% - 60px);left:clamp(10px,1.4vw,20px);z-index:3;display:flex;align-items:center;justify-content:center;width:46px;height:46px;padding:0;border:0;background:transparent;cursor:pointer;opacity:.72;transition:opacity .3s ease,transform .3s ease" style-hover="opacity:1">
+      <button onClick="{{ lobPrev }}" title="Poprzednie" style="position:absolute;top:calc(50% - 60px);left:clamp(10px,1.4vw,20px);z-index:3;display:flex;align-items:center;justify-content:center;width:46px;height:46px;padding:0;border:0;background:transparent;cursor:pointer;opacity:.72;transition:opacity .3s ease,transform .3s ease" style-hover="opacity:1">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5F0E7" stroke-width="1.1" stroke-linecap="round" aria-hidden="true" style="display:block;filter:drop-shadow(0 1px 6px rgba(15,12,9,.85))"><path d="M15 5l-7 7 7 7"></path></svg>
       </button>
       <button onClick="{{ lobNext }}" title="Następne" style="position:absolute;top:calc(50% - 60px);right:clamp(10px,1.4vw,20px);z-index:3;display:flex;align-items:center;justify-content:center;width:46px;height:46px;padding:0;border:0;background:transparent;cursor:pointer;opacity:.72;transition:opacity .3s ease,transform .3s ease" style-hover="opacity:1">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5F0E7" stroke-width="1.1" stroke-linecap="round" aria-hidden="true" style="display:block;filter:drop-shadow(0 1px 6px rgba(15,12,9,.85))"><path d="M9 5l7 7-7 7"></path></svg>
       </button>
       <div id="th-lobby-strip" data-spastrip="1" style="display:flex;gap:2px;height:clamp(400px,46vw,600px);overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#F7F4EE">
-        <figure data-lobbyslide="0" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+        <figure data-lobslide="0" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
           <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
             <img loading="lazy" decoding="async" src="assets/lobby.jpg" alt="Recepcja i concierge" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ lobSc0 }});filter:brightness({{ lobBr0 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
             <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
@@ -418,67 +433,109 @@
             </div>
           </figcaption>
         </figure>
-        <figure data-lobbyslide="1" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+        <figure data-lobslide="1" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
           <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
-            <img loading="lazy" decoding="async" src="assets/klub-salon.jpg" alt="Salon fryzjerski i gabinet kosmetologiczny" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ lobSc1 }});filter:brightness({{ lobBr1 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <img loading="lazy" decoding="async" src="assets/klub-concierge.jpg" alt="Concierge 24/7" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ lobSc1 }});filter:brightness({{ lobBr1 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
             <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
           </div>
           <figcaption style="flex:0 0 auto;height:{{ lobDH1 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
             <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
-              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Salon fryzjerski i gabinet kosmetologiczny</span>
-              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ lobDOp1 }};transition:opacity .55s ease;text-wrap:pretty">Strefa beauty z gabinetem kosmetologicznym i widokiem na las.</span>
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Concierge 24/7</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ lobDOp1 }};transition:opacity .55s ease;text-wrap:pretty">Rezerwacje wizyt i restauracji, zakupy, bilety, korespondencja i opieka nad formalnościami — codziennie, o każdej porze.</span>
             </div>
           </figcaption>
         </figure>
-        <figure data-lobbyslide="2" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+        <figure data-lobslide="2" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
           <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
-            <img loading="lazy" decoding="async" src="assets/klub-gry.jpg" alt="Sala klubowa i bar" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ lobSc2 }});filter:brightness({{ lobBr2 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <img loading="lazy" decoding="async" src="assets/klub-transport.jpg" alt="Transport" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ lobSc2 }});filter:brightness({{ lobBr2 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
             <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
           </div>
           <figcaption style="flex:0 0 auto;height:{{ lobDH2 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
             <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
-              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Sala klubowa i bar</span>
-              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ lobDOp2 }};transition:opacity .55s ease;text-wrap:pretty">Bilard, ping-pong, karty i wieczorne spotkania przy barze. Eventy, wieczorki taneczne, koncerty i spotkania.</span>
-            </div>
-          </figcaption>
-        </figure>
-        <figure data-lobbyslide="3" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
-          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
-            <img loading="lazy" decoding="async" src="assets/klub-kaplica.jpg" alt="Kaplica" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ lobSc3 }});filter:brightness({{ lobBr3 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
-            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
-          </div>
-          <figcaption style="flex:0 0 auto;height:{{ lobDH3 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
-            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
-              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Kaplica</span>
-              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ lobDOp3 }};transition:opacity .55s ease;text-wrap:pretty">Ciche wnętrze z drewnem, kamiennym ołtarzem i widokiem na las — msze i modlitwa na miejscu.</span>
-            </div>
-          </figcaption>
-        </figure>
-        <figure data-lobbyslide="4" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
-          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
-            <img loading="lazy" decoding="async" src="assets/klub-transport.jpg" alt="Transport" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ lobSc4 }});filter:brightness({{ lobBr4 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
-            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
-          </div>
-          <figcaption style="flex:0 0 auto;height:{{ lobDH4 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
-            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
               <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Transport</span>
-              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ lobDOp4 }};transition:opacity .55s ease;text-wrap:pretty">Bezpłatny transport po Zakopanem hotelowym pojazdem — z kierowcą, pod same drzwi.</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ lobDOp2 }};transition:opacity .55s ease;text-wrap:pretty">Bezpłatny transport po Zakopanem hotelowym pojazdem — z kierowcą, pod same drzwi.</span>
             </div>
           </figcaption>
         </figure>
       </div>
-
-
-
-
+    </div>
+    <div style="display:{{ clubShow }};flex-direction:column;position:relative;background:#FFFFFF">
+      <button onClick="{{ cluPrev }}" title="Poprzednie" style="position:absolute;top:calc(50% - 60px);left:clamp(10px,1.4vw,20px);z-index:3;display:flex;align-items:center;justify-content:center;width:46px;height:46px;padding:0;border:0;background:transparent;cursor:pointer;opacity:.72;transition:opacity .3s ease,transform .3s ease" style-hover="opacity:1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5F0E7" stroke-width="1.1" stroke-linecap="round" aria-hidden="true" style="display:block;filter:drop-shadow(0 1px 6px rgba(15,12,9,.85))"><path d="M15 5l-7 7 7 7"></path></svg>
+      </button>
+      <button onClick="{{ cluNext }}" title="Następne" style="position:absolute;top:calc(50% - 60px);right:clamp(10px,1.4vw,20px);z-index:3;display:flex;align-items:center;justify-content:center;width:46px;height:46px;padding:0;border:0;background:transparent;cursor:pointer;opacity:.72;transition:opacity .3s ease,transform .3s ease" style-hover="opacity:1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F5F0E7" stroke-width="1.1" stroke-linecap="round" aria-hidden="true" style="display:block;filter:drop-shadow(0 1px 6px rgba(15,12,9,.85))"><path d="M9 5l7 7-7 7"></path></svg>
+      </button>
+      <div id="th-club-strip" data-spastrip="1" style="display:flex;gap:2px;height:clamp(400px,46vw,600px);overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#F7F4EE">
+        <figure data-cluslide="0" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/klub-gry.jpg" alt="Sala klubowa i bar" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ cluSc0 }});filter:brightness({{ cluBr0 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ cluDH0 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Sala klubowa i bar</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ cluDOp0 }};transition:opacity .55s ease;text-wrap:pretty">Bilard, ping-pong, karty i wieczorne spotkania przy barze.</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure data-cluslide="1" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/klub-salon.jpg" alt="Salon fryzjerski i gabinet kosmetologiczny" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ cluSc1 }});filter:brightness({{ cluBr1 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ cluDH1 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Salon fryzjerski i gabinet kosmetologiczny</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ cluDOp1 }};transition:opacity .55s ease;text-wrap:pretty">Strefa beauty z gabinetem kosmetologicznym i widokiem na las.</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure data-cluslide="2" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/klub-kaplica.jpg" alt="Kaplica" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ cluSc2 }});filter:brightness({{ cluBr2 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ cluDH2 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Kaplica</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ cluDOp2 }};transition:opacity .55s ease;text-wrap:pretty">Ciche wnętrze z drewnem, kamiennym ołtarzem i widokiem na las — msze i modlitwa na miejscu.</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure data-cluslide="3" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/klub-eventy.jpg" alt="Eventy i wieczorki taneczne" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ cluSc3 }});filter:brightness({{ cluBr3 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ cluDH3 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Eventy i wieczorki taneczne</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ cluDOp3 }};transition:opacity .55s ease;text-wrap:pretty">Koncerty, wieczorki taneczne, spotkania tematyczne i muzyka na żywo — kalendarz wydarzeń przez cały rok.</span>
+            </div>
+          </figcaption>
+        </figure>
+        <figure data-cluslide="4" style="flex:0 0 min(78%,880px);position:relative;display:flex;flex-direction:column;margin:0;height:100%;overflow:hidden;background:#16130F;scroll-snap-align:center">
+          <div style="position:relative;flex:1 1 auto;min-height:0;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/klub-psycholog.jpg" alt="Opieka psychologa" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ cluSc4 }});filter:brightness({{ cluBr4 }});transition:transform 2.4s cubic-bezier(.2,.7,.2,1),filter 1s ease">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,9,0) 58%,rgba(15,12,9,.28) 100%)"></div>
+          </div>
+          <figcaption style="flex:0 0 auto;height:{{ cluDH4 }};overflow:hidden;background:#F7F4EE;border-top:1px solid #E4DDCF;transition:height .7s cubic-bezier(.2,.7,.2,1)">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px clamp(20px,2.4vw,40px) 20px">
+              <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px);line-height:1.15;color:#16130F">Opieka psychologa</span>
+              <span style="font-size:15px;line-height:1.6;max-width:60ch;color:#5B5346;opacity:{{ cluDOp4 }};transition:opacity .55s ease;text-wrap:pretty">Rozmowy indywidualne i wsparcie psychologa na miejscu — spokojnie, bez pośpiechu i bez wychodzenia z budynku.</span>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:1px;margin-top:1px;background:#E4DDCF">
-      <div style="flex:1 1 290px;background:#FFFFFF;padding:28px 26px;transition:background .3s ease" data-svc="1"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px"><span style="font-family:'Bodoni Moda',serif;font-size:20px">Sprzątanie i serwis</span></div><div style="font-size:14px;line-height:1.6;color:#7A7264;font-weight:400">Regularne sprzątanie apartamentu i obsługa na hotelowym poziomie.</div></div>
-      <div style="flex:1 1 290px;background:#FFFFFF;padding:28px 26px;transition:background .3s ease" data-svc="1"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px"><span style="font-family:'Bodoni Moda',serif;font-size:20px">Concierge 24/7</span></div><div style="font-size:14px;line-height:1.6;color:#7A7264;font-weight:400">Rezerwacje wizyt, zakupy, bilety i bezpłatny transport po Zakopanem.</div></div>
-      <div style="flex:1 1 290px;background:#FFFFFF;padding:28px 26px;transition:background .3s ease" data-svc="1"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px"><span style="font-family:'Bodoni Moda',serif;font-size:20px">Życie kulturalne</span></div><div style="font-size:14px;line-height:1.6;color:#7A7264;font-weight:400">Koncerty, wieczory tematyczne, warsztaty artystyczne i wycieczki.</div></div>
-      <div style="flex:1 1 290px;background:#FFFFFF;padding:28px 26px;transition:background .3s ease" data-svc="1"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px"><span style="font-family:'Bodoni Moda',serif;font-size:20px">Aktywność fizyczna</span></div><div style="font-size:14px;line-height:1.6;color:#7A7264;font-weight:400">Joga, pilates, nordic walking i gimnastyka w wodzie — pod okiem trenerów.</div></div>
-      <div style="flex:1 1 290px;background:#FFFFFF;padding:28px 26px;transition:background .3s ease" data-svc="1"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px"><span style="font-family:'Bodoni Moda',serif;font-size:20px">Rehabilitacja i masaże</span></div><div style="font-size:14px;line-height:1.6;color:#7A7264;font-weight:400">Fizjoterapia indywidualna, masaże i treningi personalne.</div></div>
-      <div style="flex:1 1 290px;background:#FFFFFF;padding:28px 26px;transition:background .3s ease" data-svc="1"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px"><span style="font-family:'Bodoni Moda',serif;font-size:20px">Opieka medyczna</span></div><div style="font-size:14px;line-height:1.6;color:#7A7264;font-weight:400">Indywidualna opieka medyczna i wsparcie psychologa — dopasowane do potrzeb.</div></div>
+      <div style="flex:1 1 290px;background:#FFFFFF;padding:28px 26px;transition:background .3s ease" data-svc="1"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px"><span style="font-family:'Bodoni Moda',serif;font-size:22px">Sprzątanie i serwis</span></div><div style="font-size:15px;line-height:1.6;color:#7A7264;font-weight:400">Regularne sprzątanie apartamentu i obsługa na hotelowym poziomie.</div></div>
+      <div style="flex:1 1 290px;background:#FFFFFF;padding:28px 26px;transition:background .3s ease" data-svc="1"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px"><span style="font-family:'Bodoni Moda',serif;font-size:22px">Concierge 24/7</span></div><div style="font-size:15px;line-height:1.6;color:#7A7264;font-weight:400">Rezerwacje wizyt, zakupy, bilety i bezpłatny transport po Zakopanem.</div></div>
+      <div style="flex:1 1 290px;background:#FFFFFF;padding:28px 26px;transition:background .3s ease" data-svc="1"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px"><span style="font-family:'Bodoni Moda',serif;font-size:22px">Życie kulturalne</span></div><div style="font-size:15px;line-height:1.6;color:#7A7264;font-weight:400">Koncerty, wieczory tematyczne, warsztaty artystyczne i wycieczki.</div></div>
+      <div style="flex:1 1 290px;background:#FFFFFF;padding:28px 26px;transition:background .3s ease" data-svc="1"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px"><span style="font-family:'Bodoni Moda',serif;font-size:22px">Aktywność fizyczna</span></div><div style="font-size:15px;line-height:1.6;color:#7A7264;font-weight:400">Joga, pilates, nordic walking i gimnastyka w wodzie — pod okiem trenerów.</div></div>
+      <div style="flex:1 1 290px;background:#FFFFFF;padding:28px 26px;transition:background .3s ease" data-svc="1"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px"><span style="font-family:'Bodoni Moda',serif;font-size:22px">Rehabilitacja i masaże</span></div><div style="font-size:15px;line-height:1.6;color:#7A7264;font-weight:400">Fizjoterapia indywidualna, masaże i treningi personalne.</div></div>
+      <div style="flex:1 1 290px;background:#FFFFFF;padding:28px 26px;transition:background .3s ease" data-svc="1"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px"><span style="font-family:'Bodoni Moda',serif;font-size:22px">Opieka medyczna</span></div><div style="font-size:15px;line-height:1.6;color:#7A7264;font-weight:400">Indywidualna opieka medyczna i wsparcie psychologa — dopasowane do potrzeb.</div></div>
     </div>
   </div>
 </section>
@@ -487,71 +544,71 @@
   <div style="max-width:1440px;margin:0 auto">
     <div data-reveal="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:52px">
       <div>
-        <div style="font-size:13px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">04</span>Budynek</div>
-        <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(38px,4.6vw,76px);letter-spacing:-.02em;line-height:1.06;margin:0">Przejdź się po kondygnacjach</h2>
+        <div style="font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">04</span>Rzuty</div>
+        <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(38px,4.6vw,76px);letter-spacing:-.02em;line-height:1.06;margin:0">Przejdź się <em style="font-style:italic;color:#A6824E">po kondygnacjach</em></h2>
       </div>
     </div>
-    <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:1px;background:#E4DDCF;min-height:620px">
+    <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:1px;background:#E4DDCF;min-height:510px">
       <div style="position:relative;z-index:3;flex:1 1 250px;display:flex;flex-direction:column;background:#F7F4EE">
         <button onClick="{{ pickFloor }}" data-floor="0" style="position:relative;text-align:left;padding:0 58px 0 22px;height:{{ f0h }};border:0;border-left:3px solid {{ f0line }};cursor:pointer;background:{{ f0bg }};color:{{ f0fg }};display:flex;flex-direction:column;justify-content:center;gap:3px;overflow:hidden;transition:height .45s cubic-bezier(.2,.7,.2,1),background .35s ease,color .35s ease,border-color .35s ease">
           <span style="font-size:15px;letter-spacing:.06em;transform:translateX({{ f0shift }});transition:transform .45s cubic-bezier(.2,.7,.2,1)">Piętro 4</span>
-          <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f0subOp }};max-height:{{ f0subH }};transform:translateX({{ f0shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">11 lokali</span>
-          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f0cShow }};align-items:baseline;gap:4px;color:{{ f0cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:20px;line-height:1">{{ f0count }}</span></span>
+          <span style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f0subOp }};max-height:{{ f0subH }};transform:translateX({{ f0shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">11 lokali</span>
+          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f0cShow }};align-items:baseline;gap:4px;color:{{ f0cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:22px;line-height:1">{{ f0count }}</span></span>
           <span style="position:absolute;left:0;top:0;height:2px;width:{{ f0top }};background:{{ f0barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
           <span style="position:absolute;left:0;bottom:0;height:2px;width:{{ f0bar }};background:{{ f0barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
         </button>
         <button onClick="{{ pickFloor }}" data-floor="1" style="position:relative;text-align:left;padding:0 58px 0 22px;height:{{ f1h }};border:0;border-left:3px solid {{ f1line }};cursor:pointer;background:{{ f1bg }};color:{{ f1fg }};display:flex;flex-direction:column;justify-content:center;gap:3px;overflow:hidden;transition:height .45s cubic-bezier(.2,.7,.2,1),background .35s ease,color .35s ease,border-color .35s ease">
           <span style="font-size:15px;letter-spacing:.06em;transform:translateX({{ f1shift }});transition:transform .45s cubic-bezier(.2,.7,.2,1)">Piętro 3</span>
-          <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f1subOp }};max-height:{{ f1subH }};transform:translateX({{ f1shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">14 lokali</span>
-          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f1cShow }};align-items:baseline;gap:4px;color:{{ f1cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:20px;line-height:1">{{ f1count }}</span></span>
+          <span style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f1subOp }};max-height:{{ f1subH }};transform:translateX({{ f1shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">14 lokali</span>
+          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f1cShow }};align-items:baseline;gap:4px;color:{{ f1cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:22px;line-height:1">{{ f1count }}</span></span>
           <span style="position:absolute;left:0;top:0;height:2px;width:{{ f1top }};background:{{ f1barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
           <span style="position:absolute;left:0;bottom:0;height:2px;width:{{ f1bar }};background:{{ f1barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
         </button>
         <button onClick="{{ pickFloor }}" data-floor="2" style="position:relative;text-align:left;padding:0 58px 0 22px;height:{{ f2h }};border:0;border-left:3px solid {{ f2line }};cursor:pointer;background:{{ f2bg }};color:{{ f2fg }};display:flex;flex-direction:column;justify-content:center;gap:3px;overflow:hidden;transition:height .45s cubic-bezier(.2,.7,.2,1),background .35s ease,color .35s ease,border-color .35s ease">
           <span style="font-size:15px;letter-spacing:.06em;transform:translateX({{ f2shift }});transition:transform .45s cubic-bezier(.2,.7,.2,1)">Piętro 2</span>
-          <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f2subOp }};max-height:{{ f2subH }};transform:translateX({{ f2shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">17 lokali</span>
-          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f2cShow }};align-items:baseline;gap:4px;color:{{ f2cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:20px;line-height:1">{{ f2count }}</span></span>
+          <span style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f2subOp }};max-height:{{ f2subH }};transform:translateX({{ f2shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">17 lokali</span>
+          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f2cShow }};align-items:baseline;gap:4px;color:{{ f2cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:22px;line-height:1">{{ f2count }}</span></span>
           <span style="position:absolute;left:0;top:0;height:2px;width:{{ f2top }};background:{{ f2barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
           <span style="position:absolute;left:0;bottom:0;height:2px;width:{{ f2bar }};background:{{ f2barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
         </button>
         <button onClick="{{ pickFloor }}" data-floor="3" style="position:relative;text-align:left;padding:0 58px 0 22px;height:{{ f3h }};border:0;border-left:3px solid {{ f3line }};cursor:pointer;background:{{ f3bg }};color:{{ f3fg }};display:flex;flex-direction:column;justify-content:center;gap:3px;overflow:hidden;transition:height .45s cubic-bezier(.2,.7,.2,1),background .35s ease,color .35s ease,border-color .35s ease">
           <span style="font-size:15px;letter-spacing:.06em;transform:translateX({{ f3shift }});transition:transform .45s cubic-bezier(.2,.7,.2,1)">Piętro 1</span>
-          <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f3subOp }};max-height:{{ f3subH }};transform:translateX({{ f3shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">17 lokali</span>
-          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f3cShow }};align-items:baseline;gap:4px;color:{{ f3cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:20px;line-height:1">{{ f3count }}</span></span>
+          <span style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f3subOp }};max-height:{{ f3subH }};transform:translateX({{ f3shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">17 lokali</span>
+          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f3cShow }};align-items:baseline;gap:4px;color:{{ f3cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:22px;line-height:1">{{ f3count }}</span></span>
           <span style="position:absolute;left:0;top:0;height:2px;width:{{ f3top }};background:{{ f3barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
           <span style="position:absolute;left:0;bottom:0;height:2px;width:{{ f3bar }};background:{{ f3barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
         </button>
         <button onClick="{{ pickFloor }}" data-floor="4" style="position:relative;text-align:left;padding:0 58px 0 22px;height:{{ f4h }};border:0;border-left:3px solid {{ f4line }};cursor:pointer;background:{{ f4bg }};color:{{ f4fg }};display:flex;flex-direction:column;justify-content:center;gap:3px;overflow:hidden;transition:height .45s cubic-bezier(.2,.7,.2,1),background .35s ease,color .35s ease,border-color .35s ease">
           <span style="font-size:15px;letter-spacing:.06em;transform:translateX({{ f4shift }});transition:transform .45s cubic-bezier(.2,.7,.2,1)">Parter</span>
-          <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f4subOp }};max-height:{{ f4subH }};transform:translateX({{ f4shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">7 lokali · usługi</span>
-          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f4cShow }};align-items:baseline;gap:4px;color:{{ f4cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:20px;line-height:1">{{ f4count }}</span></span>
+          <span style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f4subOp }};max-height:{{ f4subH }};transform:translateX({{ f4shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">7 lokali · usługi</span>
+          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f4cShow }};align-items:baseline;gap:4px;color:{{ f4cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:22px;line-height:1">{{ f4count }}</span></span>
           <span style="position:absolute;left:0;top:0;height:2px;width:{{ f4top }};background:{{ f4barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
           <span style="position:absolute;left:0;bottom:0;height:2px;width:{{ f4bar }};background:{{ f4barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
         </button>
         <button onClick="{{ pickFloor }}" data-floor="5" style="position:relative;text-align:left;padding:0 58px 0 22px;height:{{ f5h }};border:0;border-left:3px solid {{ f5line }};cursor:pointer;background:{{ f5bg }};color:{{ f5fg }};display:flex;flex-direction:column;justify-content:center;gap:3px;overflow:hidden;transition:height .45s cubic-bezier(.2,.7,.2,1),background .35s ease,color .35s ease,border-color .35s ease">
           <span style="font-size:15px;letter-spacing:.06em;transform:translateX({{ f5shift }});transition:transform .45s cubic-bezier(.2,.7,.2,1)">Garaż −1</span>
-          <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f5subOp }};max-height:{{ f5subH }};transform:translateX({{ f5shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">basen · technika</span>
-          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f5cShow }};align-items:baseline;gap:4px;color:{{ f5cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:20px;line-height:1">{{ f5count }}</span></span>
+          <span style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f5subOp }};max-height:{{ f5subH }};transform:translateX({{ f5shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">basen · technika</span>
+          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f5cShow }};align-items:baseline;gap:4px;color:{{ f5cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:22px;line-height:1">{{ f5count }}</span></span>
           <span style="position:absolute;left:0;top:0;height:2px;width:{{ f5top }};background:{{ f5barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
           <span style="position:absolute;left:0;bottom:0;height:2px;width:{{ f5bar }};background:{{ f5barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
         </button>
         <button onClick="{{ pickFloor }}" data-floor="6" style="position:relative;text-align:left;padding:0 58px 0 22px;height:{{ f6h }};border:0;border-left:3px solid {{ f6line }};cursor:pointer;background:{{ f6bg }};color:{{ f6fg }};display:flex;flex-direction:column;justify-content:center;gap:3px;overflow:hidden;transition:height .45s cubic-bezier(.2,.7,.2,1),background .35s ease,color .35s ease,border-color .35s ease">
           <span style="font-size:15px;letter-spacing:.06em;transform:translateX({{ f6shift }});transition:transform .45s cubic-bezier(.2,.7,.2,1)">Garaż −2</span>
-          <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f6subOp }};max-height:{{ f6subH }};transform:translateX({{ f6shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">parking</span>
-          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f6cShow }};align-items:baseline;gap:4px;color:{{ f6cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:20px;line-height:1">{{ f6count }}</span></span>
+          <span style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f6subOp }};max-height:{{ f6subH }};transform:translateX({{ f6shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">parking</span>
+          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f6cShow }};align-items:baseline;gap:4px;color:{{ f6cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:22px;line-height:1">{{ f6count }}</span></span>
           <span style="position:absolute;left:0;top:0;height:2px;width:{{ f6top }};background:{{ f6barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
           <span style="position:absolute;left:0;bottom:0;height:2px;width:{{ f6bar }};background:{{ f6barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
         </button>
         <button onClick="{{ pickFloor }}" data-floor="7" style="position:relative;text-align:left;padding:0 58px 0 22px;height:{{ f7h }};border:0;border-left:3px solid {{ f7line }};cursor:pointer;background:{{ f7bg }};color:{{ f7fg }};display:flex;flex-direction:column;justify-content:center;gap:3px;overflow:hidden;transition:height .45s cubic-bezier(.2,.7,.2,1),background .35s ease,color .35s ease,border-color .35s ease">
           <span style="font-size:15px;letter-spacing:.06em;transform:translateX({{ f7shift }});transition:transform .45s cubic-bezier(.2,.7,.2,1)">Elewacje</span>
-          <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f7subOp }};max-height:{{ f7subH }};transform:translateX({{ f7shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">widoki budynku</span>
-          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f7cShow }};align-items:baseline;gap:4px;color:{{ f7cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:20px;line-height:1">{{ f7count }}</span></span>
+          <span style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:{{ f7subOp }};max-height:{{ f7subH }};transform:translateX({{ f7shift }});transition:opacity .4s ease,max-height .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)">widoki budynku</span>
+          <span style="position:absolute;right:22px;top:50%;transform:translateY(-50%);display:{{ f7cShow }};align-items:baseline;gap:4px;color:{{ f7cFg }}"><span style="font-family:'Bodoni Moda',serif;font-size:22px;line-height:1">{{ f7count }}</span></span>
           <span style="position:absolute;left:0;top:0;height:2px;width:{{ f7top }};background:{{ f7barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
           <span style="position:absolute;left:0;bottom:0;height:2px;width:{{ f7bar }};background:{{ f7barFg }};transition:width .5s cubic-bezier(.2,.7,.2,1),background .35s ease"></span>
         </button>
       </div>
-      <div style="display:{{ listShow }};flex:0 1 232px;min-width:200px;flex-direction:column;background:#FFFFFF;min-height:620px;max-height:760px">
-        <div style="flex:1;min-height:0;overflow-y:auto">
+      <div style="display:{{ listShow }};flex:0 1 232px;min-width:200px;flex-direction:column;background:#FFFFFF;align-self:flex-start;height:510px;position:relative">
+        <div id="th-unit-scroll" style="flex:1;min-height:0;overflow-y:auto">
           <sc-for list="{{ unitList }}" as="u" hint-placeholder-count="0">
             <button onClick="{{ pickUnit }}" onMouseEnter="{{ hoverUnit }}" onMouseLeave="{{ unhoverUnit }}" data-unit="{{ u.n }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;border:0;border-bottom:1px solid #F0EADD;background:{{ u.rowBg }};color:{{ u.rowFg }};cursor:pointer;text-align:left;transition:background .25s ease,color .25s ease" style-hover="background:#EDE6D8">
               <span style="display:flex;align-items:baseline;gap:8px"><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:{{ u.subFg }}">Lokal</span><span style="font-family:'Bodoni Moda',serif;font-size:22px;line-height:1">{{ u.n }}</span></span>
@@ -559,21 +616,24 @@
             </button>
           </sc-for>
         </div>
+        <div id="th-unit-hint" style="position:absolute;left:0;right:0;bottom:0;height:34px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:5px;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.92));pointer-events:none;opacity:0;transition:opacity .3s ease">
+          <svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="#A6824E" stroke-width="1.2" aria-hidden="true" style="display:block;animation:thNudge 1.8s ease-in-out infinite"><path d="M1 1l8 7 8-7"></path></svg>
+        </div>
       </div>
-      <div style="flex:3 1 380px;background:#FFFFFF;position:relative;min-height:620px;overflow:hidden">
+      <div style="flex:3 1 380px;background:#FFFFFF;position:relative;min-height:510px;overflow:hidden">
         <div id="th-plan-outer" style="display:{{ planShow }};position:absolute;left:0;right:0;top:0;bottom:0;align-items:center;justify-content:center;padding:18px">
           <div id="th-plan-wrap" style="position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center">
             <div id="th-plan-box" style="position:relative;display:inline-block;max-width:100%">
-              <img id="th-plan-img" alt="Rzut kondygnacji" onClick="{{ zoomPlan }}" style="display:{{ planImgShow }};max-width:100%;max-height:582px;object-fit:contain;cursor:zoom-in">
+              <img id="th-plan-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Rzut kondygnacji" onClick="{{ zoomPlan }}" style="display:{{ planImgShow }};max-width:100%;max-height:474px;object-fit:contain;cursor:zoom-in">
               <sc-for list="{{ planSpots }}" as="u" hint-placeholder-count="0">
                 <button onClick="{{ pickUnit }}" onMouseEnter="{{ hoverUnit }}" onMouseLeave="{{ unhoverUnit }}" data-unit="{{ u.n }}" title="{{ u.title }}" style="position:absolute;left:{{ u.x }}%;top:{{ u.y }}%;width:{{ u.w }}%;height:{{ u.h }}%;padding:0;border:1px solid {{ u.bd }};background:{{ u.bg }};cursor:pointer;display:flex;align-items:flex-start;justify-content:flex-end;transition:background .2s ease,border-color .2s ease">
-                  <span style="margin:4px;padding:2px 7px;background:{{ u.chipBg }};color:{{ u.chipFg }};font-size:11px;letter-spacing:.06em;line-height:1.5;opacity:{{ u.chipOp }};transition:opacity .2s ease">{{ u.n }}</span>
+                  <span style="margin:4px;padding:2px 7px;background:{{ u.chipBg }};color:{{ u.chipFg }};font-size:12px;letter-spacing:.06em;line-height:1.5;opacity:{{ u.chipOp }};transition:opacity .2s ease">{{ u.n }}</span>
                 </button>
               </sc-for>
             </div>
             <canvas id="th-floor-canvas" style="max-width:100%;max-height:600px;display:{{ planCanvasShow }}"></canvas>
           </div>
-          <div id="th-floor-status" style="position:absolute;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#7A7264">wczytywanie rzutu…</div>
+          <div id="th-floor-status" style="position:absolute;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#7A7264">wczytywanie rzutu…</div>
         </div>
       </div>
     </div>
@@ -581,7 +641,7 @@
     <div style="display:{{ cardShow }};margin-top:1px;background:#FFFFFF;border-top:1px solid #E4DDCF;animation:thUp .5s cubic-bezier(.2,.7,.2,1) both">
       <div id="th-unit-card" style="width:100%;display:flex;flex-wrap:wrap;gap:1px;background:#E4DDCF">
         <div style="flex:2 1 460px;min-width:0;display:flex;align-items:center;justify-content:center;padding:clamp(22px,3vw,46px);background:#FBF9F5">
-          <img id="th-card-img" alt="Rzut lokalu" style="max-width:100%;max-height:min(78vh,860px);object-fit:contain"></div>
+          <img id="th-card-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Rzut lokalu" style="max-width:100%;max-height:min(78vh,860px);object-fit:contain"></div>
         <div style="flex:1 1 340px;display:flex;flex-direction:column;gap:clamp(20px,2.2vw,30px);padding:clamp(26px,3vw,44px);background:#16130F;color:#F2ECE1">
           <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px">
             <div style="display:flex;flex-direction:column;gap:12px">
@@ -592,16 +652,22 @@
           </div>
           <div style="display:{{ cardTotalShow }};flex-direction:column;gap:10px;padding-top:clamp(18px,2vw,24px);border-top:1px solid #2A241D">
             <span style="font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#8C8377">Powierzchnia lokalu</span>
-            <span style="display:flex;align-items:baseline;gap:7px"><span style="font-family:'Bodoni Moda',serif;font-size:36px;line-height:1">{{ cardTotal }}</span><span style="font-size:14px;color:#A89C8A">m²</span></span>
+            <span style="display:flex;align-items:baseline;gap:7px"><span style="font-family:'Bodoni Moda',serif;font-size:36px;line-height:1">{{ cardTotal }}</span><span style="font-size:15px;color:#A89C8A">m²</span></span>
+          </div>
+          <div style="display:{{ cardRoomsShow }};flex-direction:column;gap:12px;padding-top:clamp(18px,2vw,24px);border-top:1px solid #2A241D">
+            <span style="font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#8C8377">Rozkład pomieszczeń</span>
+            <sc-for list="{{ cardRoomsList }}" as="r" hint-placeholder-count="3">
+              <span style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;font-size:15px"><span style="color:#A89C8A">{{ r.label }}</span><span style="white-space:nowrap">{{ r.val }} m²</span></span>
+            </sc-for>
           </div>
           <div style="display:{{ cardExShow }};flex-direction:column;gap:12px;padding-top:clamp(18px,2vw,24px);border-top:1px solid #2A241D">
             <span style="font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#8C8377">Do lokalu</span>
             <sc-for list="{{ cardExList }}" as="x" hint-placeholder-count="0">
-              <span style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;font-size:14px"><span style="color:#A89C8A">{{ x.label }}</span><span>{{ x.val }} m²</span></span>
+              <span style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;font-size:15px"><span style="color:#A89C8A">{{ x.label }}</span><span>{{ x.val }} m²</span></span>
             </sc-for>
           </div>
           <div style="display:flex;flex-direction:column;gap:10px;margin-top:auto;padding-top:clamp(18px,2vw,24px)">
-            <a href="#kontakt" onClick="{{ askUnitCard }}" style="display:flex;align-items:center;justify-content:center;height:52px;background:#C6A87C;color:#16130F;font-size:11px;letter-spacing:.2em;text-transform:uppercase;transition:background .3s ease" style-hover="background:#D8BB8E">Zapytaj o ten lokal</a>
+            <a href="#kontakt" onClick="{{ askUnitCard }}" style="display:flex;align-items:center;justify-content:center;height:58px;background:#C6A87C;color:#16130F;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;transition:background .3s ease" style-hover="background:#D8BB8E">Zapytaj o ten lokal</a>
             <div style="display:flex;gap:10px">
               <button onClick="{{ cardPrev }}" style="flex:1;height:44px;border:1px solid #2E2A24;background:transparent;color:#A89C8A;cursor:pointer;font-size:10px;letter-spacing:.2em;text-transform:uppercase;transition:color .3s ease,border-color .3s ease" style-hover="color:#F2ECE1;border-color:#C6A87C">Poprzedni</button>
               <button onClick="{{ cardNext }}" style="flex:1;height:44px;border:1px solid #2E2A24;background:transparent;color:#A89C8A;cursor:pointer;font-size:10px;letter-spacing:.2em;text-transform:uppercase;transition:color .3s ease,border-color .3s ease" style-hover="color:#F2ECE1;border-color:#C6A87C">Następny</button>
@@ -615,23 +681,27 @@
 
 <section id="kalkulator" data-screen-label="Cennik" style="padding:clamp(72px,10vw,130px) clamp(16px,3vw,40px);background:#F7F4EE">
   <div style="max-width:1240px;margin:0 auto">
-    <div data-reveal="" style="text-align:center;margin-bottom:58px">
-      <div style="font-size:13px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">05</span>Formy korzystania</div>
-      <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(40px,5vw,84px);letter-spacing:-.02em;line-height:1.06;margin:0 auto 18px;max-width:22ch">Policz swój miesięczny koszt</h2>
-      <p style="max-width:600px;margin:0 auto;font-size:17px;line-height:1.7;color:#6B655A;font-weight:400">Wybierz formę i metraż — pokażemy pełny koszt z obowiązkowymi opłatami.</p>
+    <div data-reveal="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:52px">
+      <div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">05</span>Cennik</div>
+        <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(38px,4.6vw,76px);letter-spacing:-.02em;line-height:1.06;margin:0;max-width:16ch">Policz swój <em style="font-style:italic;color:#A6824E">miesięczny koszt</em></h2>
+      </div>
+      <div style="max-width:360px;padding:4px 0 6px 24px;border-left:1px solid #E4DDCF">
+        <p style="margin:0;font-size:17px;line-height:1.75;color:#6B655A;font-weight:400;text-wrap:pretty">Wybierz formę i metraż — pokażemy pełny koszt z obowiązkowymi opłatami.</p>
+      </div>
       </div>
     </div>
     <div data-reveal="" style="display:flex;gap:1px;background:#E4DDCF;flex-wrap:wrap">
-      <button onClick="{{ pickMode }}" data-mode="0" style="flex:1;min-width:200px;height:70px;border:0;cursor:pointer;font-size:13px;letter-spacing:.18em;text-transform:uppercase;background:{{ m0bg }};color:{{ m0fg }};transition:all .3s ease">Zakup apartamentu</button>
-      <button onClick="{{ pickMode }}" data-mode="1" style="flex:1;min-width:200px;height:70px;border:0;cursor:pointer;font-size:13px;letter-spacing:.18em;text-transform:uppercase;background:{{ m1bg }};color:{{ m1fg }};transition:all .3s ease">Wynajem długoterminowy</button>
-      <button onClick="{{ pickMode }}" data-mode="2" style="flex:1;min-width:200px;height:70px;border:0;cursor:pointer;font-size:13px;letter-spacing:.18em;text-transform:uppercase;background:{{ m2bg }};color:{{ m2fg }};transition:all .3s ease">Wynajem krótkoterminowy</button>
+      <button onClick="{{ pickMode }}" data-mode="0" style="flex:1;min-width:200px;height:70px;border:0;cursor:pointer;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:{{ m0bg }};color:{{ m0fg }};transition:all .3s ease">Zakup apartamentu</button>
+      <button onClick="{{ pickMode }}" data-mode="1" style="flex:1;min-width:200px;height:70px;border:0;cursor:pointer;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:{{ m1bg }};color:{{ m1fg }};transition:all .3s ease">Wynajem długoterminowy</button>
+      <button onClick="{{ pickMode }}" data-mode="2" style="flex:1;min-width:200px;height:70px;border:0;cursor:pointer;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;background:{{ m2bg }};color:{{ m2fg }};transition:all .3s ease">Wynajem krótkoterminowy</button>
     </div>
     <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:1px;background:#E4DDCF;margin-top:1px">
       <div style="background:#FFFFFF;padding:clamp(32px,4vw,52px) clamp(24px,3.4vw,48px)">
-        <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#7A7264;margin-bottom:34px">{{ modeNote }}</div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#7A7264;margin-bottom:34px">{{ modeNote }}</div>
         <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:14px">
           <span style="font-size:15px;color:#6B655A;font-weight:400">Metraż apartamentu</span>
-          <span style="font-family:'Bodoni Moda',serif;font-size:34px;line-height:1">{{ area }} m²</span>
+          <span style="font-family:'Bodoni Moda',serif;font-size:28px;line-height:1">{{ area }} m²</span>
         </div>
         <input type="range" min="25" max="65" step="1" value="{{ area }}" onInput="{{ setArea }}" style="width:100%;height:22px;cursor:grab">
         <div style="display:flex;justify-content:space-between;font-size:13px;color:#7D766A;margin-top:4px"><span>25 m²</span><span>65 m²</span></div>
@@ -645,20 +715,20 @@
 
         <div style="display:grid;gap:22px">
           <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px">
-            <div><div style="font-size:16px;color:#16130F">{{ primaryLabel }}</div><div style="font-size:13px;color:#7D766A;font-weight:400;margin-top:4px">{{ primaryHint }}</div></div>
-            <div style="font-family:'Bodoni Moda',serif;font-size:26px;white-space:nowrap">{{ primaryValue }}</div>
+            <div><div style="font-size:15px;color:#16130F">{{ primaryLabel }}</div><div style="font-size:13px;color:#7D766A;font-weight:400;margin-top:4px">{{ primaryHint }}</div></div>
+            <div style="font-family:'Bodoni Moda',serif;font-size:28px;white-space:nowrap">{{ primaryValue }}</div>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px">
-            <div><div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="flex:0 0 auto;min-width:214px;font-size:16px;color:#16130F">Zarządzanie obiektem</span><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#A6824E;border:1px solid #E0D4BE;padding:3px 8px">obowiązkowe</span></div><div style="font-size:13px;color:#7D766A;font-weight:400;margin-top:4px">Fundusz remontowy, media, pralnia, sprzątanie, concierge, transport, eventy</div></div>
+            <div><div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="flex:0 0 auto;min-width:214px;font-size:15px;color:#16130F">Zarządzanie obiektem</span><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#A6824E;border:1px solid #E0D4BE;padding:3px 8px">obowiązkowe</span></div><div style="font-size:13px;color:#7D766A;font-weight:400;margin-top:4px">Fundusz remontowy, media, pralnia, sprzątanie, concierge, transport, eventy</div></div>
             <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:right">
-              <span style="font-family:'Bodoni Moda',serif;font-size:26px;line-height:1;white-space:nowrap">{{ feeMgmtValue }}</span>
+              <span style="font-family:'Bodoni Moda',serif;font-size:28px;line-height:1;white-space:nowrap">{{ feeMgmtValue }}</span>
               <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#7D766A;white-space:nowrap">{{ perMonthLabel }}</span>
             </div>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px">
-            <div><div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="flex:0 0 auto;min-width:214px;font-size:16px;color:#16130F">Wyżywienie i opieka</span><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#A6824E;border:1px solid #E0D4BE;padding:3px 8px">obowiązkowe</span></div><div style="font-size:13px;color:#7D766A;font-weight:400;margin-top:4px">4 posiłki dziennie, całodobowy bar bezalkoholowy, dietetyk, trenerzy personalni</div></div>
+            <div><div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="flex:0 0 auto;min-width:214px;font-size:15px;color:#16130F">Wyżywienie i opieka</span><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#A6824E;border:1px solid #E0D4BE;padding:3px 8px">obowiązkowe</span></div><div style="font-size:13px;color:#7D766A;font-weight:400;margin-top:4px">4 posiłki dziennie, całodobowy bar bezalkoholowy, dietetyk, trenerzy personalni</div></div>
             <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:right">
-              <span style="font-family:'Bodoni Moda',serif;font-size:26px;line-height:1;white-space:nowrap">{{ feeMealsValue }}</span>
+              <span style="font-family:'Bodoni Moda',serif;font-size:28px;line-height:1;white-space:nowrap">{{ feeMealsValue }}</span>
               <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#7D766A;white-space:nowrap">{{ perMonthLabel }}</span>
             </div>
           </div>
@@ -667,7 +737,7 @@
       <div style="background:#16130F;color:#F2ECE1;padding:clamp(32px,4vw,52px) clamp(24px,3.4vw,48px);display:flex;flex-direction:column;justify-content:space-between">
         <div>
           <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px">
-            <span style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#C6A87C">Koszt miesięczny</span>
+            <span style="font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#C6A87C">Koszt miesięczny</span>
             <span style="display:flex;align-items:center;gap:14px">
               <button onClick="{{ setCur }}" data-cur="PLN" style="padding:3px 2px;border:0;border-bottom:1px solid {{ curPlnLine }};background:transparent;color:{{ curPlnFg }};cursor:pointer;font-size:12px;font-weight:{{ curPlnW }};letter-spacing:.2em;transition:color .3s ease,border-color .3s ease" style-hover="color:#F5F0E7">PLN</button>
               <span style="width:1px;height:11px;background:#3A332B"></span>
@@ -679,12 +749,12 @@
           <div style="font-family:'Bodoni Moda',serif;font-size:clamp(46px,6vw,78px);line-height:1;letter-spacing:-.02em">{{ monthlyTotal }}</div>
           <div style="font-size:15px;color:#A89C8A;font-weight:400;margin-top:12px">{{ monthlyNote }}</div>
           <div style="display:{{ oneTimeShow }};margin-top:38px;padding-top:32px;border-top:1px solid #2E2A24">
-            <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#B4A896;margin-bottom:12px">Cena apartamentu</div>
-            <div style="font-family:'Bodoni Moda',serif;font-size:44px;line-height:1">{{ purchasePrice }}</div>
+            <div style="font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#B4A896;margin-bottom:12px">Cena apartamentu</div>
+            <div style="font-family:'Bodoni Moda',serif;font-size:clamp(34px,3.4vw,44px);line-height:1">{{ purchasePrice }}</div>
           </div>
         </div>
         <div style="margin-top:40px">
-          <a href="#kontakt" style="display:flex;align-items:center;justify-content:center;height:58px;background:#C6A87C;color:#16130F;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500" style-hover="background:#B29066">Zapytaj o dostępność</a>
+          <a href="#kontakt" style="display:flex;align-items:center;justify-content:center;height:58px;background:#C6A87C;color:#16130F;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;font-weight:500" style-hover="background:#B29066">Zapytaj o apartament</a>
           <p style="margin:16px 0 0;font-size:13px;line-height:1.6;color:#8F8474;font-weight:400">Wartości szacunkowe, wyliczone liniowo w widełkach cenowych inwestycji. Nie stanowią oferty w rozumieniu przepisów Kodeksu cywilnego.</p>
         </div>
       </div>
@@ -692,7 +762,7 @@
     <div data-reveal="" style="display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;margin-top:52px;padding:clamp(28px,3.6vw,44px) clamp(22px,3.4vw,48px);border:1px solid #D6CEBE;background:#FFFFFF">
       <svg width="52" height="52" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M26 3l20 8v14c0 12-8.4 20-20 24C14.4 45 6 37 6 25V11l20-8z" stroke="#C6A87C" stroke-width="1.4"></path><path d="M18 26l6 6 12-13" stroke="#C6A87C" stroke-width="1.4"></path></svg>
       <div>
-        <div style="font-family:'Bodoni Moda',serif;font-size:30px;margin-bottom:10px">Gwarancja odkupu apartamentu</div>
+        <div style="font-family:'Bodoni Moda',serif;font-size:28px;margin-bottom:10px">Gwarancja odkupu apartamentu</div>
         <div style="font-size:17px;line-height:1.7;color:#55504A;font-weight:400;text-wrap:pretty">Jeśli kupisz apartament na własność, gwarantujemy jego odkup w każdym czasie — pomniejszony o ustaloną wcześniej amortyzację.</div>
       </div>
     </div>
@@ -702,8 +772,8 @@
 <section id="galeria" data-screen-label="Galeria" style="padding:clamp(72px,10vw,130px) clamp(16px,3vw,40px);background:#FFFFFF">
   <div style="max-width:1440px;margin:0 auto">
     <div data-reveal="" style="margin-bottom:52px">
-      <div style="font-size:13px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">06</span>Galeria</div>
-      <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(38px,4.6vw,76px);letter-spacing:-.02em;line-height:1.06;margin:0">Zobacz Tatry Hills</h2>
+      <div style="font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">06</span>Galeria</div>
+      <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(38px,4.6vw,76px);letter-spacing:-.02em;line-height:1.06;margin:0">Zobacz <em style="font-style:italic;color:#A6824E">Tatry Hills</em></h2>
     </div>
     <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));grid-auto-flow:dense;gap:12px">
       <div data-gph="1" style="position:relative;overflow:hidden;grid-column:1/-1;grid-row:span 2;max-height:640px;"><img loading="lazy" decoding="async" src="assets/exterior-summer.jpg" alt="Budynek latem" data-src="assets/exterior-summer.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Budynek latem</div></div>
@@ -711,9 +781,9 @@
       <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/spa-pool.jpg" alt="Basen i jacuzzi" data-src="assets/spa-pool.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Basen i jacuzzi</div></div>
       <div data-gph="1" style="position:relative;overflow:hidden;"><img loading="lazy" decoding="async" src="assets/spa-sauna.jpg" alt="Sauny" data-src="assets/spa-sauna.jpg" onClick="{{ openLightbox }}" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;filter:saturate(.92);transition:filter .4s ease,transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="filter:saturate(1.05);transform:scale(1.015)"><div style="position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(15,12,9,.7),transparent);color:#F5F0E7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none">Sauny</div></div>
       <button onClick="{{ openGal }}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;width:100%;aspect-ratio:16/10;border:1px solid #C6A87C;background:#FFFFFF;cursor:pointer;transition:background .35s ease,border-color .35s ease" style-hover="background:#F7F4EE;border-color:#A6824E">
-        <span style="font-family:'Bodoni Moda',serif;font-size:clamp(38px,3.4vw,56px);line-height:1;color:#A6824E">+{{ galMoreCount }}</span>
-        <span style="display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#A6824E">Zobacz więcej zdjęć
-          <svg width="24" height="8" viewBox="0 0 26 8" fill="none" stroke="#A6824E" stroke-width="1" aria-hidden="true" style="display:block"><path d="M0 4h24M20 1l4 3-4 3"></path></svg>
+        <span style="display:flex;align-items:baseline;justify-content:center;gap:2px;font-family:'Bodoni Moda',serif;font-size:clamp(38px,3.4vw,56px);line-height:1;color:#A6824E"><span style="font-size:.5em">+</span>{{ galMoreCount }}</span>
+        <span style="display:flex;align-items:center;justify-content:center;gap:12px;font-size:13px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#A6824E;text-align:center"><span style="margin-right:-.26em">Zobacz więcej zdjęć</span>
+          <svg width="24" height="8" viewBox="0 0 26 8" fill="none" stroke="#A6824E" stroke-width="1" aria-hidden="true" style="display:block;flex:0 0 auto"><path d="M0 4h24M20 1l4 3-4 3"></path></svg>
         </span>
       </button>
     </div>
@@ -721,9 +791,9 @@
       <div style="flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:clamp(18px,2.2vw,30px) clamp(18px,3vw,44px);border-bottom:1px solid #E4DDCF">
         <div style="display:flex;align-items:baseline;gap:16px;color:#16130F">
           <span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.9vw,28px)">Galeria</span>
-          <span style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8F8474">{{ galTotal }} zdjęć</span>
+          <span style="font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#8F8474">{{ galTotal }} zdjęć</span>
         </div>
-        <button onClick="{{ closeGal }}" title="Zamknij" style="display:flex;align-items:center;gap:12px;height:42px;padding:0 18px;border:1px solid #E4DDCF;background:transparent;color:#16130F;cursor:pointer;font-size:11px;letter-spacing:.22em;text-transform:uppercase;transition:background .3s ease,border-color .3s ease" style-hover="background:#F7F4EE;border-color:#C6A87C">Zamknij
+        <button onClick="{{ closeGal }}" title="Zamknij" style="display:flex;align-items:center;gap:12px;height:42px;padding:0 18px;border:1px solid #E4DDCF;background:transparent;color:#16130F;cursor:pointer;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;transition:background .3s ease,border-color .3s ease" style-hover="background:#F7F4EE;border-color:#C6A87C">Zamknij
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true" style="display:block"><path d="M5 5l14 14M19 5L5 19"></path></svg>
         </button>
       </div>
@@ -756,13 +826,13 @@
 <section id="lokalizacja" data-screen-label="Lokalizacja" style="padding:clamp(72px,10vw,130px) clamp(16px,3vw,40px);background:#F7F4EE">
   <div style="max-width:1440px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:clamp(40px,5vw,80px);align-items:center">
     <div data-reveal="">
-      <div style="font-size:13px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">07</span>Lokalizacja</div>
-      <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(38px,4.6vw,76px);letter-spacing:-.02em;line-height:1.06;margin:0 0 28px">Zakopane,<br>przy Gubałówce</h2>
-      <p style="font-size:18px;line-height:1.75;color:#4A453D;font-weight:400;margin:0 0 34px;text-wrap:pretty">Znakomicie położona działka przy Gubałówce — ok. 2,5 km spacerem od Krupówek.</p>
+      <div style="font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">07</span>Lokalizacja</div>
+      <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(38px,4.6vw,76px);letter-spacing:-.02em;line-height:1.06;margin:0 0 28px">Zakopane, <em style="font-style:italic;color:#A6824E">przy Gubałówce</em></h2>
+      <p style="font-size:17px;line-height:1.75;color:#4A453D;font-weight:400;margin:0 0 34px;text-wrap:pretty">Znakomicie położona działka przy Gubałówce — ok. 2,5 km spacerem od Krupówek.</p>
       <div style="display:grid;gap:1px;background:#E4DDCF">
-        <div style="display:flex;justify-content:space-between;background:#FFFFFF;padding:20px 24px"><span style="font-size:16px;color:#4A453D;font-weight:400">Krupówki</span><span style="font-family:'Bodoni Moda',serif;font-size:20px">2,5 km</span></div>
-        <div style="display:flex;justify-content:space-between;background:#FFFFFF;padding:20px 24px"><span style="font-size:16px;color:#4A453D;font-weight:400">Wyciąg na Gubałówce</span><span style="font-family:'Bodoni Moda',serif;font-size:20px">≈ 600 m</span></div>
-        <div style="display:flex;justify-content:space-between;background:#FFFFFF;padding:20px 24px"><span style="font-size:16px;color:#4A453D;font-weight:400">Pozwolenie na budowę</span><span style="font-family:'Bodoni Moda',serif;font-size:20px">uzyskane</span></div>
+        <div style="display:flex;justify-content:space-between;background:#FFFFFF;padding:20px 24px"><span style="font-size:15px;color:#4A453D;font-weight:400">Krupówki</span><span style="font-family:'Bodoni Moda',serif;font-size:22px">2,5 km</span></div>
+        <div style="display:flex;justify-content:space-between;background:#FFFFFF;padding:20px 24px"><span style="font-size:15px;color:#4A453D;font-weight:400">Wyciąg na Gubałówce</span><span style="font-family:'Bodoni Moda',serif;font-size:22px">≈ 600 m</span></div>
+        <div style="display:flex;justify-content:space-between;background:#FFFFFF;padding:20px 24px"><span style="font-size:15px;color:#4A453D;font-weight:400">Pozwolenie na budowę</span><span style="font-family:'Bodoni Moda',serif;font-size:22px">uzyskane</span></div>
       </div>
     </div>
     <div data-reveal="">
@@ -777,26 +847,26 @@
 <section id="kontakt" data-screen-label="Kontakt" style="padding:clamp(72px,10vw,130px) clamp(16px,3vw,40px) 80px;background:#FFFFFF;position:relative;overflow:hidden">
   <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:clamp(40px,5vw,80px);align-items:stretch">
     <div data-reveal="" style="display:flex;flex-direction:column">
-      <div style="font-size:13px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">08</span>Kontakt</div>
-      <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(40px,5vw,84px);letter-spacing:-.02em;line-height:1.04;margin:0 0 26px">Jestem zainteresowany</h2>
-      <p style="font-size:18px;line-height:1.75;color:#4A453D;font-weight:400;margin:0 0 44px;text-wrap:pretty">Zostaw kontakt — oddzwonimy i opowiemy o apartamentach i harmonogramie.</p>
+      <div style="font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#A6824E;margin-bottom:22px"><span style="color:#B29066;margin-right:14px">08</span>Kontakt</div>
+      <h2 style="font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(40px,5vw,84px);letter-spacing:-.02em;line-height:1.04;margin:0 0 26px">Jestem <em style="font-style:italic;color:#A6824E">zainteresowany</em></h2>
+      <p style="font-size:17px;line-height:1.75;color:#4A453D;font-weight:400;margin:0 0 44px;text-wrap:pretty">Zostaw kontakt — oddzwonimy i opowiemy o apartamentach i harmonogramie.</p>
       <div style="flex:1;display:grid;grid-template-rows:auto auto 1fr;gap:1px;background:#E4DDCF">
         <div style="background:#F7F4EE;padding:26px 28px">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A6824E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;flex:0 0 auto"><path d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5L17 13l4 1.5v3a2.5 2.5 0 0 1-2.7 2.5C10.4 19.4 4.6 13.6 4 5.7A2.5 2.5 0 0 1 6.5 3Z"></path></svg>
-            <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7A7264">Telefon</span>
+            <span style="font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7A7264">Telefon</span>
           </div>
           <a href="tel:+48516066067" style="font-family:'Bodoni Moda',serif;font-size:28px;letter-spacing:.03em">+48 516 066 067</a>
         </div>
         <div style="background:#F7F4EE;padding:26px 28px">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A6824E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;flex:0 0 auto"><rect x="3" y="5" width="18" height="14"></rect><path d="m3 6.5 9 6 9-6"></path></svg>
-            <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7A7264">E-mail</span>
+            <span style="font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7A7264">E-mail</span>
           </div>
-          <a href="mailto:biuro@capitaltowers.pl" style="font-family:'Bodoni Moda',serif;font-size:24px;letter-spacing:.01em">biuro@capitaltowers.pl</a>
+          <a href="mailto:biuro@capitaltowers.pl" style="font-family:'Bodoni Moda',serif;font-size:28px;letter-spacing:.01em">biuro@capitaltowers.pl</a>
         </div>
         <div style="background:#F7F4EE;padding:26px 28px;display:flex;flex-direction:column;justify-content:center;gap:14px;min-height:120px">
-          <div style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7A7264">Wykonawca</div>
+          <div style="font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7A7264">Wykonawca</div>
           <a href="https://capitaltowers.pl" target="_blank" rel="noopener" style="display:inline-block;transition:opacity .3s ease" style-hover="opacity:.72"><img src="assets/ct-logo-v2.png" alt="Capital Towers" style="display:block;height:auto;width:100%;max-width:296px"></a>
         </div>
       </div>
@@ -804,7 +874,7 @@
     <div data-reveal="" style="background:#F7F4EE;border:1px solid #E4DDCF;padding:clamp(28px,3.6vw,48px) clamp(22px,3.4vw,46px)">
       <form onSubmit="{{ submitForm }}" style="display:{{ formShow }};flex-direction:column;gap:26px">
         <div>
-          <div style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7A7264;margin-bottom:14px">Jaka forma Cię interesuje?</div>
+          <div style="font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7A7264;margin-bottom:14px">Jaka forma Cię interesuje?</div>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:#E4DDCF">
             <button type="button" onClick="{{ pickInterest }}" data-interest="0" style="height:56px;border:0;cursor:pointer;font-size:13px;letter-spacing:.1em;background:{{ i0bg }};color:{{ i0fg }};transition:all .25s ease">Zakup</button>
             <button type="button" onClick="{{ pickInterest }}" data-interest="1" style="height:56px;border:0;cursor:pointer;font-size:13px;letter-spacing:.1em;background:{{ i1bg }};color:{{ i1fg }};transition:all .25s ease">Wynajem długi</button>
@@ -812,29 +882,29 @@
           </div>
         </div>
         <label style="display:block">
-          <span style="display:block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7A7264;margin-bottom:10px">Imię i nazwisko</span>
-          <input type="text" required="" placeholder="Jan Kowalski" style="width:100%;height:54px;padding:0 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:16px;outline:none" style-focus="border-color:#C6A87C">
+          <span style="display:block;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7A7264;margin-bottom:10px">Imię i nazwisko</span>
+          <input type="text" required="" placeholder="Jan Kowalski" style="width:100%;height:54px;padding:0 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:15px;outline:none" style-focus="border-color:#C6A87C">
         </label>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
           <label style="display:block">
-            <span style="display:block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7A7264;margin-bottom:10px">Telefon</span>
-            <input type="tel" required="" placeholder="+48 600 000 000" style="width:100%;height:54px;padding:0 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:16px;outline:none" style-focus="border-color:#C6A87C">
+            <span style="display:block;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7A7264;margin-bottom:10px">Telefon</span>
+            <input type="tel" required="" placeholder="+48 600 000 000" style="width:100%;height:54px;padding:0 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:15px;outline:none" style-focus="border-color:#C6A87C">
           </label>
           <label style="display:block">
-            <span style="display:block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7A7264;margin-bottom:10px">E-mail</span>
-            <input type="email" placeholder="jan@przyklad.pl" style="width:100%;height:54px;padding:0 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:16px;outline:none" style-focus="border-color:#C6A87C">
+            <span style="display:block;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7A7264;margin-bottom:10px">E-mail</span>
+            <input type="email" placeholder="jan@przyklad.pl" style="width:100%;height:54px;padding:0 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:15px;outline:none" style-focus="border-color:#C6A87C">
           </label>
         </div>
         <label style="display:block">
-          <span style="display:block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7A7264;margin-bottom:10px">Wiadomość</span>
-          <textarea rows="3" placeholder="Interesuje mnie apartament około 40 m²…" style="width:100%;padding:16px 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:16px;outline:none;resize:vertical" style-focus="border-color:#C6A87C"></textarea>
+          <span style="display:block;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7A7264;margin-bottom:10px">Wiadomość</span>
+          <textarea rows="3" placeholder="Interesuje mnie apartament około 40 m²…" style="width:100%;padding:16px 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:15px;outline:none;resize:vertical" style-focus="border-color:#C6A87C"></textarea>
         </label>
         <div style="font-size:13px;line-height:1.6;color:#7D766A;font-weight:400">Wysyłając formularz zgadzasz się na kontakt w sprawie inwestycji Tatry Hills.</div>
-        <button type="submit" style="height:58px;border:0;background:#C6A87C;color:#16130F;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;cursor:pointer" style-hover="background:#B29066">Wyślij zgłoszenie</button>
+        <button type="submit" style="height:58px;border:0;background:#C6A87C;color:#16130F;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;font-weight:500;cursor:pointer" style-hover="background:#B29066">Wyślij zgłoszenie</button>
       </form>
       <div style="display:{{ thanksShow }};flex-direction:column;align-items:flex-start;gap:18px;padding:30px 0">
         <svg width="46" height="46" viewBox="0 0 46 46" fill="none" aria-hidden="true"><circle cx="23" cy="23" r="22" stroke="#C6A87C" stroke-width="1.3"></circle><path d="M14 24l6 6 13-14" stroke="#C6A87C" stroke-width="1.5"></path></svg>
-        <div style="font-family:'Bodoni Moda',serif;font-size:32px">Dziękujemy, {{ leadName }}</div>
+        <div style="font-family:'Bodoni Moda',serif;font-size:28px">Dziękujemy, {{ leadName }}</div>
         <div style="font-size:17px;line-height:1.7;color:#55504A;font-weight:400">Zgłoszenie zapisane. Skontaktujemy się z Tobą w sprawie: {{ leadInterest }}.</div>
         <button type="button" onClick="{{ resetForm }}" style="height:52px;padding:0 26px;border:1px solid #D6CEBE;background:transparent;color:#A6824E;font-size:12px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer" style-hover="border-color:#C6A87C">Wyślij kolejne</button>
       </div>
@@ -846,8 +916,8 @@
       <div style="font-size:13px;line-height:1.75;color:#7D766A;font-weight:400">Luksusowa Villa Seniora<br>Zakopane, przy Gubałówce</div>
     </div>
     <div>
-      <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#A6824E;margin-bottom:16px">Inwestycja</div>
-      <div style="display:grid;gap:10px;font-size:14px">
+      <div style="font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#A6824E;margin-bottom:16px">Inwestycja</div>
+      <div style="display:grid;gap:10px;font-size:15px">
         <a href="#apartamenty" style="color:#55504A" style-hover="color:#A6824E">Apartamenty</a>
         <a href="#udogodnienia" style="color:#55504A" style-hover="color:#A6824E">Udogodnienia</a>
         <a href="#rzuty" style="color:#55504A" style-hover="color:#A6824E">Rzuty kondygnacji</a>
@@ -856,16 +926,16 @@
       </div>
     </div>
     <div>
-      <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#A6824E;margin-bottom:16px">Kontakt</div>
-      <div style="display:grid;gap:10px;font-size:14px">
+      <div style="font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#A6824E;margin-bottom:16px">Kontakt</div>
+      <div style="display:grid;gap:10px;font-size:15px">
         <a href="tel:+48516066067" style="color:#55504A" style-hover="color:#A6824E">+48 516 066 067</a>
         <a href="mailto:biuro@capitaltowers.pl" style="color:#55504A" style-hover="color:#A6824E">biuro@capitaltowers.pl</a>
         <a href="https://capitaltowers.pl" target="_blank" rel="noopener" style="color:#55504A" style-hover="color:#A6824E">capitaltowers.pl</a>
       </div>
     </div>
     <div>
-      <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#A6824E;margin-bottom:16px">Informacje</div>
-      <div style="display:grid;gap:10px;font-size:14px">
+      <div style="font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#A6824E;margin-bottom:16px">Informacje</div>
+      <div style="display:grid;gap:10px;font-size:15px">
         <a href="polityka-prywatnosci.html" style="color:#55504A" style-hover="color:#A6824E">Polityka prywatności</a>
         <a href="polityka-prywatnosci.html#cookies" style="color:#55504A" style-hover="color:#A6824E">Polityka cookies</a>
         <a href="polityka-prywatnosci.html#rodo" style="color:#55504A" style-hover="color:#A6824E">Klauzula informacyjna RODO</a>
@@ -883,7 +953,7 @@
   <button onClick="{{ lbPrev }}" title="Poprzednie" style="display:{{ lbNavShow }};position:absolute;left:22px;top:50%;transform:translateY(-50%);width:56px;height:56px;border:1px solid rgba(239,231,220,.25);background:rgba(20,16,13,.6);cursor:pointer;align-items:center;justify-content:center" style-hover="border-color:#C6A87C"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9l8 8" stroke="#C6A87C" stroke-width="1.5"></path></svg></button>
   <button onClick="{{ lbNext }}" title="Następne" style="display:{{ lbNavShow }};position:absolute;right:22px;top:50%;transform:translateY(-50%);width:56px;height:56px;border:1px solid rgba(239,231,220,.25);background:rgba(20,16,13,.6);cursor:pointer;align-items:center;justify-content:center" style-hover="border-color:#C6A87C"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M1 1l8 8-8 8" stroke="#C6A87C" stroke-width="1.5"></path></svg></button>
   <div style="display:{{ lbNavShow }};position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:13px;letter-spacing:.3em;color:#B4A896">{{ lbCount }}</div>
-  <div style="position:absolute;top:26px;right:34px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#B4A896">zamknij ✕</div>
+  <div style="position:absolute;top:26px;right:34px;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#B4A896">zamknij ✕</div>
 </div>
 
 <button onClick="{{ toTop }}" title="Do góry" style="position:fixed;right:26px;bottom:26px;z-index:56;width:54px;height:54px;border:1px solid #D6CEBE;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:{{ topBtnOpacity }};pointer-events:{{ topBtnEvents }};transition:opacity .4s ease,border-color .3s ease" style-hover="border-color:#C6A87C"><svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M7 15V1M1 7l6-6 6 6" stroke="#C6A87C" stroke-width="1.4"></path></svg></button>
@@ -897,7 +967,7 @@ class Component extends DCLogic {
   state = {
     lang: 'pl', cap: 0, cardUnit: 0, cur: 'PLN', rates: { PLN: 1, EUR: null, USD: null }, ratesDate: '', scroll: 0, video: 1, split: 0, splitAnim: true, tab: 0, floor: 4, floorView: 'plan', selectedUnit: 0, mode: 0, area: 34,
     interest: 0, submitted: false, leadName: '', lbIndex: -1, shownMonthly: null, activeSection: '',
-    cApart: 0, cArea: 0, cMeals: 0, cKm: 0, galOpen: false, restoSpot: 0, lobbySpot: 0, spaSpot: 0, spaAuto: true, spaProg: 0, spaTouched: false
+    cApart: 0, cArea: 0, cMeals: 0, cKm: 0, galOpen: false, restoSpot: 0, lobbySpot: 0, clubSpot: 0, aptCh: 0, aptChP: 0, spaSpot: 0, spaAuto: true, spaTouched: false
   };
 
   gallery = [
@@ -1043,11 +1113,12 @@ class Component extends DCLogic {
     this.spaTimer = setInterval(() => {
       const st = this.state;
       if (st.tab !== 0 || !st.spaAuto || document.hidden) return;
-      const p = (st.spaProg || 0) + 0.14 / 5;
-      if (p >= 1) this.spaScrollTo(((st.spaSpot || 0) + 1) % 4, false);
-      else this.setState({ spaProg: p });
+      const p = (this.spaP || 0) + 0.14 / 5;
+      if (p >= 1) { this.spaP = 0; this.spaScrollTo(((st.spaSpot || 0) + 1) % 5, false); }
+      else this.spaP = p;
     }, 140);
     this.syncCardImg();
+    this.syncUnitHint();
     this.onCardKey = (e) => {
       if (!this.state.cardUnit) return;
       if (e.key === 'Escape') this.setState({ cardUnit: 0 });
@@ -1307,8 +1378,11 @@ class Component extends DCLogic {
 
   componentDidUpdate() {
     this.syncCardImg();
+    this.syncUnitHint();
     this.bindSpaStrip();
     this.bindLobbyStrip();
+    this.bindClubStrip();
+    this.bindAptChapters();
     this.bindRestoStrip();
     this.applyHighlights();
     this.translateDom();
@@ -1355,7 +1429,8 @@ class Component extends DCLogic {
     if (!strip) return;
     const el = strip.querySelector('[data-spaslide="' + i + '"]');
     if (el) strip.scrollTo({ left: this.spaOffset(strip, el) - (strip.clientWidth - el.clientWidth) / 2, behavior: 'smooth' });
-    this.setState(manual ? { spaSpot: i, spaAuto: false, spaTouched: true, spaProg: 0 } : { spaSpot: i, spaProg: 0 });
+    this.spaP = 0;
+    this.setState(manual ? { spaSpot: i, spaAuto: false, spaTouched: true } : { spaSpot: i });
   }
 
   restoNearest(strip) {
@@ -1416,9 +1491,9 @@ class Component extends DCLogic {
   lobbyNearest(strip) {
     const mid = strip.scrollLeft + strip.clientWidth / 2;
     let best = 0, bd = Infinity;
-    strip.querySelectorAll('[data-lobbyslide]').forEach((el) => {
+    strip.querySelectorAll('[data-lobslide]').forEach((el) => {
       const d = Math.abs(this.spaOffset(strip, el) + el.clientWidth / 2 - mid);
-      if (d < bd) { bd = d; best = Number(el.dataset.lobbyslide); }
+      if (d < bd) { bd = d; best = Number(el.dataset.lobslide); }
     });
     return best;
   }
@@ -1426,7 +1501,7 @@ class Component extends DCLogic {
   lobbyScrollTo(i) {
     const strip = document.getElementById('th-lobby-strip');
     if (!strip) return;
-    const el = strip.querySelector('[data-lobbyslide="' + i + '"]');
+    const el = strip.querySelector('[data-lobslide="' + i + '"]');
     if (el) strip.scrollTo({ left: this.spaOffset(strip, el) - (strip.clientWidth - el.clientWidth) / 2, behavior: 'smooth' });
     this.setState({ lobbySpot: i });
   }
@@ -1468,6 +1543,61 @@ class Component extends DCLogic {
     strip.addEventListener('click', (e) => { if (moved > 6) { e.preventDefault(); e.stopPropagation(); } }, true);
   }
 
+  clubNearest(strip) {
+    const mid = strip.scrollLeft + strip.clientWidth / 2;
+    let best = 0, bd = Infinity;
+    strip.querySelectorAll('[data-cluslide]').forEach((el) => {
+      const d = Math.abs(this.spaOffset(strip, el) + el.clientWidth / 2 - mid);
+      if (d < bd) { bd = d; best = Number(el.dataset.cluslide); }
+    });
+    return best;
+  }
+
+  clubScrollTo(i) {
+    const strip = document.getElementById('th-club-strip');
+    if (!strip) return;
+    const el = strip.querySelector('[data-cluslide="' + i + '"]');
+    if (el) strip.scrollTo({ left: this.spaOffset(strip, el) - (strip.clientWidth - el.clientWidth) / 2, behavior: 'smooth' });
+    this.setState({ clubSpot: i });
+  }
+
+  bindClubStrip() {
+    const strip = document.getElementById('th-club-strip');
+    if (!strip || strip.dataset.bound) return;
+    strip.dataset.bound = '1';
+    let t;
+    strip.addEventListener('scroll', () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        const best = this.clubNearest(strip);
+        if (best !== this.state.clubSpot) this.setState({ clubSpot: best });
+      }, 90);
+    }, { passive: true });
+    let dragging = false, sx = 0, sl = 0, moved = 0;
+    strip.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'touch') return;
+      dragging = true; moved = 0; sx = e.clientX; sl = strip.scrollLeft;
+      strip.style.scrollSnapType = 'none';
+      strip.style.cursor = 'grabbing';
+    });
+    strip.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      const dx = e.clientX - sx;
+      moved = Math.max(moved, Math.abs(dx));
+      strip.scrollLeft = sl - dx;
+    });
+    const endDrag = () => {
+      if (!dragging) return;
+      dragging = false;
+      strip.style.cursor = 'grab';
+      strip.style.scrollSnapType = 'x mandatory';
+      this.clubScrollTo(this.clubNearest(strip));
+    };
+    strip.addEventListener('pointerup', endDrag);
+    strip.addEventListener('pointerleave', endDrag);
+    strip.addEventListener('click', (e) => { if (moved > 6) { e.preventDefault(); e.stopPropagation(); } }, true);
+  }
+
   bindSpaStrip() {
     const strip = document.getElementById('th-spa-strip');
     if (!strip || strip.dataset.bound) return;
@@ -1477,7 +1607,7 @@ class Component extends DCLogic {
       clearTimeout(t);
       t = setTimeout(() => {
         const best = this.spaNearest(strip);
-        if (best !== this.state.spaSpot) this.setState({ spaSpot: best, spaProg: 0 });
+        if (best !== this.state.spaSpot) { this.spaP = 0; this.setState({ spaSpot: best }); }
       }, 90);
     }, { passive: true });
     let dragging = false, sx = 0, sl = 0, moved = 0;
@@ -1514,11 +1644,70 @@ class Component extends DCLogic {
         const seq = [1, 2, 3, 0];
         seq.forEach((n, k) => setTimeout(() => {
           this.spaScrollTo(n, false);
-          if (k === seq.length - 1) setTimeout(() => this.setState({ spaAuto: true, spaProg: 0 }), 700);
+          if (k === seq.length - 1) setTimeout(() => this.setState({ spaAuto: true }), 700);
         }, 340 + k * 430));
       }, { threshold: [0, 0.45, 1] });
       this.spaIo.observe(strip);
     }
+  }
+
+  scrollHost(el) {
+    let p = el.parentElement;
+    while (p) {
+      const st = getComputedStyle(p);
+      if (/(auto|scroll)/.test(st.overflowY) && p.scrollHeight > p.clientHeight + 8) return p;
+      p = p.parentElement;
+    }
+    const d = document.scrollingElement || document.documentElement;
+    return d.scrollHeight > d.clientHeight + 8 ? d : null;
+  }
+
+  scrollToPlan() {
+    if (this._planScroll) cancelAnimationFrame(this._planScroll);
+    this._planScroll = requestAnimationFrame(() => {
+      const el = document.getElementById('th-plan-outer');
+      if (!el) return;
+      const host = this.scrollHost(el);
+      if (!host) return;
+      const r = el.getBoundingClientRect();
+      if (host === document.scrollingElement || host === document.documentElement) {
+        const top = window.scrollY + r.top - 92;
+        if (Math.abs(window.scrollY - top) > 24) window.scrollTo({ top: top, behavior: 'smooth' });
+      } else {
+        const top = host.scrollTop + r.top - host.getBoundingClientRect().top - 92;
+        if (Math.abs(host.scrollTop - top) > 24) host.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  }
+
+
+  chapterCount = 9;
+  chapters = [["Wydzielona sypialnia","Osobna strefa spania i pokój dzienny w większości apartamentów."],["Aneks kuchenny","Zmywarka, zlew, płyta grzewcza, lodówka i kawiarka — gotowe od pierwszego dnia."],["Panoramiczne przeszklenia","Światło i widok na Tatry od podłogi do sufitu."],["Balkon lub taras","Prywatna przestrzeń na świeżym powietrzu, z widokiem na góry."],["Komfort termiczny","Klimatyzacja i ogrzewanie podłogowe — przyjemnie latem i zimą."],["Smart apartament","Smart TV, światłowodowe wi-fi i system przywoławczy — pomoc zawsze w zasięgu ręki."]];
+
+  bindAptChapters() {
+    const v = document.getElementById('th-apt-video');
+    if (!v || v.dataset.chBound) return;
+    v.dataset.chBound = '1';
+    v.addEventListener('timeupdate', () => {
+      const d = v.duration || 1;
+      const seg = d / this.chapterCount;
+      const i = Math.min(this.chapterCount - 1, Math.floor(v.currentTime / seg));
+      const p = Math.max(0, Math.min(1, (v.currentTime - i * seg) / seg));
+      if (i !== this.state.aptCh) this.setState({ aptCh: i, aptChP: p });
+      else if (Math.abs((this.state.aptChP || 0) - p) > 0.12) this.setState({ aptChP: p });
+    });
+  }
+
+  syncUnitHint() {
+    const sc = document.getElementById('th-unit-scroll');
+    const hint = document.getElementById('th-unit-hint');
+    if (!sc || !hint) return;
+    if (!sc.dataset.hintBound) {
+      sc.dataset.hintBound = '1';
+      sc.addEventListener('scroll', () => this.syncUnitHint(), { passive: true });
+    }
+    const more = sc.scrollHeight - sc.clientHeight - sc.scrollTop > 6;
+    hint.style.opacity = more ? '1' : '0';
   }
 
   syncCardImg() {
@@ -1528,8 +1717,8 @@ class Component extends DCLogic {
     if (n) {
       const src = 'assets/rzut/' + String(n).padStart(2, '0') + '.jpg';
       if (!el.src || el.src.indexOf(src) === -1) el.src = src;
-    } else if (el.hasAttribute('src')) {
-      el.removeAttribute('src');
+    } else if (el.src.indexOf('data:image/gif') === -1) {
+      el.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
     }
   }
 
@@ -1648,6 +1837,33 @@ class Component extends DCLogic {
 
   unitInfo = {"1":{"t":"34,22","e":"Ogródek 26,01 m²"},"2":{"t":"34,08","e":"Ogródek 24,23 m²"},"3":{"t":"32,19","e":"Ogródek 22,04 m²"},"4":{"t":"34,91","e":"Ogródek 20,61 m²"},"5":{"t":"34,22","e":"Ogródek 12,38 m²"},"6":{"t":"34,08","e":"Ogródek 16,49 m²"},"7":{"t":"32,10","e":"Ogródek 20,61 m²"},"8":{"t":"35,54","e":"Ogródek 21,21 m²"},"9":{"t":"33,58","e":"Ogródek 21,21 m²"},"10":{"t":"33,59","e":"Ogródek 21,21 m²"},"11":{"t":"37,59","e":"Balkon 13,17 m² · Ogródek 21,80 m²"},"12":{"t":"37,79","e":"Balkon 22,80 m²"},"13":{"t":"32,23","e":"Loggia 8,74 m²"},"14":{"t":"34,12","e":"Loggia 8,69 m²"},"15":{"t":"34,28","e":"Loggia 8,73 m²"},"16":{"t":"43,74","e":"Loggia 11,26 m²"},"17":{"t":"34,26","e":"Loggia 8,73 m²"},"18":{"t":"34,13","e":"Loggia 8,69 m²"},"19":{"t":"34,12","e":"Loggia 8,76 m²"},"20":{"t":"37,59","e":"Balkon 11,77 m²"},"21":{"t":"37,37","e":"Balkon 11,59 m² · Ogródek 21,60 m²"},"22":{"t":"33,60","e":"Ogródek 21,21 m²"},"23":{"t":"33,60","e":"Ogródek 21,21 m²"},"24":{"t":"35,65","e":"Ogródek 21,21 m²"},"25":{"t":"35,59","e":"Loggia 8,73 m²"},"26":{"t":"33,58","e":"Loggia 8,74 m²"},"27":{"t":"32,29","e":"Balkon 6,59 m²"},"28":{"t":"36,69","e":"Balkon 19,76 m²"},"29":{"t":"36,92","e":"Balkon 20,15 m²"},"30":{"t":"32,21","e":"Loggia 8,74 m²"},"31":{"t":"34,04","e":"Loggia 8,70 m²"},"32":{"t":"34,28","e":"Loggia 8,73 m²"},"33":{"t":"42,42","e":"Balkon 10,40 m²"},"34":{"t":"34,26","e":"Loggia 8,71 m²"},"35":{"t":"34,12","e":"Loggia 8,68 m²"},"36":{"t":"34,12","e":"Loggia 8,72 m²"},"37":{"t":"33,88","e":"Balkon 18,71 m²"},"38":{"t":"33,33","e":"Balkon 18,54 m²"},"39":{"t":"33,60","e":"Loggia 8,74 m²"},"40":{"t":"33,60","e":"Loggia 8,70 m²"},"41":{"t":"35,63","e":"Loggia 8,73 m²"},"42":{"t":"33,75","e":"Loggia 8,73 m²"},"43":{"t":"33,58","e":"Loggia 8,70 m²"},"44":{"t":"39,44","e":"Balkon 8,10 m²"},"45":{"t":"32,23","e":"Balkon 8,10 m²"},"46":{"t":"32,21","e":"Loggia 8,70 m²"},"47":{"t":"34,10","e":"Loggia 8,69 m²"},"48":{"t":"34,27","e":"Loggia 8,73 m²"},"49":{"t":"25,35","e":""},"50":{"t":"34,26","e":"Loggia 8,72 m²"},"51":{"t":"34,12","e":"Loggia 8,70 m²"},"52":{"t":"55,03","e":"Loggia 8,70 m² · Balkon 6,70 m²"},"53":{"t":"53,96","e":"Loggia 8,69 m² · Balkon 6,53 m²"},"54":{"t":"33,60","e":"Loggia 8,70 m²"},"55":{"t":"33,76","e":"Loggia 8,73 m²"},"56":{"t":"33,72","e":"Loggia 8,73 m²"},"57":{"t":"33,58","e":"Loggia 8,70 m²"},"58":{"t":"65,27","e":"Loggia 6,59 m² · Balkon 8,83 m²"},"59":{"t":"34,06","e":"Loggia 8,70 m²"},"60":{"t":"34,27","e":"Loggia 8,73 m²"},"61":{"t":"34,26","e":"Loggia 8,73 m²"},"62":{"t":"34,12","e":"Loggia 8,70 m²"},"63":{"t":"39,20","e":"Loggia 8,70 m²"},"64":{"t":"38,14","e":"Loggia 8,70 m²"},"65":{"t":"33,60","e":"Loggia 8,70 m²"},"66":{"t":"33,75","e":"Loggia 8,73 m²"}};
 
+  // pomieszczenia z tabel na rzutach [m²]; prefiks p = Pokój
+  unitRooms = {
+    1:'20,56/3,34/10,32',2:'20,43/3,33/10,32',3:'19,47/3,29/9,43',4:'20,12/3,45/11,34',5:'20,66/3,34/10,88',6:'19,88/3,32/10,88',
+    7:'28,25/3,85',8:'21,39/3,31/10,84',9:'20,22/3,31/10,05',10:'20,22/3,32/10,05',11:'20,05/3,31/14,23',12:'20,25/3,31/14,23',
+    13:'19,55/3,28/9,40',14:'20,48/3,32/10,32',15:'20,65/3,31/10,32',16:'26,56/3,03/14,15',17:'20,05/3,33/10,88',18:'19,93/3,31/10,89',
+    19:'19,93/3,31/10,88',20:'20,05/3,31/14,23',21:'19,83/3,31/14,23',22:'19,70/3,31/10,59',23:'19,70/3,31/10,59',24:'21,36/3,31/10,98',
+    25:'21,45/3,31/10,83',26:'20,25/3,31/10,02',27:'19,61/3,28/9,40',28:'20,05/3,31/13,33',29:'20,29/3,30/13,33',30:'19,54/3,27/9,40',
+    31:'20,51/3,27/10,26',32:'20,63/3,31/10,34',33:'25,89/3,04/13,49',34:'20,05/3,33/10,88',35:'19,96/3,31/10,85',36:'19,96/3,31/10,85',
+    37:'17,25/3,30/13,33',38:'17,25/3,30/13,33',39:'19,70/3,31/10,59',40:'19,70/3,31/10,59',41:'21,36/3,31/10,96',42:'20,38/3,31/10,06',
+    43:'20,25/3,31/10,02',44:'19,72/3,71/16,01',45:'28,65/3,58',46:'19,54/3,27/9,40',47:'20,51/3,31/10,28',48:'20,63/3,31/10,33',
+    49:'21,81/3,54',50:'20,05/3,33/10,88',51:'19,96/3,31/10,85',52:'27,62/3,31/10,63/13,47',53:'27,07/3,31/10,36/13,22',54:'19,70/3,31/10,59',
+    55:'19,78/3,31/10,67',56:'20,37/3,31/10,04',57:'20,26/3,31/10,01',58:'32,56/3,35/9,74/19,62',59:'20,51/3,26/10,29',60:'20,63/3,31/10,33',
+    61:'20,05/3,33/10,88',62:'19,96/3,31/10,85',63:'19,96/3,31/10,84/p5,09',64:'19,70/3,31/10,59/p4,54',65:'19,70/3,31/10,59',66:'19,78/3,31/10,66'
+  };
+
+  roomList(n) {
+    const raw = this.unitRooms[n];
+    if (!raw) return [];
+    const parts = raw.split('/');
+    const out = [{ label: 'Salon z aneksem kuchennym', val: parts[0] }, { label: 'Łazienka', val: parts[1] }];
+    const rest = parts.slice(2);
+    const beds = rest.filter((p) => p[0] !== 'p');
+    beds.forEach((v, i) => out.push({ label: beds.length > 1 ? 'Sypialnia ' + (i + 1) : 'Sypialnia', val: v }));
+    rest.filter((p) => p[0] === 'p').forEach((v) => out.push({ label: 'Pokój', val: v.slice(1) }));
+    return out;
+  }
+
   // powierzchnia pokoju dziennego z rzutu [m²]
   unitArea = {
     1:'20,56',2:'20,43',3:'19,47',4:'20,12',5:'20,00',6:'19,88',7:'28,25',
@@ -1658,7 +1874,12 @@ class Component extends DCLogic {
   };
 
   planUnits = {
-    0: [],
+    0: [
+      { n: 64, x: 12.8, y: 13, w: 10.4, h: 32 }, { n: 65, x: 23.3, y: 13, w: 9.5, h: 32 }, { n: 66, x: 32.8, y: 13, w: 10.2, h: 32 },
+      { n: 56, x: 55, y: 13, w: 11, h: 32 }, { n: 57, x: 66, y: 13, w: 9, h: 32 },
+      { n: 63, x: 12.8, y: 53, w: 10.4, h: 32 }, { n: 62, x: 23.3, y: 53, w: 9.5, h: 32 }, { n: 61, x: 32.8, y: 53, w: 10.2, h: 32 },
+      { n: 60, x: 55, y: 53, w: 11, h: 32 }, { n: 59, x: 66, y: 53, w: 8.5, h: 32 }, { n: 58, x: 74.6, y: 45, w: 23.5, h: 48 }
+    ],
     1: [
       { n: 53, x: 7, y: 14, w: 11, h: 34 }, { n: 54, x: 24, y: 14, w: 10, h: 34 }, { n: 55, x: 35.5, y: 14, w: 10, h: 34 },
       { n: 42, x: 56, y: 14, w: 9.5, h: 34 }, { n: 43, x: 65.5, y: 14, w: 9.5, h: 34 }, { n: 44, x: 75, y: 14, w: 10, h: 34 },
@@ -1735,12 +1956,13 @@ class Component extends DCLogic {
     [0, 1, 2, 3, 4].forEach((i) => {
       const on = s.cap === i;
       v['cap' + i + 'Op'] = on ? 1 : 0;
+      v['capO' + i] = on ? 1 : 0.4;
       v['cap' + i + 'Y'] = on ? '0px' : '14px';
       v['cap' + i + 'Bar'] = on ? '#C6A87C' : 'rgba(245,240,231,.28)';
     });
 
     const perMonth = s.lang === 'en' ? 'per month' : (s.lang === 'uk' ? 'на місяць' : 'miesięcznie');
-    const spa = this.tabStyle(s.tab === 0), resto = this.tabStyle(s.tab === 1), lobby = this.tabStyle(s.tab === 2);
+    const spa = this.tabStyle(s.tab === 0), resto = this.tabStyle(s.tab === 1), lobby = this.tabStyle(s.tab === 2), club = this.tabStyle(s.tab === 3);
 
     ['inwestycja', 'apartamenty', 'udogodnienia', 'rzuty', 'kalkulator', 'galeria', 'lokalizacja', 'kontakt'].forEach((id) => {
       v['dot' + id] = s.activeSection === id ? '#C6A87C' : 'rgba(198,168,124,.12)';
@@ -1800,9 +2022,11 @@ class Component extends DCLogic {
       showSpa: () => this.setState({ tab: 0 }),
       showResto: () => this.setState({ tab: 1 }),
       showLobby: () => this.setState({ tab: 2 }),
+      showClub: () => this.setState({ tab: 3 }),
       spaBtnBg: spa.bg, spaBtnFg: spa.fg,
       restoBtnBg: resto.bg, restoBtnFg: resto.fg,
       lobbyBtnBg: lobby.bg, lobbyBtnFg: lobby.fg,
+      clubBtnBg: club.bg, clubBtnFg: club.fg,
       spaTh0Op: (s.spaSpot || 0) === 0 ? 1 : 0.42,
       spaTh0Sc: (s.spaSpot || 0) === 0 ? 1.05 : 1,
       spaTh1Op: (s.spaSpot || 0) === 1 ? 1 : 0.42,
@@ -1884,45 +2108,12 @@ class Component extends DCLogic {
       resDotW1: (s.restoSpot || 0) === 1 ? '34px' : '12px',
       resDotBg1: (s.restoSpot || 0) === 1 ? '#E0C69C' : 'rgba(245,240,231,.42)',
       resGo1: () => this.restoScrollTo(1),
-      lobPrev: () => this.lobbyScrollTo(((s.lobbySpot || 0) + 4) % 5),
-      lobNext: () => this.lobbyScrollTo(((s.lobbySpot || 0) + 1) % 5),
-      lobSc4: (s.lobbySpot || 0) === 4 ? 1.02 : 1.08,
-      lobBr4: (s.lobbySpot || 0) === 4 ? 1 : 0.78,
-      lobDH4: (s.lobbySpot || 0) === 4 ? '132px' : '64px',
-      lobDOp4: (s.lobbySpot || 0) === 4 ? 1 : 0,
-      lobDotW4: (s.lobbySpot || 0) === 4 ? '34px' : '12px',
-      lobDotBg4: (s.lobbySpot || 0) === 4 ? '#E0C69C' : 'rgba(245,240,231,.42)',
-      lobGo4: () => this.lobbyScrollTo(4),
-      lobSc3: (s.lobbySpot || 0) === 3 ? 1.02 : 1.08,
-      lobBr3: (s.lobbySpot || 0) === 3 ? 1 : 0.78,
-      lobDH3: (s.lobbySpot || 0) === 3 ? '132px' : '64px',
-      lobDOp3: (s.lobbySpot || 0) === 3 ? 1 : 0,
-      lobDotW3: (s.lobbySpot || 0) === 3 ? '34px' : '12px',
-      lobDotBg3: (s.lobbySpot || 0) === 3 ? '#E0C69C' : 'rgba(245,240,231,.42)',
-      lobGo3: () => this.lobbyScrollTo(3),
-      lobSc0: (s.lobbySpot || 0) === 0 ? 1.02 : 1.08,
-      lobBr0: (s.lobbySpot || 0) === 0 ? 1 : 0.78,
-      lobDH0: (s.lobbySpot || 0) === 0 ? '132px' : '64px',
-      lobDOp0: (s.lobbySpot || 0) === 0 ? 1 : 0,
-      lobDotW0: (s.lobbySpot || 0) === 0 ? '34px' : '12px',
-      lobDotBg0: (s.lobbySpot || 0) === 0 ? '#E0C69C' : 'rgba(245,240,231,.42)',
-      lobGo0: () => this.lobbyScrollTo(0),
-      lobSc1: (s.lobbySpot || 0) === 1 ? 1.02 : 1.08,
-      lobBr1: (s.lobbySpot || 0) === 1 ? 1 : 0.78,
-      lobDH1: (s.lobbySpot || 0) === 1 ? '132px' : '64px',
-      lobDOp1: (s.lobbySpot || 0) === 1 ? 1 : 0,
-      lobDotW1: (s.lobbySpot || 0) === 1 ? '34px' : '12px',
-      lobDotBg1: (s.lobbySpot || 0) === 1 ? '#E0C69C' : 'rgba(245,240,231,.42)',
-      lobGo1: () => this.lobbyScrollTo(1),
-      lobSc2: (s.lobbySpot || 0) === 2 ? 1.02 : 1.08,
-      lobBr2: (s.lobbySpot || 0) === 2 ? 1 : 0.78,
-      lobDH2: (s.lobbySpot || 0) === 2 ? '132px' : '64px',
-      lobDOp2: (s.lobbySpot || 0) === 2 ? 1 : 0,
-      lobDotW2: (s.lobbySpot || 0) === 2 ? '34px' : '12px',
-      lobDotBg2: (s.lobbySpot || 0) === 2 ? '#E0C69C' : 'rgba(245,240,231,.42)',
-      lobGo2: () => this.lobbyScrollTo(2),
-      spaPrev: () => this.spaScrollTo(((s.spaSpot || 0) + 3) % 4, true),
-      spaNext: () => this.spaScrollTo(((s.spaSpot || 0) + 1) % 4, true),
+      spaPrev: () => this.spaScrollTo(((s.spaSpot || 0) + 4) % 5, true),
+      spaNext: () => this.spaScrollTo(((s.spaSpot || 0) + 1) % 5, true),
+      spaSc4: (s.spaSpot || 0) === 4 ? 1.02 : 1.08,
+      spaBr4: (s.spaSpot || 0) === 4 ? 1 : 0.78,
+      spaDH4: (s.spaSpot || 0) === 4 ? '132px' : '64px',
+      spaDOp4: (s.spaSpot || 0) === 4 ? 1 : 0,
       spaGo0: () => this.spaScrollTo(0, true),
       spaDotW0: (s.spaSpot || 0) === 0 ? '34px' : '12px',
       spaDotBg0: (s.spaSpot || 0) === 0 ? '#A6824E' : '#D6CEBE',
@@ -1936,18 +2127,13 @@ class Component extends DCLogic {
       spaDotW3: (s.spaSpot || 0) === 3 ? '34px' : '12px',
       spaDotBg3: (s.spaSpot || 0) === 3 ? '#A6824E' : '#D6CEBE',
       spaDesc: ["Podgrzewana tafla i jacuzzi za panoramicznym przeszkleniem na Tatry.","Fińska, parowa i biosauna — drewno, kamień i widok na zaśnieżony las.","Mikroklimat solny, leżaki i ciepłe światło — inhalacja i wyciszenie.","Cardio, wolne ciężary i zajęcia grupowe — z trenerami personalnymi na miejscu."][s.spaSpot || 0],
-      spa0BarW: (s.spaSpot || 0) === 0 ? (s.spaAuto === false ? '100%' : (Math.round((s.spaProg || 0) * 100) + '%')) : '0%',
-      spa1BarW: (s.spaSpot || 0) === 1 ? (s.spaAuto === false ? '100%' : (Math.round((s.spaProg || 0) * 100) + '%')) : '0%',
-      spa2BarW: (s.spaSpot || 0) === 2 ? (s.spaAuto === false ? '100%' : (Math.round((s.spaProg || 0) * 100) + '%')) : '0%',
-      spa3BarW: (s.spaSpot || 0) === 3 ? (s.spaAuto === false ? '100%' : (Math.round((s.spaProg || 0) * 100) + '%')) : '0%',
-      spaProgW: Math.round((s.spaProg || 0) * 100) + '%',
       spaHint: s.spaTouched ? 'przeciągnij' : 'przewiń zdjęcia',
       spaHintOp: s.spaTouched ? 0.75 : 1,
       spaHintY: '0px',
       spaPause: () => this.setState({ spaAuto: false, spaTouched: true }),
-      spaResume: () => this.setState({ spaAuto: true, spaProg: 0 }),
+      spaResume: () => this.setState({ spaAuto: true }),
       spaCaption: ["Basen i jacuzzi z widokiem na góry","Sauna fińska, parowa i biosauna","Grota solna","Siłownia i sala fitness"][s.spaSpot || 0],
-      spaHover0: () => { if ((s.spaSpot || 0) !== 0) this.setState({ spaAuto: false, spaTouched: true, spaProg: 0, spaSpot: 0 }); },
+      spaHover0: () => { if ((s.spaSpot || 0) !== 0) this.setState({ spaAuto: false, spaTouched: true, spaSpot: 0 }); },
       spaImg0Op: (s.spaSpot || 0) === 0 ? 1 : 0,
       spaImg0Sc: (s.spaSpot || 0) === 0 ? 1.04 : 1,
       spa0Bg: (s.spaSpot || 0) === 0 ? '#FBF8F2' : '#FFFFFF',
@@ -1959,7 +2145,7 @@ class Component extends DCLogic {
       spa0Op: (s.spaSpot || 0) === 0 ? 1 : 0,
       spaDot0W: (s.spaSpot || 0) === 0 ? '26px' : '10px',
       spaDot0Bg: (s.spaSpot || 0) === 0 ? '#E0C69C' : 'rgba(245,240,231,.4)',
-      spaHover1: () => { if ((s.spaSpot || 0) !== 1) this.setState({ spaAuto: false, spaTouched: true, spaProg: 0, spaSpot: 1 }); },
+      spaHover1: () => { if ((s.spaSpot || 0) !== 1) this.setState({ spaAuto: false, spaTouched: true, spaSpot: 1 }); },
       spaImg1Op: (s.spaSpot || 0) === 1 ? 1 : 0,
       spaImg1Sc: (s.spaSpot || 0) === 1 ? 1.04 : 1,
       spa1Bg: (s.spaSpot || 0) === 1 ? '#FBF8F2' : '#FFFFFF',
@@ -1971,7 +2157,7 @@ class Component extends DCLogic {
       spa1Op: (s.spaSpot || 0) === 1 ? 1 : 0,
       spaDot1W: (s.spaSpot || 0) === 1 ? '26px' : '10px',
       spaDot1Bg: (s.spaSpot || 0) === 1 ? '#E0C69C' : 'rgba(245,240,231,.4)',
-      spaHover2: () => { if ((s.spaSpot || 0) !== 2) this.setState({ spaAuto: false, spaTouched: true, spaProg: 0, spaSpot: 2 }); },
+      spaHover2: () => { if ((s.spaSpot || 0) !== 2) this.setState({ spaAuto: false, spaTouched: true, spaSpot: 2 }); },
       spaImg2Op: (s.spaSpot || 0) === 2 ? 1 : 0,
       spaImg2Sc: (s.spaSpot || 0) === 2 ? 1.04 : 1,
       spa2Bg: (s.spaSpot || 0) === 2 ? '#FBF8F2' : '#FFFFFF',
@@ -1983,7 +2169,7 @@ class Component extends DCLogic {
       spa2Op: (s.spaSpot || 0) === 2 ? 1 : 0,
       spaDot2W: (s.spaSpot || 0) === 2 ? '26px' : '10px',
       spaDot2Bg: (s.spaSpot || 0) === 2 ? '#E0C69C' : 'rgba(245,240,231,.4)',
-      spaHover3: () => { if ((s.spaSpot || 0) !== 3) this.setState({ spaAuto: false, spaTouched: true, spaProg: 0, spaSpot: 3 }); },
+      spaHover3: () => { if ((s.spaSpot || 0) !== 3) this.setState({ spaAuto: false, spaTouched: true, spaSpot: 3 }); },
       spaImg3Op: (s.spaSpot || 0) === 3 ? 1 : 0,
       spaImg3Sc: (s.spaSpot || 0) === 3 ? 1.04 : 1,
       spa3Bg: (s.spaSpot || 0) === 3 ? '#FBF8F2' : '#FFFFFF',
@@ -1998,6 +2184,43 @@ class Component extends DCLogic {
       spaShow: s.tab === 0 ? 'flex' : 'none',
       restoShow: s.tab === 1 ? 'flex' : 'none',
       lobbyShow: s.tab === 2 ? 'flex' : 'none',
+      clubShow: s.tab === 3 ? 'flex' : 'none',
+      lobPrev: () => this.lobbyScrollTo(((s.lobbySpot || 0) + 2) % 3),
+      lobNext: () => this.lobbyScrollTo(((s.lobbySpot || 0) + 1) % 3),
+      cluPrev: () => this.clubScrollTo(((s.clubSpot || 0) + 4) % 5),
+      cluNext: () => this.clubScrollTo(((s.clubSpot || 0) + 1) % 5),
+      cluSc4: (s.clubSpot || 0) === 4 ? 1.02 : 1.08,
+      cluBr4: (s.clubSpot || 0) === 4 ? 1 : 0.78,
+      cluDH4: (s.clubSpot || 0) === 4 ? '132px' : '64px',
+      cluDOp4: (s.clubSpot || 0) === 4 ? 1 : 0,
+      cluSc3: (s.clubSpot || 0) === 3 ? 1.02 : 1.08,
+      cluBr3: (s.clubSpot || 0) === 3 ? 1 : 0.78,
+      cluDH3: (s.clubSpot || 0) === 3 ? '132px' : '64px',
+      cluDOp3: (s.clubSpot || 0) === 3 ? 1 : 0,
+      lobSc0: (s.lobbySpot || 0) === 0 ? 1.02 : 1.08,
+      lobBr0: (s.lobbySpot || 0) === 0 ? 1 : 0.78,
+      lobDH0: (s.lobbySpot || 0) === 0 ? '132px' : '64px',
+      lobDOp0: (s.lobbySpot || 0) === 0 ? 1 : 0,
+      lobSc1: (s.lobbySpot || 0) === 1 ? 1.02 : 1.08,
+      lobBr1: (s.lobbySpot || 0) === 1 ? 1 : 0.78,
+      lobDH1: (s.lobbySpot || 0) === 1 ? '132px' : '64px',
+      lobDOp1: (s.lobbySpot || 0) === 1 ? 1 : 0,
+      lobSc2: (s.lobbySpot || 0) === 2 ? 1.02 : 1.08,
+      lobBr2: (s.lobbySpot || 0) === 2 ? 1 : 0.78,
+      lobDH2: (s.lobbySpot || 0) === 2 ? '132px' : '64px',
+      lobDOp2: (s.lobbySpot || 0) === 2 ? 1 : 0,
+      cluSc0: (s.clubSpot || 0) === 0 ? 1.02 : 1.08,
+      cluBr0: (s.clubSpot || 0) === 0 ? 1 : 0.78,
+      cluDH0: (s.clubSpot || 0) === 0 ? '132px' : '64px',
+      cluDOp0: (s.clubSpot || 0) === 0 ? 1 : 0,
+      cluSc1: (s.clubSpot || 0) === 1 ? 1.02 : 1.08,
+      cluBr1: (s.clubSpot || 0) === 1 ? 1 : 0.78,
+      cluDH1: (s.clubSpot || 0) === 1 ? '132px' : '64px',
+      cluDOp1: (s.clubSpot || 0) === 1 ? 1 : 0,
+      cluSc2: (s.clubSpot || 0) === 2 ? 1.02 : 1.08,
+      cluBr2: (s.clubSpot || 0) === 2 ? 1 : 0.78,
+      cluDH2: (s.clubSpot || 0) === 2 ? '132px' : '64px',
+      cluDOp2: (s.clubSpot || 0) === 2 ? 1 : 0,
 
       setLang: (e) => {
         const l = e.currentTarget.dataset.lang;
@@ -2042,6 +2265,7 @@ class Component extends DCLogic {
       pickUnit: (e) => {
         const n = Number(e.currentTarget.dataset.unit);
         this.setState({ pickedUnit: n, cardUnit: n });
+        this.scrollToPlan();
       },
       stopProp: (e) => e.stopPropagation(),
       closeCard: () => this.setState({ cardUnit: 0 }),
@@ -2060,12 +2284,36 @@ class Component extends DCLogic {
         const n = list[(i + 1) % list.length];
         this.setState({ cardUnit: n, pickedUnit: n });
       },
+      ch0Op: (s.aptCh || 0) === 0 ? 1 : 0,
+      ch0Y: (s.aptCh || 0) === 0 ? '0%' : ((s.aptCh || 0) > 0 ? '-100%' : '100%'),
+      ch1Op: (s.aptCh || 0) === 1 ? 1 : 0,
+      ch1Y: (s.aptCh || 0) === 1 ? '0%' : ((s.aptCh || 0) > 1 ? '-100%' : '100%'),
+      ch2Op: (s.aptCh || 0) === 2 ? 1 : 0,
+      ch2Y: (s.aptCh || 0) === 2 ? '0%' : ((s.aptCh || 0) > 2 ? '-100%' : '100%'),
+      ch3Op: (s.aptCh || 0) === 3 ? 1 : 0,
+      ch3Y: (s.aptCh || 0) === 3 ? '0%' : ((s.aptCh || 0) > 3 ? '-100%' : '100%'),
+      ch4Op: (s.aptCh || 0) === 4 ? 1 : 0,
+      ch4Y: (s.aptCh || 0) === 4 ? '0%' : ((s.aptCh || 0) > 4 ? '-100%' : '100%'),
+      ch5Op: (s.aptCh || 0) === 5 ? 1 : 0,
+      ch5Y: (s.aptCh || 0) === 5 ? '0%' : ((s.aptCh || 0) > 5 ? '-100%' : '100%'),
+      ch6Op: (s.aptCh || 0) === 6 ? 1 : 0,
+      ch6Y: (s.aptCh || 0) === 6 ? '0%' : ((s.aptCh || 0) > 6 ? '-100%' : '100%'),
+      ch7Op: (s.aptCh || 0) === 7 ? 1 : 0,
+      ch7Y: (s.aptCh || 0) === 7 ? '0%' : ((s.aptCh || 0) > 7 ? '-100%' : '100%'),
+      ch8Op: (s.aptCh || 0) === 8 ? 1 : 0,
+      ch8Y: (s.aptCh || 0) === 8 ? '0%' : ((s.aptCh || 0) > 8 ? '-100%' : '100%'),
+      chProg: Math.round((((s.aptCh || 0) + (s.aptChP || 0)) / 9) * 100) + '%',
+      heroBarOp: s.scroll > 0.015 ? 0 : 1,
+      heroBarY: s.scroll > 0.015 ? '100%' : '0%',
+      heroBarPe: s.scroll > 0.015 ? 'none' : 'auto',
       cardShow: s.cardUnit ? 'flex' : 'none',
       cardNo: s.cardUnit || '',
       cardFloor: this.floorNames[s.floor] || '',
       cardTotal: (this.unitInfo[s.cardUnit] || {}).t || '',
       cardTotalShow: (this.unitInfo[s.cardUnit] || {}).t ? 'flex' : 'none',
       cardExShow: (this.unitInfo[s.cardUnit] || {}).e ? 'flex' : 'none',
+      cardRoomsList: this.roomList(s.cardUnit),
+      cardRoomsShow: this.roomList(s.cardUnit).length ? 'flex' : 'none',
       cardExList: (((this.unitInfo[s.cardUnit] || {}).e || '').split(' · ').filter(Boolean)).map((p) => {
         const m = p.match(/^(.*?)\s+([\d,]+)\s*m²$/);
         return m ? { label: m[1], val: m[2] } : { label: p, val: '' };
