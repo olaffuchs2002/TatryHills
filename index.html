@@ -68,8 +68,14 @@
     #th-plan-outer{padding:10px!important}
     #th-plan-img{max-height:330px!important}
   }
+  @media (max-width:980px){
+    [data-footcols]{grid-template-columns:1fr 1fr!important;gap:34px 40px!important}
+    [data-footbar]{grid-template-columns:1fr!important;gap:22px!important}
+  }
   @media (max-width:560px){
     [data-hstat]{padding:14px 15px!important}
+    [data-footbar]{grid-template-columns:1fr!important}
+    [data-footcols]{grid-template-columns:1fr!important;gap:34px!important}
   }
   [data-tilt-img]{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
   nav a[data-nav]{position:relative}
@@ -1036,29 +1042,29 @@
         </div>
         <label style="display:block">
           <span style="display:block;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7A7264;margin-bottom:10px">Imię i nazwisko</span>
-          <input type="text" required="required" placeholder="Jan Kowalski" style="width:100%;height:54px;padding:0 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:15px;outline:none" style-focus="border-color:#C6A87C">
+          <input type="text" name="imie" required="required" placeholder="Jan Kowalski" style="width:100%;height:54px;padding:0 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:15px;outline:none" style-focus="border-color:#C6A87C">
         </label>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
           <label style="display:block">
             <span style="display:block;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7A7264;margin-bottom:10px">Telefon</span>
-            <input type="tel" required="required" placeholder="+48 600 000 000" style="width:100%;height:54px;padding:0 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:15px;outline:none" style-focus="border-color:#C6A87C">
+            <input type="tel" name="telefon" required="required" placeholder="+48 600 000 000" style="width:100%;height:54px;padding:0 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:15px;outline:none" style-focus="border-color:#C6A87C">
           </label>
           <label style="display:block">
             <span style="display:block;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7A7264;margin-bottom:10px">E-mail</span>
-            <input type="email" placeholder="jan@przyklad.pl" style="width:100%;height:54px;padding:0 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:15px;outline:none" style-focus="border-color:#C6A87C">
+            <input type="email" name="email" placeholder="jan@przyklad.pl" style="width:100%;height:54px;padding:0 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:15px;outline:none" style-focus="border-color:#C6A87C">
           </label>
         </div>
         <label style="display:block">
           <span style="display:block;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7A7264;margin-bottom:10px">Wiadomość</span>
-          <textarea rows="3" placeholder="Interesuje mnie apartament około 40 m²…" style="width:100%;padding:16px 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:15px;outline:none;resize:vertical" style-focus="border-color:#C6A87C"></textarea>
+          <textarea rows="3" name="wiadomosc" placeholder="Interesuje mnie apartament około 40 m²…" style="width:100%;padding:16px 18px;background:#FFFFFF;border:1px solid #E4DDCF;color:#16130F;font-size:15px;outline:none;resize:vertical" style-focus="border-color:#C6A87C"></textarea>
         </label>
         <div style="display:flex;flex-direction:column;gap:14px">
           <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer">
-            <input type="checkbox" required="required" style="flex:0 0 auto;width:18px;height:18px;margin-top:2px;accent-color:#C6A87C;cursor:pointer">
+            <input type="checkbox" name="zgoda_rodo" required="required" style="flex:0 0 auto;width:18px;height:18px;margin-top:2px;accent-color:#C6A87C;cursor:pointer">
             <span style="font-size:13px;line-height:1.6;color:#5A544B;font-weight:400">* Wyrażam zgodę na przetwarzanie moich danych osobowych przez CAPITAL TOWERS GROUP sp. z o.o. w celu udzielenia odpowiedzi na zapytanie dotyczące inwestycji Tatry Hills.</span>
           </label>
           <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer">
-            <input type="checkbox" style="flex:0 0 auto;width:18px;height:18px;margin-top:2px;accent-color:#C6A87C;cursor:pointer">
+            <input type="checkbox" name="zgoda_marketing" style="flex:0 0 auto;width:18px;height:18px;margin-top:2px;accent-color:#C6A87C;cursor:pointer">
             <span style="font-size:13px;line-height:1.6;color:#5A544B;font-weight:400">Wyrażam zgodę na otrzymywanie informacji handlowych o inwestycji drogą elektroniczną i telefoniczną (art. 10 ustawy o świadczeniu usług drogą elektroniczną, art. 172 Prawa telekomunikacyjnego). Zgoda dobrowolna.</span>
           </label>
           <details style="font-size:13px;line-height:1.6;color:#7D766A">
@@ -1066,7 +1072,8 @@
             <p style="margin:12px 0 0;font-weight:400">Administratorem danych jest CAPITAL TOWERS GROUP sp. z o.o., ul. Elektoralna 13/121, 00-137 Warszawa, KRS 0000576513. Dane przetwarzamy na podstawie zgody (art. 6 ust. 1 lit. a RODO) oraz naszego prawnie uzasadnionego interesu (art. 6 ust. 1 lit. f RODO) w celu obsługi zapytania i kontaktu. Podanie danych jest dobrowolne, ale niezbędne do udzielenia odpowiedzi. Dane przechowujemy do czasu wycofania zgody lub przez okres niezbędny do obsługi zapytania. Przysługuje Ci prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia, sprzeciwu, wycofania zgody w dowolnym momencie oraz wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych. Kontakt: <a href="mailto:biuro@tatry-hills.pl" style="color:#A6824E">biuro@tatry-hills.pl</a>. Pełna treść: <a href="polityka-prywatnosci.dc.html" style="color:#A6824E">Polityka prywatności</a>.</p>
           </details>
         </div>
-        <button type="submit" style="height:58px;border:0;background:#C6A87C;color:#16130F;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;font-weight:500;cursor:pointer" style-hover="background:#B29066">Wyślij zgłoszenie</button>
+        <p style="display:{{ errShow }};margin:0;padding:14px 16px;background:#FBEFEA;border:1px solid #E8C7B6;font-size:13px;line-height:1.6;color:#8A4A2E;font-weight:400">{{ sendError }}</p>
+        <button type="submit" disabled="{{ sendDisabled }}" style="height:58px;border:0;background:#C6A87C;color:#16130F;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;opacity:{{ sendOpacity }};transition:background .3s ease,opacity .3s ease" style-hover="background:#B29066">{{ sendLabel }}</button>
       </form>
       <div style="display:{{ thanksShow }};flex-direction:column;align-items:flex-start;gap:18px;padding:30px 0">
         <svg width="46" height="46" viewBox="0 0 46 46" fill="none" aria-hidden="true"><circle cx="23" cy="23" r="22" stroke="#C6A87C" stroke-width="1.3"></circle><path d="M14 24l6 6 13-14" stroke="#C6A87C" stroke-width="1.5"></path></svg>
@@ -1076,7 +1083,7 @@
       </div>
     </div>
   </div>
-  <div style="max-width:1240px;margin:100px auto 0;padding-top:48px;border-top:1px solid #E4DDCF;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px">
+  <div style="max-width:1240px;margin:100px auto 0;padding-top:48px;border-top:1px solid #E4DDCF;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px" data-footcols="1">
     <div>
       <img src="assets/logo-gold.png" alt="Tatry Hills" style="display:block;height:auto;width:100%;max-width:150px;margin-bottom:18px">
       <div style="font-size:13px;line-height:1.75;color:#7D766A;font-weight:400">Luksusowa Villa Seniora<br>Zakopane, przy Gubałówce</div>
@@ -1105,22 +1112,29 @@
         <a href="polityka-prywatnosci.dc.html" style="color:#55504A" style-hover="color:#A6824E">Polityka prywatności</a>
         <a href="polityka-prywatnosci.dc.html#cookies" style="color:#55504A" style-hover="color:#A6824E">Polityka cookies</a>
         <a href="polityka-prywatnosci.dc.html#rodo" style="color:#55504A" style-hover="color:#A6824E">Klauzula informacyjna RODO</a>
+        <button onClick="{{ cookieReopen }}" style="justify-self:start;padding:0;border:0;background:transparent;font-family:'Jost',sans-serif;font-size:15px;font-weight:400;color:#55504A;cursor:pointer;text-align:left;transition:color .3s ease" style-hover="color:#A6824E">Ustawienia plików cookies</button>
       </div>
     </div>
   </div>
-  <div style="max-width:1240px;margin:52px auto 0;padding-top:30px;border-top:1px solid #EFE9DC;display:flex;flex-direction:column;gap:22px">
-    <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 26px;font-size:12px;line-height:1.7;color:#55504A;font-weight:400">
-      <span style="color:#16130F">CAPITAL TOWERS GROUP sp. z o.o.</span>
-      <span>ul. Elektoralna 13/121, 00-137 Warszawa</span>
-      <span style="display:flex;flex-wrap:wrap;gap:10px 18px;color:#6B655A">
+  <div data-footbar="1" style="max-width:1240px;margin:56px auto 0;padding-top:28px;border-top:1px solid #EFE9DC;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:26px 48px">
+    <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 22px;font-size:12px;line-height:1.7;color:#6B655A;font-weight:400">
+        <span style="color:#16130F">CAPITAL TOWERS GROUP sp. z o.o.</span>
+        <span>ul. Elektoralna 13/121, 00-137 Warszawa</span>
         <span>NIP 5272745024</span>
         <span>REGON 362531978</span>
         <span>KRS 0000576513</span>
-      </span>
+      </div>
+      <p style="max-width:72ch;margin:0;font-size:12px;line-height:1.7;color:#8A8378;font-weight:400;text-wrap:balance">Przedstawiona oferta ma&nbsp;jedynie charakter informacyjny i nie stanowi oferty w rozumieniu art. 66 § 1 Kodeksu cywilnego.</p>
     </div>
-    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 32px">
-      <p style="flex:1 1 520px;max-width:88ch;margin:0;font-size:12px;line-height:1.75;color:#6B655A;font-weight:400;text-wrap:pretty">Wizualizacje, metraże i ceny mają charakter poglądowy, mogą ulec zmianie i stanowią zaproszenie do zawarcia umowy w rozumieniu art. 71 Kodeksu cywilnego, a nie ofertę w rozumieniu art. 66 § 1 ustawy z dnia 23 kwietnia 1964 r. — Kodeks cywilny.</p>
-      <span style="flex:0 0 auto;font-size:12px;letter-spacing:.16em;color:#6B655A;font-weight:400">© 2026 Tatry Hills</span>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px">
+      <span title="Treści i grafiki częściowo tworzone z użyciem AI" style="display:inline-flex;align-items:center;gap:7px;height:26px;padding:0 11px;border-radius:13px;background:#16130F;color:#F5F0E7">
+        <span style="font-size:11px;font-weight:600;letter-spacing:.04em">AI</span>
+        <span style="width:1px;height:11px;background:#4A443B"></span>
+        <span style="font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#C6A87C">Modified</span>
+      </span>
+      <span style="font-size:11px;line-height:1.6;color:#8A8378;font-weight:400">Część treści i grafik na stronie wspomagane AI</span>
+      <span style="font-size:12px;letter-spacing:.16em;color:#6B655A;font-weight:400">© 2026 Tatry Hills</span>
     </div>
   </div>
 </section>
@@ -1143,7 +1157,7 @@
 class Component extends DCLogic {
   state = {
     lang: 'pl', cap: 0, cardUnit: 0, cur: 'PLN', rates: { PLN: 1, EUR: null, USD: null }, ratesDate: '', scroll: 0, video: 1, split: 0, splitAnim: true, tab: 0, floor: 4, floorView: 'plan', selectedUnit: 0, mode: 0, area: 34,
-    interest: 0, submitted: false, leadName: '', lbIndex: -1, shownMonthly: null, activeSection: '',
+    interest: 0, submitted: false, sending: false, sendError: '', leadName: '', lbIndex: -1, shownMonthly: null, activeSection: '',
     cApart: 0, cArea: 0, cMeals: 0, cKm: 0, galOpen: false, cookie: null, mergeMode: false, mergeSel: [], restoSpot: 0, lobbySpot: 0, clubSpot: 0, aptCh: 0, aptChP: 0, spaSpot: 0, spaAuto: true, spaTouched: false
   };
 
@@ -1251,8 +1265,8 @@ class Component extends DCLogic {
 
     const vid = document.querySelector('#gora video');
     if (vid) {
-      vid.muted = true;
-      const kick = () => { vid.muted = true; const p = vid.play(); if (p && p.catch) p.catch(() => {}); };
+      vid.muted = true; vid.volume = 0; vid.defaultMuted = true; vid.removeAttribute('controls');
+      const kick = () => { vid.muted = true; vid.volume = 0; const p = vid.play(); if (p && p.catch) p.catch(() => {}); };
       this.syncVideo = () => {
         if (!vid.getAttribute('src')) vid.setAttribute('src', 'assets/hero.mp4');
         kick();
@@ -1312,7 +1326,8 @@ class Component extends DCLogic {
     this.capTimer = setInterval(() => this.setState((st) => ({ cap: (st.cap + 1) % 5 })), 4200);
     const apt = document.getElementById('th-apt-video');
     if (apt) {
-      const kickApt = () => { apt.muted = true; const p = apt.play(); if (p && p.catch) p.catch(() => {}); };
+      apt.muted = true; apt.volume = 0; apt.defaultMuted = true; apt.removeAttribute('controls');
+      const kickApt = () => { apt.muted = true; apt.volume = 0; const p = apt.play(); if (p && p.catch) p.catch(() => {}); };
       kickApt();
       apt.addEventListener('pause', () => { if (!document.hidden) setTimeout(kickApt, 150); });
       this.aptTimer = setInterval(() => { if (apt.paused && !document.hidden) kickApt(); }, 1200);
@@ -2695,17 +2710,46 @@ class Component extends DCLogic {
       pickInterest: (e) => this.setState({ interest: Number(e.currentTarget.dataset.interest) }),
       submitForm: (e) => {
         e.preventDefault();
+        if (s.sending) return;
         const f = e.target;
-        const name = (f.querySelector('input[type=text]') || {}).value || 'Gościu';
-        this.setState({ submitted: true, leadName: name.split(' ')[0] });
+        const g = (sel) => ((f.querySelector(sel) || {}).value || '').trim();
+        const name = g('input[name=imie]') || 'Gościu';
+        const payload = {
+          _subject: 'Tatry Hills — nowe zapytanie ze strony',
+          _template: 'table',
+          _captcha: 'false',
+          Zainteresowanie: this.interests[s.interest],
+          'Imię i nazwisko': name,
+          Telefon: g('input[name=telefon]'),
+          'E-mail': g('input[name=email]'),
+          Wiadomość: g('textarea[name=wiadomosc]') || '—',
+          'Zgoda marketingowa': (f.querySelector('input[name=zgoda_marketing]') || {}).checked ? 'tak' : 'nie',
+          Waluta: s.cur,
+          Strona: (typeof location !== 'undefined' ? location.href : '')
+        };
+        this.setState({ sending: true, sendError: '' });
+        fetch('https://formsubmit.co/ajax/biuro@tatry-hills.pl', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload)
+        })
+          .then((r) => r.ok ? r.json() : Promise.reject())
+          .then(() => { f.reset(); this.setState({ sending: false, submitted: true, leadName: name.split(' ')[0] }); })
+          .catch(() => this.setState({ sending: false, sendError: 'Nie udało się wysłać zapytania. Zadzwoń: +48 516 066 067 lub napisz na biuro@tatry-hills.pl' }));
       },
       resetForm: () => this.setState({ submitted: false }),
       formShow: s.submitted ? 'none' : 'flex',
+      sendLabel: s.sending ? 'Wysyłanie…' : 'Wyślij zapytanie',
+      sendDisabled: s.sending,
+      sendOpacity: s.sending ? 0.6 : 1,
+      errShow: s.sendError ? 'block' : 'none',
+      sendError: s.sendError,
       thanksShow: s.submitted ? 'flex' : 'none',
       leadName: s.leadName,
       leadInterest: this.interests[s.interest],
 
       cookieShow: s.cookie ? 'none' : 'block',
+      cookieReopen: () => { try { localStorage.removeItem('th-cookie'); } catch (e) {} this.setState({ cookie: null }); },
       cookieAccept: () => { try { localStorage.setItem('th-cookie', 'all'); } catch (e) {} this.setState({ cookie: 'all' }); },
       cookieReject: () => { try { localStorage.setItem('th-cookie', 'essential'); } catch (e) {} this.setState({ cookie: 'essential' }); },
       galOverlayShow: s.galOpen ? 'flex' : 'none',
